@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Known Limitations </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../vs2015.css" /> -->
+    <script src="../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='../../index.html'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<div class='navlabel'>README</div>
+<button class='navitem'><a href='../../index.html'>Home</a></button>
+<hr/>
+<button class='navitem'><a href='#known-limitations'><span class='navitem1'>Known Limitations</span></a></button>
+<button class='navitem'><a href='#scalability-issues-with-merging'><span class='navitem1'>Scalability Issues with Merging</span></a></button>
+<button class='navitem'><a href='#export-limitations'><span class='navitem1'>Export Limitations</span></a></button>
+<button class='navitem'><a href='#import-limitations'><span class='navitem1'>Import Limitations</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="known-limitations" class="title">Known Limitations</h1>
+<p>There are two limitations with respect to merging of models imported from STL.
+The default for merging is controlled by the configuration parameter <a href="3D-PRINTING/AA3dp-merge-enabledAA.var.html"><code>3d-printing:*3dp-merge-enabled*</code></a>.
+To improve import quality and success rate, the default has been set to <strong>off</strong> (<code>NIL</code>) for now.</p>
+<p>It is recommended to perform merging interactively on an as-needed basis using the
+dialog <code>MERGE_3D</code>.</p>
+<h1 id="scalability-issues-with-merging">Scalability Issues with Merging</h1>
+<p>Merge scans all vertices in the model created from STL data using a native (C++) function
+which causes a <code>Stack overflow</code> with large amounts of vertices. Following options to fix this
+issues are available:</p>
+<ul>
+<li>fix the native (C++) function and create a custom build of <em>Modeling</em>.</li>
+<li>get PTC to include the (simple) bugfix in one of the next <em>Modeling</em> releases.</li>
+</ul>
+<h1 id="export-limitations">Export Limitations</h1>
+<ul>
+<li>3mf export currently does not export face colors, part instance colors, textures or materials.</li>
+</ul>
+<h1 id="import-limitations">Import Limitations</h1>
+<ul>
+<li>3mf import does not import face colors.</li>
+<li>3mf materials are imported as material color without material name.</li>
+<li>3mf textures are not imported.</li>
+</ul>
+
+        </article>
+        <footer>
+            <hr />
+            Template project Created by PowerShell Module <a href='https://github.com/WetHat/MarkdownToHtml'>MarkdownToHTML</a>.
+        </footer>
+    </main>
+</body>
+</html>

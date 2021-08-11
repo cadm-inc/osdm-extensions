@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>READ-MANUFACTURING-DATA [Public Function] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='../../../index.html'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<div class='navlabel'>README</div>
+<button class='navitem'><a href='../../../index.html'>Home</a></button>
+<hr/>
+<button class='navitem'><a href='#read-manufacturing-data-public-function'><span class='navitem1'>READ-MANUFACTURING-DATA [Public Function]</span></a></button>
+<button class='navitem'><a href='#arguments'><span class='navitem1'>Arguments</span></a></button>
+<button class='navitem'><a href='#returns'><span class='navitem1'>Returns</span></a></button>
+<button class='navitem'><a href='#instance-component-links'><span class='navitem2'>Instance (Component) Links</span></a></button>
+<button class='navitem'><a href='#parts-mesh-objects'><span class='navitem2'>Parts (Mesh objects)</span></a></button>
+<button class='navitem'><a href='#assemblies-components-objects'><span class='navitem2'>Assemblies (Components objects)</span></a></button>
+<button class='navitem'><a href='#top-level-assembly'><span class='navitem2'>Top Level Assembly</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="read-manufacturing-data-public-function" class="title">READ-MANUFACTURING-DATA [Public Function]</h1>
+<p class="package">Package: <a href="3D-PRINTING.DATA-EXCHANGE.pkg.html"><code>3d-printing.data-exchange</code></a> (Nick name(s): <code>:3dp.x</code>) </p>
+<p>Read manufacturing data (STL or 3MF) from files and optionally reconstruct
+surfaces.</p>
+<pre><code class="language-lisp">(read-manufacturing-data mf-file  :type                   {keyword}
+                                 [:facecount-limit        {number}]
+                                 [:surface-reconstruction {keyword|keyword list}]
+                                 [:resolution             {number}]
+                                 [:progress               {PROGRESS}])
+</code></pre>
+<p>Generates a model specification consisting of nested property lists.</p>
+<h1 id="arguments">Arguments</h1>
+<dl>
+<dt><em>mf-file</em> {<code>string</code>}</dt>
+<dd>Path to file containing manufacturing data.</dd>
+<dt><em>type</em> {<code>keyword</code>}</dt>
+<dd>Type of data to import. Currently supported are <code>:STL</code> and <code>:3MF</code>.</dd>
+<dt><em>:resolution</em> {<code>number</code> [1.0e-3]}</dt>
+<dd>Surface recognition precision. Used for geometric comparisons in
+surface fitting.</dd>
+<dt><em>:facecount-limit</em> {<code>number</code> [150000]}</dt>
+<dd>Optional maximum number of faces in the imported model. If that limit is
+exceeded, plane recognition is enforced to reduce the number of faces.
+Default is 150,000.</dd>
+<dt><em>:surface-reconstruction</em> {<code>keyword</code>|<em>keyword list</em> [<code>NIL</code>] }</dt>
+<dd>
+<p>Optional one or more surface types to reconstruct.
+Currently supported surface types  are:</p>
+<ul>
+<li><code>:PLANES</code></li>
+<li><code>:CYLINDERS</code></li>
+</ul>
+</dd>
+<dt><em>:progress</em> {<code>PROGRESS</code> [<code>NIL</code>]}</dt>
+<dd>
+<p>Optional instance of a progress object. Used to update a progress indicator
+in the UI. if <code>NIL</code> (default) no progress is displayed.</p>
+<h1 id="returns">Returns</h1>
+</dd>
+</dl>
+<blockquote>
+<p>Model specification (list of property lists) created from manufacturing
+data.
+The specification of the root assembly of the model hierarchy is the first
+element in the returned list. Its id is: <strong>&quot;Root&quot;</strong>.
+The format of the elemtents of the specification list is described below:</p>
+<h2 id="instance-component-links">Instance (Component) Links</h2>
+</blockquote>
+<blockquote>
+<pre><code class="language-lisp">(
+  :TM     &lt;transformation  {MATRIX-3D}&gt;
+  :TARGET &lt;hash-key        {integer}&gt;
+)
+</code></pre>
+ </blockquote>
+<blockquote>
+<h2 id="parts-mesh-objects">Parts (Mesh objects)</h2>
+</blockquote>
+<blockquote>
+<pre><code class="language-lisp">(
+  :ID                     &lt;hash-key    {integer}&gt;
+  :NAME                   &lt;part-name   {string}&gt;
+  :BODY                   &lt;body-handle {BODY}&gt;
+  :RESOLUTION             &lt;res                       {number}&gt;
+  :FACET-COUNT            &lt;number-of-facets          {number}&gt;
+  :FACE-COUNT             &lt;number-of-facets          {number}&gt;
+  :REPAIRED-FACET-COUNT   &lt;number-of-degenerate-faces-repaired {number}&gt;
+  :DEGENERATE-FACET-COUNT &lt;number-of-degenerate-facets_dropped {number}&gt;
+  :SURFACE-RECONSTRUCTION &lt;surface-types {keyword list}&gt;
+ [:COLOR                  &lt;part contents color        {integer}&gt;]
+ [:TRANSPARENCY           &lt;part contents transparency {double }&gt;]
+)
+</code></pre>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong> The <code>:COLOR</code> and <code>:TRANSPACENCY</code> properties are available only for
+3mf data import.</p>
+</blockquote>
+<blockquote>
+<h2 id="assemblies-components-objects">Assemblies (Components objects)</h2>
+</blockquote>
+<blockquote>
+<pre><code class="language-lisp">(
+  :ID         &lt;hash-key       {integer}&gt;
+  :NAME       &lt;component-name {string}&gt;
+  :COMPONENTS &lt;child-links    {plist list}&gt;
+)
+</code></pre>
+</blockquote>
+<blockquote>
+<h2 id="top-level-assembly">Top Level Assembly</h2>
+</blockquote>
+<blockquote>
+<pre><code class="language-lisp">(
+  :ID         -1
+  :NAME       &lt;filename                 {string}&gt;
+  :COMPONENTS &lt;top-level-instances      {plist list}&gt;
+ [:META-DATA  ( (:NAME {string}) :VALUE {string}) ...)]
+)
+</code></pre>
+</blockquote>
+<blockquote>
+<p><strong>Note</strong> the <code>:META-DATA</code> property is currently available for 3mf-files only.</p>
+</blockquote>
+
+        </article>
+        <footer>
+            <hr />
+            Template project Created by PowerShell Module <a href='https://github.com/WetHat/MarkdownToHtml'>MarkdownToHTML</a>.
+        </footer>
+    </main>
+</body>
+</html>

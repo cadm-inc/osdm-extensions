@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>3DP_SETTINGS [Public Dialog] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='../../../index.html'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<div class='navlabel'>README</div>
+<button class='navitem'><a href='../../../index.html'>Home</a></button>
+<hr/>
+<button class='navitem'><a href='#dp_settings-public-dialog'><span class='navitem1'>3DP_SETTINGS [Public Dialog]</span></a></button>
+<button class='navitem'><a href='#syntax'><span class='navitem1'>Syntax</span></a></button>
+<button class='navitem'><a href='#options'><span class='navitem1'>Options</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="dp_settings-public-dialog" class="title">3DP_SETTINGS [Public Dialog]</h1>
+<p class="package">Package: <a href="3D-PRINTING.pkg.html"><code>3d-printing</code></a> (Nick name(s): <code>:3dp</code>) </p>
+<p>Edit customizable module settings for the 3d printing extension.</p>
+<p><img src="images/settings_dia.png" class="leftfloat" alt="Settings Dialog" /></p>
+<ol>
+<li>Configures the <a href="AA3dp-default-recognition-precisionAA.var.html"><code>*3dp-default-recognition-precision*</code></a> parameter.</li>
+<li>Configures the <a href="AA3dp-lightweight-model-enabledAA.var.html"><code>*3dp-lightweight-model-enabled*</code></a> parameter.</li>
+<li>Configures the <a href="AA3dp-plane-recognition-enabledAA.var.html"><code>*3dp-plane-recognition-enabled*</code></a> parameter.</li>
+<li>Configures the <a href="AA3dp-cylinder-recognition-enabledAA.var.html"><code>*3dp-cylinder-recognition-enabled*</code></a> parameter.</li>
+<li>Configures the <a href="AA3dp-merge-enabledAA.var.html"><code>*3dp-merge-enabled*</code></a> parameter.</li>
+<li>Configures the <a href="AA3dp-face-count-limitAA.var.html"><code>*3dp-face-count-limit*</code></a> parameter.</li>
+<li>Resets all parameters to the startup customization in <code>3dp_customize</code>.</li>
+</ol>
+<h1 id="syntax">Syntax</h1>
+<pre><img src='3DP_SETTINGS.dia1.svg' alt='Diagram 1.' /></pre>
+<h1 id="options">Options</h1>
+<dl>
+<dt><code>:RECOGNITION_PRECISION</code> {<code>number</code>}</dt>
+<dd>The surface recognition setting: <a href="AA3dp-default-recognition-precisionAA.var.html"><code>*3dp-default-recognition-precision*</code></a></dd>
+<dt><code>:LIGHTWEIGHT</code> {<code>boolean</code>}</dt>
+<dd>Lightweight model switch:  <a href="AA3dp-lightweight-model-enabledAA.var.html"><code>*3dp-lightweight-model-enabled*</code></a></dd>
+<dt><code>:PLANE_RECOG</code> {<code>boolean</code>}</dt>
+<dd>Plane recognition switch: <a href="AA3dp-plane-recognition-enabledAA.var.html"><code>*3dp-plane-recognition-enabled*</code></a></dd>
+<dt><code>:CYLINDER_RECOG</code> {<code>boolean</code>}</dt>
+<dd>Cylinder recognition switch: <a href="AA3dp-cylinder-recognition-enabledAA.var.html"><code>*3dp-cylinder-recognition-enabled*</code></a></dd>
+<dt><code>:MERGE</code> {<code>boolean</code>}</dt>
+<dd>Merge switch: <a href="AA3dp-merge-enabledAA.var.html"><code>*3dp-merge-enabled*</code></a></dd>
+<dt><code>:FACE_LIMIT</code> {<code>number</code>}</dt>
+<dd>Face count limit: <a href="AA3dp-face-count-limitAA.var.html"><code>*3dp-face-count-limit*</code></a></dd>
+<dt><code>:RESET</code></dt>
+<dd>Reset all values to the factory default.</dd>
+</dl>
+
+        </article>
+        <footer>
+            <hr />
+            Template project Created by PowerShell Module <a href='https://github.com/WetHat/MarkdownToHtml'>MarkdownToHTML</a>.
+        </footer>
+    </main>
+</body>
+</html>

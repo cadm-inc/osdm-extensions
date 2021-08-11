@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>DEACTIVATE-MODULE [Public Function] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='../../../index.html'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<div class='navlabel'>README</div>
+<button class='navitem'><a href='../../../index.html'>Home</a></button>
+<hr/>
+<button class='navitem'><a href='#deactivate-module-public-function'><span class='navitem1'>DEACTIVATE-MODULE [Public Function]</span></a></button>
+<button class='navitem'><a href='#returns'><span class='navitem1'>Returns</span></a></button>
+<button class='navitem'><a href='#description'><span class='navitem1'>Description</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="deactivate-module-public-function" class="title">DEACTIVATE-MODULE [Public Function]</h1>
+<p class="package">Package: <a href="3D-PRINTING.pkg.html"><code>3d-printing</code></a> (Nick name(s): <code>:3dp</code>) </p>
+<p>Deactivate this module.</p>
+<pre><code class="language-lisp">(deactivate-module)
+</code></pre>
+<h1 id="returns">Returns</h1>
+<p><code>T</code> for successful deactivation; <code>NIL</code> otherwise.</p>
+<h1 id="description">Description</h1>
+<p>Module deactivation implies:</p>
+<ul>
+<li>unregistering and unconfiguring the module's user interface (if any)</li>
+<li>releasing the license (if applicable))</li>
+</ul>
+
+        </article>
+        <footer>
+            <hr />
+            Template project Created by PowerShell Module <a href='https://github.com/WetHat/MarkdownToHtml'>MarkdownToHTML</a>.
+        </footer>
+    </main>
+</body>
+</html>

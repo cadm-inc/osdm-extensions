@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LOAD-MODULE-CUSTOMIZATION [Public Function] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='../../../index.html'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<div class='navlabel'>README</div>
+<button class='navitem'><a href='../../../index.html'>Home</a></button>
+<hr/>
+<button class='navitem'><a href='#load-module-customization-public-function'><span class='navitem1'>LOAD-MODULE-CUSTOMIZATION [Public Function]</span></a></button>
+<button class='navitem'><a href='#arguments'><span class='navitem1'>Arguments</span></a></button>
+<button class='navitem'><a href='#returns'><span class='navitem1'>Returns</span></a></button>
+<button class='navitem'><a href='#description'><span class='navitem1'>Description</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="load-module-customization-public-function" class="title">LOAD-MODULE-CUSTOMIZATION [Public Function]</h1>
+<p class="package">Package: <a href="3D-PRINTING.pkg.html"><code>3d-printing</code></a> (Nick name(s): <code>:3dp</code>) </p>
+<p>Load or re-load the module customizations.</p>
+<pre><code class="language-lisp">(load-module-customization [with-persisted-settings])
+</code></pre>
+<h1 id="arguments">Arguments</h1>
+<dl>
+<dt><em>with-persisted-settings</em> {<code>boolean</code> [<code>NIL</code>]}</dt>
+<dd>Optional flag. <code>T</code> to restore persisted settings created by the
+<a href="3DP_SETTINGS.dia.html"><code>3DP_SETTINGS</code></a>
+after the customization has been loaded. <code>NIL</code> to just load the
+customization.</dd>
+</dl>
+<h1 id="returns">Returns</h1>
+<p><code>T</code> on success; <code>NIL</code> otherwise.</p>
+<h1 id="description">Description</h1>
+<p>This function is automatically called at the end of the module loading process but can also
+be called explicitely whenever the customization changed.</p>
+<p>Customization files can be placed into
+one or more of the following directories:</p>
+<table version="">
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Factory</td>
+<td style="text-align: left;">Module installation directory</td>
+</tr>
+<tr>
+<td style="text-align: left;">Corporate</td>
+<td style="text-align: left;">as specified in %SDCORPCUSTOMIZEDIR%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Site</td>
+<td style="text-align: left;">as specified in %SDSITECUSTOMIZEDIR%</td>
+</tr>
+<tr>
+<td style="text-align: left;">User</td>
+<td style="text-align: left;">%APPDATA%/PTC/Creo Elements Direct Modeling /</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong> The customization files are loaded in table order. The <em>user</em> customization takes
+precedence over all other customizations.</p>
+
+        </article>
+        <footer>
+            <hr />
+            Template project Created by PowerShell Module <a href='https://github.com/WetHat/MarkdownToHtml'>MarkdownToHTML</a>.
+        </footer>
+    </main>
+</body>
+</html>

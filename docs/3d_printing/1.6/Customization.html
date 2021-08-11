@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Extension Module Customization Overview </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../vs2015.css" /> -->
+    <script src="../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='../../index.html'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<div class='navlabel'>README</div>
+<button class='navitem'><a href='../../index.html'>Home</a></button>
+<hr/>
+<button class='navitem'><a href='#extension-module-customization-overview'><span class='navitem1'>Extension Module Customization Overview</span></a></button>
+<button class='navitem'><a href='#extension-module-startup-configuration'><span class='navitem1'>Extension Module Startup Configuration</span></a></button>
+<button class='navitem'><a href='#customization-options'><span class='navitem3'>Customization Options</span></a></button>
+<button class='navitem'><a href='#re-loading-customizations-after-change'><span class='navitem3'>Re-loading Customizations after Change</span></a></button>
+<button class='navitem'><a href='#interactive-configuration'><span class='navitem1'>Interactive Configuration</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="extension-module-customization-overview" class="title">Extension Module Customization Overview</h1>
+<p>Function and behavior of the <code>3d_printing</code> extension module can be customized in following ways:</p>
+<h1 id="extension-module-startup-configuration">Extension Module Startup Configuration</h1>
+<p>The module startup configuration (typically defined by the CAD admin) can be customized by
+editing the <code>3dp_customize.lsp</code> file.
+The factory default <code>3dp_customize.lsp</code> file can be found
+in the root directory where the module was unpacked (see <a href="Installation.html">Extension Module Installation and Startup</a>.</p>
+<p>This extension module fully supports the <em>Modeling</em> multi-level customization architecture.
+The <code>3dp_customize.lsp</code> file can be placed into one or more of the following directories:</p>
+<table version="">
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Factory</td>
+<td style="text-align: left;">Module installation directory</td>
+</tr>
+<tr>
+<td style="text-align: left;">Corporate</td>
+<td style="text-align: left;">as specified in %SDCORPCUSTOMIZEDIR%</td>
+</tr>
+<tr>
+<td style="text-align: left;">Site</td>
+<td style="text-align: left;">as specified in %SDSITECUSTOMIZEDIR%</td>
+</tr>
+<tr>
+<td style="text-align: left;">User</td>
+<td style="text-align: left;">%APPDATA%/PTC/Creo Elements Direct Modeling /</td>
+</tr>
+</tbody>
+</table>
+<p>where:</p>
+<blockquote>
+<dl>
+<dt>%SDCORPCUSTOMIZEDIR%, %SDSITECUSTOMIZEDIR%</dt>
+<dd>Windows environment variables typically defined by the CAD adminstrator.</dd>
+</dl>
+</blockquote>
+<blockquote>
+<dl>
+<dt>%APPDATA%</dt>
+<dd>Windows system variable pointing to the user's application data directory</dd>
+</dl>
+</blockquote>
+<blockquote>
+<dl>
+<dt version=""></dt>
+<dd><em>Modeling</em> Version</dd>
+</dl>
+</blockquote>
+<p><strong>Note</strong>: Customization files are loaded in table order. The <em>user</em> customization takes
+precedence over all other customizations.</p>
+<h3 id="customization-options">Customization Options</h3>
+<p>The module's startup configuration can be customized by setting one or
+more of the following parameters in the <code>3dp_customize.lsp</code> file:</p>
+<ul>
+<li><a href="3D-PRINTING/AA3dp-default-recognition-precisionAA.var.html"><code>3d-printing:*3dp-default-recognition-precision*</code></a></li>
+<li><a href="3D-PRINTING/AA3dp-lightweight-model-enabledAA.var.html"><code>3d-printing:*3dp-lightweight-model-enabled*</code></a></li>
+<li><a href="3D-PRINTING/AA3dp-plane-recognition-enabledAA.var.html"><code>3d-printing:*3dp-plane-recognition-enabled*</code></a></li>
+<li><a href="3D-PRINTING/AA3dp-cylinder-recognition-enabledAA.var.html"><code>3d-printing:*3dp-cylinder-recognition-enabled*</code></a></li>
+<li><a href="3D-PRINTING/AA3dp-merge-enabledAA.var.html"><code>3d-printing:*3dp-merge-enabled*</code></a></li>
+<li><a href="3D-PRINTING/AA3dp-face-count-limitAA.var.html"><code>3d-printing:*3dp-face-count-limit*</code></a></li>
+<li><a href="3D-PRINTING/AAuser-interface-integrationAA.var.html"><code>3d-printing:*user-interface-integration*</code></a></li>
+</ul>
+<h3 id="re-loading-customizations-after-change">Re-loading Customizations after Change</h3>
+<blockquote>
+<p>Type following command into the <em>Modeling</em> command line and press <em>Enter</em>:</p>
+</blockquote>
+<pre><code class="language-lisp">(3dp:load-module-customization)
+</code></pre>
+<h1 id="interactive-configuration">Interactive Configuration</h1>
+<p>Settings can be persistently changed by the user in a Modeling session via the
+settings dialog: <a href="3D-PRINTING/3DP_SETTINGS.dia.html"><code>3d-printing:3DP_SETTINGS</code></a>. Changes made in this
+dialog override the settings loaded from <code>3dp_customize.lsp</code>.</p>
+
+        </article>
+        <footer>
+            <hr />
+            Template project Created by PowerShell Module <a href='https://github.com/WetHat/MarkdownToHtml'>MarkdownToHTML</a>.
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Modeling Extension Module '3d_printing' </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../vs2015.css" /> -->
+    <script src="../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='../../index.html'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<div class='navlabel'>README</div>
+<button class='navitem'><a href='../../index.html'>Home</a></button>
+<hr/>
+<button class='navitem'><a href='#modeling-extension-module-3d_printing'><span class='navitem1'>Modeling Extension Module '3d_printing'</span></a></button>
+<button class='navitem'><a href='#d-printing-extension-data-sheet'><span class='navitem1'>3D Printing Extension Data Sheet</span></a></button>
+<button class='navitem'><a href='#manufacturing-data-export'><span class='navitem2'>Manufacturing Data Export</span></a></button>
+<button class='navitem'><a href='#manufacturing-data-import'><span class='navitem2'>Manufacturing Data Import</span></a></button>
+<button class='navitem'><a href='#surface-reconstruction'><span class='navitem2'>Surface reconstruction</span></a></button>
+<button class='navitem'><a href='#getting-started'><span class='navitem1'>Getting Started</span></a></button>
+<button class='navitem'><a href='#programming-interfaces'><span class='navitem1'>Programming Interfaces</span></a></button>
+<button class='navitem'><a href='#lisp-packages-in-this-module'><span class='navitem2'>Lisp packages in this module</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="modeling-extension-module-3d_printing" class="title">Modeling Extension Module '3d_printing'</h1>
+<h1 id="d-printing-extension-data-sheet">3D Printing Extension Data Sheet</h1>
+<p>The <code>3d_printing</code> extension module for <em>Modeling</em> provides integration with the
+3D printing process chain. It adds utilities and dialogs
+to import, export and work with manufacturing data in the industry standard formats
+<em>STL</em> and <em>3MF</em>.</p>
+<h2 id="manufacturing-data-export">Manufacturing Data Export</h2>
+<p><img src="images/3mfExport.png" class="leftfloat" alt="Export Example" /></p>
+<p>3D CAD Models can be exported in popular manufacturing data formats STL and 3MF:</p>
+<ul>
+<li>Manufacturing data can be generated from CAD models with full control of linear and angular precision
+of the triangular mesh.</li>
+<li>STL data export supports multiple 3D parts per STL data file.</li>
+<li>3MF data export supports:
+<ul>
+<li>Assembly structures and part positioning</li>
+<li>Geometry sharing (Shared parts)</li>
+<li>Part colors</li>
+<li>Custom metadata</li>
+</ul>
+</li>
+</ul>
+<h2 id="manufacturing-data-import">Manufacturing Data Import</h2>
+<p><img src="images/3mfImport.png" class="leftfloat" alt="Import Example" /></p>
+<p><em>STL</em> and <em>3MF</em> data can be imported to Modeling as:</p>
+<ul>
+<li>Lightweight graphical model supporting geometry inspection</li>
+<li>3D CAD model supporting modeling operation (depending on the data quality), geometry inspection
+and surface reconstruction.</li>
+<li>3MF data import supports:
+<ul>
+<li>Metadata</li>
+<li>Component Structure (represented as assembly structure)</li>
+<li>Shared Components (represented as shared parts)</li>
+<li>Color</li>
+</ul>
+</li>
+</ul>
+<h2 id="surface-reconstruction">Surface reconstruction</h2>
+<p><img src="images/ReverseEngineered.png" class="leftfloat" alt="Surface Reconstruction Example" /></p>
+<ul>
+<li>Higher level surface regions are reconstructed from the triangular facet model with
+automatic or manual precision control.</li>
+<li>Based on supervised machine-learning algorithms.</li>
+<li>Significant data reduction</li>
+<li>Model and surface manipulation (depending on the data quality)</li>
+</ul>
+<h1 id="getting-started">Getting Started</h1>
+<ul>
+<li><a href="Installation.html">Extension Module Installation and Startup</a></li>
+<li><a href="Customization.html">Extension Module Customization Overview</a></li>
+<li><a href="UI.html">The Extension Module User Interface</a></li>
+<li><a href="Limitations.html">Known Limitations</a></li>
+<li><a href="ImportExamples.html">Import Examples</a></li>
+<li><a href="ReleaseNotes.html">Package Release Notes</a></li>
+</ul>
+<h1 id="programming-interfaces">Programming Interfaces</h1>
+<h2 id="lisp-packages-in-this-module">Lisp packages in this module</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="3D-PRINTING/3D-PRINTING.pkg.html"><code>3d-printing</code></a></td>
+<td style="text-align: left;">Primary package of the <code>3d_printing</code> extension module for <em>Modeling</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="3D-PRINTING.DATA-EXCHANGE/3D-PRINTING.DATA-EXCHANGE.pkg.html"><code>3d-printing.data-exchange</code></a></td>
+<td style="text-align: left;">The package <code>:3D-PRINTING.DATA-EXCHANGE</code> (nicknamed <code>:3DP.X</code>) contains a LISP API and dialogs to import or export manufacturing data such as <em>STL</em> or <em>3MF</em>.</td>
+</tr>
+</tbody>
+</table>
+
+        </article>
+        <footer>
+            <hr />
+            Template project Created by PowerShell Module <a href='https://github.com/WetHat/MarkdownToHtml'>MarkdownToHTML</a>.
+        </footer>
+    </main>
+</body>
+</html>
