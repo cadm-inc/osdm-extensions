@@ -1,4 +1,4 @@
-# Downloads and documentation for the 'Manufacturing Data' Creo Elements Direct Modeling Extension {.title}
+# Downloads and Documentation for the _3d_printing_ Creo Elements Direct Modeling Extension {.title}
 
 The 3d_printing extension module for Modeling provides tools for the
 3-D printing process chain.
