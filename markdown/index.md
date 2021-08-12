@@ -2,6 +2,6 @@
 
 ## Creo Elements Direct Modeling Extensions
 
-| Extension                              |   Description
-| -------------------------------------- | -----------------
-| [3d_printing](3d_printing/1.6/Home.md) | 3-D Manufacturing Data
+| Extension                                 | Description                       |
+| ----------------------------------------- | --------------------------------- |
+| [3-D Manufacturing](3d_printing/Index.md) | Tools for the 3-D printing process

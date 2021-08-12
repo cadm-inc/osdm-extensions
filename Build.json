@@ -18,7 +18,8 @@
         "attributes"
     ],
 
-    "footer": "Template project Created by PowerShell Module <a href='https://github.com/WetHat/MarkdownToHtml'>MarkdownToHTML</a>.",
+    "extension_footer": "<a href='https://cadm-inc-us.com/'>CADM, Inc</a> Extension <a href='{{relpath}}Home.html'>{{extensionname}}</a>;  Version: {{version}}",
+    "generic_footer": "<a href='https://cadm-inc-us.com/'>CADM, Inc</a> Extension Documentation",
 
     "navigation_bar": {
         "capture_page_headings": "123456",
@@ -31,10 +32,11 @@
     },
 
     "site_navigation": [
-        { "<img width='90%' src='CADM-logo.jpg' />": "index.md" },
-        { "README": "" },
-        { "Home": "index.md" },
-        { "---": "" }
+        { "<img width='90%' src='CADM-logo.jpg' />": "https://cadm-inc-us.com/" },
+        { "CADM Documentation Hub": "index.md" },
+        { "Extensions": "" },
+        { "3-D Manufacturing": "3d_printing/index.md" },
+        { "Page Content": "" }
     ],
 
     "github_pages": true,

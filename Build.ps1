@@ -23,7 +23,20 @@ Remove-Item $staticSite -Recurse -Force -ErrorAction:SilentlyContinue
 # of the form {{name}}.
 $SCRIPT:contentMap = @{
 	# Add additional mappings here...
-	'{{footer}}' =  $config.Footer # Footer text from configuration
+	'{{footer}}' = {
+	    param($fragment) # the html fragment created from a markdown file
+	    $pathelements = $fragment.RelativePath -split '/'
+	    if ($pathelements.Length -gt 2) {
+	        $name = $pathelements[0]
+	        $version=$pathelements[1]
+	        $depth = '../' * ($pathelements.Length - 3)
+	        $footer = $config.extension_footer.Replace('{{relpath}}',"${depth}")
+	        $footer = $footer.Replace('{{extensionname}}',$name)
+	        $footer.Replace('{{version}}',$version)
+	    } else {
+	        $config.generic_footer
+	    }
+	}
 	'{{nav}}'    = {
 		param($fragment) # the html fragment created from a markdown file
 		$navcfg = $config.navigation_bar # navigation bar configuration
