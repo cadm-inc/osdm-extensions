@@ -2,50 +2,54 @@
 
 # 3D Printing Extension Data Sheet
 
-The `3d_printing` extension module for _Modeling_ provides integration with the
-3D printing process chain. It adds utilities and dialogs
-to import, export and work with manufacturing data in the industry standard formats
-_STL_ and _3MF_.
+The `3d_printing` extension module for _Modeling_ provides tools for the
+3-D printing process chain. It adds utilities and dialogs
+to import, export and work with manufacturing data in the industry standard
+formats _STL_ and _3MF_.
+
+# Feature Overview
 
 ## Manufacturing Data Export
+>
+> ![Export Example](images/3mfExport.png){.leftfloat}
+> 3D CAD Models can be exported in popular manufacturing data formats STL and 3MF: 
+> * Manufacturing data can be generated from CAD models with full control of linear and angular precision
+>   of the triangular mesh.
+> * 3MF data export supports:
+>   - Assembly structures and part positioning
+>   - Geometry sharing (Shared parts)
+>   - Part colors
+>   - Custom metadata
 
-![Export Example](images/3mfExport.png){.leftfloat}
+##  Manufacturing Data Import {.unfloat}      
+>
+>   ![Import Example](images/3mfImport.png){.leftfloat}
+>   _STL_ and _3MF_ data can be imported to Modeling as:
+>   -  Lightweight graphical model supporting geometry inspection
+>   - 3D CAD model supporting modeling operation (depending on the data quality)
+>   - 3MF data import supports:
+>   - Metadata
+>   - Component Structure (represented as assembly structure) 
+>   - Shared Components (represented as shared parts)
+>   - Color
 
-3D CAD Models can be exported in popular manufacturing data formats STL and 3MF:
-* Manufacturing data can be generated from CAD models with full control of linear and angular precision
-  of the triangular mesh.
-* STL data export supports multiple 3D parts per STL data file.
-* 3MF data export supports:
-  * Assembly structures and part positioning
-  * Geometry sharing (Shared parts)
-  * Part colors
-  * Custom metadata
- 
-## Manufacturing Data Import
+## Reverse engineering of analytic surfaces {.unfloat}
+> 
+> ![Surface Reconstruction Example](images/ReverseEngineered.png){.leftfloat}
+>
+> * Higher level surface regions are reconstructed from the triangular facet model with
+>   automatic or manual precision control.
+> * Based on supervised machine-learning algorithms.
+> * Significant data reduction
+> * Model and surface manipulation (depending on the data quality)  
 
-![Import Example](images/3mfImport.png){.leftfloat}
+## Mesh Quality Assessment {.unfloat}
+>
+> ![Mesh Quality Assessment](images/MeshQuality.png){.leftfloat}
+> Compare manufacturing models (STL or 3mf) with their original CAD models
+> to detect quality issues introduced during mesh postprocessing.
 
-_STL_ and _3MF_ data can be imported to Modeling as:
-* Lightweight graphical model supporting geometry inspection
-* 3D CAD model supporting modeling operation (depending on the data quality), geometry inspection
-  and surface reconstruction.
-* 3MF data import supports:
-  * Metadata
-  * Component Structure (represented as assembly structure) 
-  * Shared Components (represented as shared parts)
-  * Color
-  
-## Surface reconstruction
-
-![Surface Reconstruction Example](images/ReverseEngineered.png){.leftfloat}
-
-* Higher level surface regions are reconstructed from the triangular facet model with
-  automatic or manual precision control.
-* Based on supervised machine-learning algorithms.
-* Significant data reduction
-* Model and surface manipulation (depending on the data quality)
-
-# Getting Started
+# Getting Started {.unfloat}
 
 * [Extension Module Installation and Startup](Installation.md)
 * [Extension Module Customization Overview](Customization.md)

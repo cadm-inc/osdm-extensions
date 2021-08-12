@@ -1,5 +1,15 @@
 # Package Release Notes {.title}
 
+# 1.6.1
+
+* resolution data type changed to number because it is always in mm
+* top level assembly naming fixed when unix style path is used for 3mf import
+
+# 1.6.0
+
+* Upgrade to libmf 2.1. beta
+* culled recursion when checking coedges to avoid stack overflow on unpatched SolidDesigner.exe
+
 # 1.5.5
 
 * License checks added.

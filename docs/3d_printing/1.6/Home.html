@@ -56,9 +56,11 @@
 <div class='navlabel'>Page Content</div>
 <button class='navitem'><a href='#modeling-extension-module-3d_printing'><span class='navitem1'>Modeling Extension Module '3d_printing'</span></a></button>
 <button class='navitem'><a href='#d-printing-extension-data-sheet'><span class='navitem1'>3D Printing Extension Data Sheet</span></a></button>
+<button class='navitem'><a href='#feature-overview'><span class='navitem1'>Feature Overview</span></a></button>
 <button class='navitem'><a href='#manufacturing-data-export'><span class='navitem2'>Manufacturing Data Export</span></a></button>
 <button class='navitem'><a href='#manufacturing-data-import'><span class='navitem2'>Manufacturing Data Import</span></a></button>
-<button class='navitem'><a href='#surface-reconstruction'><span class='navitem2'>Surface reconstruction</span></a></button>
+<button class='navitem'><a href='#reverse-engineering-of-analytic-surfaces'><span class='navitem2'>Reverse engineering of analytic surfaces</span></a></button>
+<button class='navitem'><a href='#mesh-quality-assessment'><span class='navitem2'>Mesh Quality Assessment</span></a></button>
 <button class='navitem'><a href='#getting-started'><span class='navitem1'>Getting Started</span></a></button>
 <button class='navitem'><a href='#programming-interfaces'><span class='navitem1'>Programming Interfaces</span></a></button>
 <button class='navitem'><a href='#lisp-packages-in-this-module'><span class='navitem2'>Lisp packages in this module</span></a></button>
@@ -67,17 +69,18 @@
         <article>
             <h1 id="modeling-extension-module-3d_printing" class="title">Modeling Extension Module '3d_printing'</h1>
 <h1 id="d-printing-extension-data-sheet">3D Printing Extension Data Sheet</h1>
-<p>The <code>3d_printing</code> extension module for <em>Modeling</em> provides integration with the
-3D printing process chain. It adds utilities and dialogs
-to import, export and work with manufacturing data in the industry standard formats
-<em>STL</em> and <em>3MF</em>.</p>
+<p>The <code>3d_printing</code> extension module for <em>Modeling</em> provides tools for the
+3-D printing process chain. It adds utilities and dialogs
+to import, export and work with manufacturing data in the industry standard
+formats <em>STL</em> and <em>3MF</em>.</p>
+<h1 id="feature-overview">Feature Overview</h1>
 <h2 id="manufacturing-data-export">Manufacturing Data Export</h2>
-<p><img src="images/3mfExport.png" class="leftfloat" alt="Export Example" /></p>
-<p>3D CAD Models can be exported in popular manufacturing data formats STL and 3MF:</p>
+<blockquote>
+<p><img src="images/3mfExport.png" class="leftfloat" alt="Export Example" />
+3D CAD Models can be exported in popular manufacturing data formats STL and 3MF:</p>
 <ul>
 <li>Manufacturing data can be generated from CAD models with full control of linear and angular precision
 of the triangular mesh.</li>
-<li>STL data export supports multiple 3D parts per STL data file.</li>
 <li>3MF data export supports:
 <ul>
 <li>Assembly structures and part positioning</li>
@@ -87,23 +90,23 @@ of the triangular mesh.</li>
 </ul>
 </li>
 </ul>
-<h2 id="manufacturing-data-import">Manufacturing Data Import</h2>
-<p><img src="images/3mfImport.png" class="leftfloat" alt="Import Example" /></p>
-<p><em>STL</em> and <em>3MF</em> data can be imported to Modeling as:</p>
+</blockquote>
+<h2 id="manufacturing-data-import" class="unfloat">Manufacturing Data Import</h2>
+<blockquote>
+<p><img src="images/3mfImport.png" class="leftfloat" alt="Import Example" />
+<em>STL</em> and <em>3MF</em> data can be imported to Modeling as:</p>
 <ul>
 <li>Lightweight graphical model supporting geometry inspection</li>
-<li>3D CAD model supporting modeling operation (depending on the data quality), geometry inspection
-and surface reconstruction.</li>
-<li>3MF data import supports:
-<ul>
+<li>3D CAD model supporting modeling operation (depending on the data quality)</li>
+<li>3MF data import supports:</li>
 <li>Metadata</li>
 <li>Component Structure (represented as assembly structure)</li>
 <li>Shared Components (represented as shared parts)</li>
 <li>Color</li>
 </ul>
-</li>
-</ul>
-<h2 id="surface-reconstruction">Surface reconstruction</h2>
+</blockquote>
+<h2 id="reverse-engineering-of-analytic-surfaces" class="unfloat">Reverse engineering of analytic surfaces</h2>
+<blockquote>
 <p><img src="images/ReverseEngineered.png" class="leftfloat" alt="Surface Reconstruction Example" /></p>
 <ul>
 <li>Higher level surface regions are reconstructed from the triangular facet model with
@@ -112,7 +115,14 @@ automatic or manual precision control.</li>
 <li>Significant data reduction</li>
 <li>Model and surface manipulation (depending on the data quality)</li>
 </ul>
-<h1 id="getting-started">Getting Started</h1>
+</blockquote>
+<h2 id="mesh-quality-assessment" class="unfloat">Mesh Quality Assessment</h2>
+<blockquote>
+<p><img src="images/MeshQuality.png" class="leftfloat" alt="Mesh Quality Assessment" />
+Compare manufacturing models (STL or 3mf) with their original CAD models
+to detect quality issues introduced during mesh postprocessing.</p>
+</blockquote>
+<h1 id="getting-started" class="unfloat">Getting Started</h1>
 <ul>
 <li><a href="Installation.html">Extension Module Installation and Startup</a></li>
 <li><a href="Customization.html">Extension Module Customization Overview</a></li>
