@@ -4,4 +4,4 @@
 
 | Extension                           | Description                       |
 | ----------------------------------- | --------------------------------- |
-| [3d_printing](3d_printing/Index.md) | Tools for the 3-D printing process
+| [3d_printing](3d_printing/index.md) | Tools for the 3-D printing process
