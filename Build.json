@@ -18,7 +18,7 @@
         "attributes"
     ],
 
-    "extension_footer": "<a href='https://cadm-inc-us.com/'>CADM, Inc</a> Extension <a href='{{relpath}}Home.html'>{{extensionname}}</a>;  Version: {{version}}",
+    "extension_footer": "Extension <a href='{{relpath}}Home.html'>{{extensionname}}</a> - Version: {{version}} - <a href='https://cadm-inc-us.com/'>CADM, Inc</a>",
     "generic_footer": "<a href='https://cadm-inc-us.com/'>CADM, Inc</a> Extension Documentation",
 
     "navigation_bar": {
