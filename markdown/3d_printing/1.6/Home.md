@@ -9,10 +9,10 @@ formats _STL_ and _3MF_.
 
 # Feature Overview
 
-## Manufacturing Data Export
+## Manufacturing Data Export {.unfloat}
 >
-> ![Export Example](images/3mfExport.png){.leftfloat}
-> 3D CAD Models can be exported in popular manufacturing data formats STL and 3MF: 
+> ![Export Example](images/3mfExport.png){.rightfloat}
+> 3D CAD Models can be exported in popular manufacturing data formats STL and 3MF:
 > * Manufacturing data can be generated from CAD models with full control of linear and angular precision
 >   of the triangular mesh.
 > * 3MF data export supports:
@@ -21,31 +21,31 @@ formats _STL_ and _3MF_.
 >   - Part colors
 >   - Custom metadata
 
-##  Manufacturing Data Import {.unfloat}      
+##  Manufacturing Data Import {.unfloat}
 >
->   ![Import Example](images/3mfImport.png){.leftfloat}
+>   ![Import Example](images/3mfImport.png){.rightfloat}
 >   _STL_ and _3MF_ data can be imported to Modeling as:
 >   -  Lightweight graphical model supporting geometry inspection
 >   - 3D CAD model supporting modeling operation (depending on the data quality)
 >   - 3MF data import supports:
 >   - Metadata
->   - Component Structure (represented as assembly structure) 
+>   - Component Structure (represented as assembly structure)
 >   - Shared Components (represented as shared parts)
 >   - Color
 
-## Reverse engineering of analytic surfaces {.unfloat}
-> 
-> ![Surface Reconstruction Example](images/ReverseEngineered.png){.leftfloat}
+## Reverse Engineering of Analytic Surfaces {.unfloat}
+>
+> ![Surface Reconstruction Example](images/ReverseEngineered.png){.rightfloat}
 >
 > * Higher level surface regions are reconstructed from the triangular facet model with
 >   automatic or manual precision control.
 > * Based on supervised machine-learning algorithms.
 > * Significant data reduction
-> * Model and surface manipulation (depending on the data quality)  
+> * Model and surface manipulation (depending on the data quality)
 
 ## Mesh Quality Assessment {.unfloat}
 >
-> ![Mesh Quality Assessment](images/MeshQuality.png){.leftfloat}
+> ![Mesh Quality Assessment](images/MeshQuality.png){.rightfloat}
 > Compare manufacturing models (STL or 3mf) with their original CAD models
 > to detect quality issues introduced during mesh postprocessing.
 

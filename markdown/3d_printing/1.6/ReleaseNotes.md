@@ -1,5 +1,10 @@
 # Package Release Notes {.title}
 
+# 1.6.2
+
+* Bugfix: Fixed ugly _nil is not of type cons_ error when selecting 
+  reference parts/assemblies which are not **below** the study container.
+
 # 1.6.1
 
 * resolution data type changed to number because it is always in mm
