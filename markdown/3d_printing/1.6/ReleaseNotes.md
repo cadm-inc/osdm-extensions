@@ -25,7 +25,7 @@
 * All measurements turned on for face selection
 * debug logging cleaned up
 
-### [`3d-printing:3DP_FOCUS_STUDY_REGION`](3D-PRINTING/3DP_FOCUS_STUDY_REGION.dia.md) ~ Focus on a region of a mesh quality study by showing only items in a specified _region of interest_ (box) or with related gemoetry.
+### [`3d-printing:3DP_FOCUS_STUDY_REGION`](3D-PRINTING/3DP_FOCUS_STUDY_REGION.dia.md) (Focus on a region of a mesh quality study by showing only items in a specified _region of interest_ (box) or with similar geometry)
 
 Measurement browser extended:
 
@@ -34,7 +34,7 @@ Measurement browser extended:
 
 # 1.5.2
 
-### [`3d-printing:3DP_FOCUS_STUDY_REGION`](3D-PRINTING/3DP_FOCUS_STUDY_REGION.dia.md) ~ Focus on a region of a mesh quality study by showing only items in a specified _region of interest_ (box) or with related gemoetry.
+### [`3d-printing:3DP_FOCUS_STUDY_REGION`](3D-PRINTING/3DP_FOCUS_STUDY_REGION.dia.md) (Focus on a region of a mesh quality study by showing only items in a specified _region of interest_ (box) or with similar geometry)
 
 * Dialog extended to allow selection of model geometry matching user defined criteria.
 * Sub dialog added to allow convenient browsing of measurement results.
@@ -46,12 +46,12 @@ Measurement browser extended:
 
 # 1.5.0
 
-### [`3d-printing:3DP_FOCUS_STUDY_REGION`](3D-PRINTING/3DP_FOCUS_STUDY_REGION.dia.md) ~ Focus on a region of a mesh quality study by showing only items in a specified _region of interest_ (box) or with related gemoetry.
+### [`3d-printing:3DP_FOCUS_STUDY_REGION`](3D-PRINTING/3DP_FOCUS_STUDY_REGION.dia.md) (Focus on a region of a mesh quality study by showing only items in a specified _region of interest_ (box) or with similar geometry)
 
 * box selector improved to reduce number of false positives.
 * Interactive manipulation of detail level.
 
-### [`3d-printing:3DP_MEASURE_MESH_QUALITY`](3D-PRINTING/3DP_MEASURE_MESH_QUALITY.dia.md) ~ Measure the quality of a mesh with respect to the part it was derived from.
+### [`3d-printing:3DP_MEASURE_MESH_QUALITY`](3D-PRINTING/3DP_MEASURE_MESH_QUALITY.dia.md) (Measure the quality of a mesh with respect to the part it was derived from)
 
 * Quality study restructured to associate measurement results with individual model faces.
 * Additional coloring options

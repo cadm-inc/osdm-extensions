@@ -16,7 +16,7 @@ The `:3D - PRINTING` package(nicknamed `:3DP`) contains:
 
 | Name | Summary |
 | :---- | :---- |
-| [`3DP_FOCUS_STUDY_REGION`](3DP_FOCUS_STUDY_REGION.dia.md) | Focus on a region of a mesh quality study by showing only items in a specified _region of interest_ (box) or with related gemoetry. |
+| [`3DP_FOCUS_STUDY_REGION`](3DP_FOCUS_STUDY_REGION.dia.md) | Focus on a region of a mesh quality study by showing only items in a specified _region of interest_ (box) or with similar geometry. |
 | [`3DP_MEASURE_MESH_QUALITY`](3DP_MEASURE_MESH_QUALITY.dia.md) | Measure the quality of a mesh with respect to the part it was derived from. |
 | [`3DP_SETTINGS`](3DP_SETTINGS.dia.md) | Edit customizable module settings for the 3d printing extension. |
 
