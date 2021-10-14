@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>LOAD_MANUFACTURING_DATA [Public Dialog] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<div class='navlabel'>Page Content</div>
+<button class='navitem'><a href='#load_manufacturing_data-public-dialog'><span class='navitem1'>LOAD_MANUFACTURING_DATA [Public Dialog]</span></a></button>
+<button class='navitem'><a href='#syntax'><span class='navitem1'>Syntax</span></a></button>
+<button class='navitem'><a href='#loading-stl-files-without-data-reduction'><span class='navitem1'>Loading STL Files Without Data Reduction</span></a></button>
+<button class='navitem'><a href='#loading-stl-files-with-data-reduction'><span class='navitem1'>Loading STL Files With Data Reduction</span></a></button>
+<button class='navitem'><a href='#reviewing-the-import-options'><span class='navitem1'>Reviewing the Import Options</span></a></button>
+<button class='navitem'><a href='#future-enhancements'><span class='navitem1'>Future Enhancements</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="load_manufacturing_data-public-dialog" class="title">LOAD_MANUFACTURING_DATA [Public Dialog]</h1>
+<p class="package">Package: <a href="3D-PRINTING.DATA-EXCHANGE.pkg.html"><code>3d-printing.data-exchange</code></a> (Nick name(s): <code>:3dp.x</code>) </p>
+<p><em>Modeling</em> load dialog extension for loading manufacturing data files (STL, 3mf).</p>
+<p>Loads a manufacturing data file from disk and creates a 3d model (solid or face part).
+A STL or 3mf file can be loaded with or without data reduction. Data reduction is
+achieved through reconstruction of analytic surfaces from groups of mesh triangles.
+See <a href="../ImportExamples.html">Import Examples</a> for a comparison of importing with or
+without data reduction.</p>
+<p><img src="images/LoadSTLDialog.png" class="leftfloat" alt="Load STL Dialog" /></p>
+<ol>
+<li><p>File type selection. Here <em>Manufacturing Data</em> load is selected.</p>
+</li>
+<li><p>Open manufacturing data load load options dialog.</p>
+</li>
+<li><p><code>:LIGHTWEIGHT</code> - When checked the STL data is imported as <em>lightweight</em> model
+(graphics with basic measuring capabilities). If unchecked the STL data is imported as
+full (B-rep) model.</p>
+</li>
+<li><p><code>:PLANE_RECONSTRUCTION</code> - When selected, planar regions are
+identified and converted to planar 3d model faces. The default can be customized
+by setting the <a href="../3D-PRINTING/AA3dp-plane-recognition-enabledAA.var.html"><code>*3DP-PLANE-RECOGNITION-ENABLED*</code></a> option
+in <code>3dp_customize.lsp</code>.</p>
+<p><strong>Note</strong>: This option is enforced if the number of faces in the imported  model would exceed the
+number of faces specified in the configurable parameter <a href="../3D-PRINTING/AA3dp-face-count-limitAA.var.html"><code>*3DP-FACE-COUNT-LIMIT*</code></a></p>
+</li>
+<li><p><code>CYLINDER_RECONSTRUCTION</code> - When selected, cylindrical regions are
+identified and converted to cylindrical 3d model faces.
+<strong>Note</strong>: this option is only available when <code>:PLANE_RECONSTRUCTION</code> is selected</p>
+</li>
+<li><p><code>:RESOLUTION</code> - Optional approximation precision for surface recognition (in mm).
+This option is available only if at least one recognition optios in selected.
+The default can be customized
+by setting the <a href="../3D-PRINTING/AA3dp-default-recognition-precisionAA.var.html"><code>*3DP-DEFAULT-RECOGNITION-PRECISION*</code></a> option
+in <code>3dp_customize.lsp</code>.
+Typical resolutions fall in the range from 0.1mm(coarse) to 0.000001mm (fine).
+<strong>Note</strong>: this option is only available when <code>:PLANE_RECONSTRUCTION</code> is selected.</p>
+</li>
+<li><p><code>:MERGE</code> - Remove mergable edges after data reduction has been applied.
+The default can be customized by setting the <a href="../3D-PRINTING/AA3dp-merge-enabledAA.var.html"><code>*3DP-MERGE-ENABLED*</code></a>
+option in <code>3dp_customize.lsp</code>.
+<strong>Note</strong>: this option is only available when <code>:PLANE_RECONSTRUCTION</code> is selected.</p>
+</li>
+<li><p>Display this help page.</p>
+</li>
+</ol>
+<h1 id="syntax">Syntax</h1>
+<pre><img src='LOAD_MANUFACTURING_DATA.dia1.svg' alt='Diagram 1.' /></pre>
+<h1 id="loading-stl-files-without-data-reduction">Loading STL Files Without Data Reduction</h1>
+<p>To load STL files with minimal processing,
+set all surface recognition options to <code>:OFF</code>. Only minimal repairs are applied. This import
+option is primarily for smaller STL models (&lt; 150,000 triangles) if maximum precision is required.
+<em>Modeling</em> automatically chooses the optimal model resolution.
+Importing STL models with more than 150,000 triangles may cause standard <em>Modeling</em> to
+run out of system resources (primaily stack space).</p>
+<p><strong>Note</strong>: To import large models without data reduction a custom build of <em>Modeling</em> is required.</p>
+<h1 id="loading-stl-files-with-data-reduction">Loading STL Files With Data Reduction</h1>
+<p>To load STL models with data reduction, set at least one surface recognition option to <code>:ON</code>.
+Surface recognition reduces model complexity by a factor from  2-20 depending on the
+quality and configuration of the manufacturing data.</p>
+<p>See <a href="../ImportExamples.html">Import Examples</a> for examples of the effect of data reduction.</p>
+<h1 id="reviewing-the-import-options">Reviewing the Import Options</h1>
+<p><img src="images/MeshParams.png" class="leftfloat" alt="Mesh Import Parameters" /></p>
+<p>A report of the import options for each imported part can be generated by clicking on the <em>Mesh Parameters</em>
+context menu action of the <em>Mesh Parameters</em> associated with the part. The textual report is shown in the <em>Modeling</em>
+output box.</p>
+<h1 id="future-enhancements">Future Enhancements</h1>
+<p>Following enhancements are planned for future releases:</p>
+<ul>
+<li>Recognition of cones, spheres</li>
+<li>Healing of incomplete models (locally convex holes).</li>
+<li>Custom <em>Modeling</em> build to support larger models without data reduction.</li>
+</ul>
+
+        </article>
+        <footer>
+            <hr />
+            Extension <a href='../Home.html'>3d_printing</a> - Version: 2.0 - <a href='https://cadm-inc-us.com/'>CADM, Inc</a>
+
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Package Release Notes </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../vs2015.css" /> -->
+    <script src="../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Extensions</div>
+<button class='navitem'><a href='../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<div class='navlabel'>Page Content</div>
+<button class='navitem'><a href='#package-release-notes'><span class='navitem1'>Package Release Notes</span></a></button>
+<button class='navitem'><a href='#section'><span class='navitem1'>2.0.0</span></a></button>
+<button class='navitem'><a href='#section-1'><span class='navitem1'>1.6.2</span></a></button>
+<button class='navitem'><a href='#section-2'><span class='navitem1'>1.6.1</span></a></button>
+<button class='navitem'><a href='#section-3'><span class='navitem1'>1.6.0</span></a></button>
+<button class='navitem'><a href='#section-4'><span class='navitem1'>1.5.5</span></a></button>
+<button class='navitem'><a href='#section-5'><span class='navitem1'>1.5.4</span></a></button>
+<button class='navitem'><a href='#d-printing3dp_focus_study_region-focus-on-a-region-of-a-mesh-quality-study-by-showing-only-items-in-a-specified-region-of-interest-box-or-with-similar-geometry'><span class='navitem3'><code>3d-printing:3DP_FOCUS_STUDY_REGION</code> (Focus on a region of a mesh quality study by showing only items in a specified <em>region of interest</em> (box) or with similar geometry)</span></a></button>
+<button class='navitem'><a href='#section-6'><span class='navitem1'>1.5.2</span></a></button>
+<button class='navitem'><a href='#d-printing3dp_focus_study_region-focus-on-a-region-of-a-mesh-quality-study-by-showing-only-items-in-a-specified-region-of-interest-box-or-with-similar-geometry-1'><span class='navitem3'><code>3d-printing:3DP_FOCUS_STUDY_REGION</code> (Focus on a region of a mesh quality study by showing only items in a specified <em>region of interest</em> (box) or with similar geometry)</span></a></button>
+<button class='navitem'><a href='#section-7'><span class='navitem1'>1.5.1</span></a></button>
+<button class='navitem'><a href='#section-8'><span class='navitem1'>1.5.0</span></a></button>
+<button class='navitem'><a href='#d-printing3dp_focus_study_region-focus-on-a-region-of-a-mesh-quality-study-by-showing-only-items-in-a-specified-region-of-interest-box-or-with-similar-geometry-2'><span class='navitem3'><code>3d-printing:3DP_FOCUS_STUDY_REGION</code> (Focus on a region of a mesh quality study by showing only items in a specified <em>region of interest</em> (box) or with similar geometry)</span></a></button>
+<button class='navitem'><a href='#d-printing3dp_measure_mesh_quality-measure-the-quality-of-a-mesh-with-respect-to-the-part-it-was-derived-from'><span class='navitem3'><code>3d-printing:3DP_MEASURE_MESH_QUALITY</code> (Measure the quality of a mesh with respect to the part it was derived from)</span></a></button>
+<button class='navitem'><a href='#other'><span class='navitem3'>Other</span></a></button>
+<button class='navitem'><a href='#section-9'><span class='navitem1'>1.4.5</span></a></button>
+<button class='navitem'><a href='#section-10'><span class='navitem1'>1.4.4</span></a></button>
+<button class='navitem'><a href='#bugfixes'><span class='navitem3'>Bugfixes</span></a></button>
+<button class='navitem'><a href='#enhancements'><span class='navitem3'>Enhancements</span></a></button>
+<button class='navitem'><a href='#section-11'><span class='navitem1'>1.4.3</span></a></button>
+<button class='navitem'><a href='#section-12'><span class='navitem1'>1.4.2</span></a></button>
+<button class='navitem'><a href='#section-13'><span class='navitem1'>1.4.1</span></a></button>
+<button class='navitem'><a href='#section-14'><span class='navitem1'>1.4.0</span></a></button>
+<button class='navitem'><a href='#section-15'><span class='navitem1'>1.3.2</span></a></button>
+<button class='navitem'><a href='#section-16'><span class='navitem1'>1.3.0</span></a></button>
+<button class='navitem'><a href='#section-17'><span class='navitem1'>1.2.2</span></a></button>
+<button class='navitem'><a href='#section-18'><span class='navitem1'>1.2.0</span></a></button>
+<button class='navitem'><a href='#section-19'><span class='navitem1'>1.1.0</span></a></button>
+<button class='navitem'><a href='#section-20'><span class='navitem1'>1.0.4</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="package-release-notes" class="title">Package Release Notes</h1>
+<h1 id="section">2.0.0</h1>
+<ul>
+<li><p>Measurement Browser Enhancements</p>
+<ul>
+<li>Maximum distance of a mesh region to the associated CAD model faces recorded
+in the study metadata</li>
+<li>User defined table filters enabled</li>
+<li>Sorting of measurement results changed to largest distance first to show the biggest
+problems first.</li>
+<li>Maximum distance of facet regions to model faces shown in the
+measurement browser</li>
+</ul>
+</li>
+<li><p>Focus region dialog re-organized. See also <a href="3D-PRINTING/3DP_FOCUS_STUDY_REGION.dia.html"><code>3d-printing:3DP_FOCUS_STUDY_REGION</code></a> (Focus on a region of a mesh quality study by showing only items in a specified <em>region of interest</em> (box) or with similar geometry).</p>
+<ul>
+<li>Study result have now three show options for each result type: solid,transparent, hidden</li>
+<li>Moved the box filter to the bottom of the dialog because it is now a secondary
+filter method. Most likely it is used after defining geometry filters and/or
+selection in the <em>Measurement Browser</em>.</li>
+<li>Only model faces are shown now when faces for geometric filtering are
+selected.</li>
+</ul>
+</li>
+</ul>
+<h1 id="section-1">1.6.2</h1>
+<ul>
+<li>Bugfix: Fixed ugly <em>nil is not of type cons</em> error when selecting 
+reference parts/assemblies which are not <strong>below</strong> the study container.</li>
+</ul>
+<h1 id="section-2">1.6.1</h1>
+<ul>
+<li>resolution data type changed to number because it is always in mm</li>
+<li>top level assembly naming fixed when unix style path is used for 3mf import</li>
+</ul>
+<h1 id="section-3">1.6.0</h1>
+<ul>
+<li>Upgrade to libmf 2.1. beta</li>
+<li>culled recursion when checking coedges to avoid stack overflow on unpatched SolidDesigner.exe</li>
+</ul>
+<h1 id="section-4">1.5.5</h1>
+<ul>
+<li>License checks added.</li>
+</ul>
+<h1 id="section-5">1.5.4</h1>
+<ul>
+<li>Error browser too few items due to destructive sorting fixed.</li>
+<li>All measurements turned on for face selection</li>
+<li>debug logging cleaned up</li>
+</ul>
+<h3 id="d-printing3dp_focus_study_region-focus-on-a-region-of-a-mesh-quality-study-by-showing-only-items-in-a-specified-region-of-interest-box-or-with-similar-geometry"><a href="3D-PRINTING/3DP_FOCUS_STUDY_REGION.dia.html"><code>3d-printing:3DP_FOCUS_STUDY_REGION</code></a> (Focus on a region of a mesh quality study by showing only items in a specified <em>region of interest</em> (box) or with similar geometry)</h3>
+<p>Measurement browser extended:</p>
+<ul>
+<li>show all measurements</li>
+<li>more display filters</li>
+</ul>
+<h1 id="section-6">1.5.2</h1>
+<h3 id="d-printing3dp_focus_study_region-focus-on-a-region-of-a-mesh-quality-study-by-showing-only-items-in-a-specified-region-of-interest-box-or-with-similar-geometry-1"><a href="3D-PRINTING/3DP_FOCUS_STUDY_REGION.dia.html"><code>3d-printing:3DP_FOCUS_STUDY_REGION</code></a> (Focus on a region of a mesh quality study by showing only items in a specified <em>region of interest</em> (box) or with similar geometry)</h3>
+<ul>
+<li>Dialog extended to allow selection of model geometry matching user defined criteria.</li>
+<li>Sub dialog added to allow convenient browsing of measurement results.</li>
+</ul>
+<h1 id="section-7">1.5.1</h1>
+<ul>
+<li>Incorrect call to <code>3dp::attach-mf-feature</code> fixed which was introduced in refactoring.</li>
+<li>Module activated when license is activated.</li>
+</ul>
+<h1 id="section-8">1.5.0</h1>
+<h3 id="d-printing3dp_focus_study_region-focus-on-a-region-of-a-mesh-quality-study-by-showing-only-items-in-a-specified-region-of-interest-box-or-with-similar-geometry-2"><a href="3D-PRINTING/3DP_FOCUS_STUDY_REGION.dia.html"><code>3d-printing:3DP_FOCUS_STUDY_REGION</code></a> (Focus on a region of a mesh quality study by showing only items in a specified <em>region of interest</em> (box) or with similar geometry)</h3>
+<ul>
+<li>box selector improved to reduce number of false positives.</li>
+<li>Interactive manipulation of detail level.</li>
+</ul>
+<h3 id="d-printing3dp_measure_mesh_quality-measure-the-quality-of-a-mesh-with-respect-to-the-part-it-was-derived-from"><a href="3D-PRINTING/3DP_MEASURE_MESH_QUALITY.dia.html"><code>3d-printing:3DP_MEASURE_MESH_QUALITY</code></a> (Measure the quality of a mesh with respect to the part it was derived from)</h3>
+<ul>
+<li>Quality study restructured to associate measurement results with individual model faces.</li>
+<li>Additional coloring options</li>
+</ul>
+<h3 id="other">Other</h3>
+<p>Documentation improvements</p>
+<h1 id="section-9">1.4.5</h1>
+<ul>
+<li>Documentation improvements</li>
+<li>Structure browser menu actions
+<ul>
+<li>show import properties</li>
+<li>show study report</li>
+<li>part/mesh alignment</li>
+<li>region of interest selection</li>
+</ul>
+</li>
+<li>Consistent naming of mesh analysis dialog: <a href="3D-PRINTING/3DP_MEASURE_MESH_QUALITY.dia.html"><code>3d-printing:3DP_MEASURE_MESH_QUALITY</code></a>.</li>
+<li>Dialog to focus on a region of interest in the mesh study: <a href="3D-PRINTING/3DP_FOCUS_STUDY_REGION.dia.html"><code>3d-printing:3DP_FOCUS_STUDY_REGION</code></a></li>
+</ul>
+<h1 id="section-10">1.4.4</h1>
+<h3 id="bugfixes">Bugfixes</h3>
+<ul>
+<li>Transformation of Study assemblies fixed</li>
+<li>Replaced call to GATHER_FACES dialog by specialized face copy code to avoid scalability issue.</li>
+</ul>
+<h3 id="enhancements">Enhancements</h3>
+<ul>
+<li>Add all model faces which have an error facet associated to the model face assembly to</li>
+<li>make inspection and measurements easier</li>
+<li>Added documentation on how to work with the study results</li>
+</ul>
+<h1 id="section-11">1.4.3</h1>
+<p>Implemented a container based Mesh Quality Study data structure which contains sub-assemblies with:</p>
+<ul>
+<li>parts containing connected facet groups exceeding the error threshold</li>
+<li>parts containing connected facet groups exceeding the warning threshold</li>
+<li>parts containing CAD model faces which could not be assigned to facets.</li>
+</ul>
+<h1 id="section-12">1.4.2</h1>
+<ul>
+<li>Mesh import: Feature attached to imported mesh so that meshes can be recognized.</li>
+<li>Mesh quality: Unassigned faces captured to face part which is put in to a container under the mesh body</li>
+<li>Mesh quality: mesh part specific show settings (edge off; face transparency).</li>
+<li>Mesh quality: Disallow selecting parts of the wrong type.</li>
+</ul>
+<h1 id="section-13">1.4.1</h1>
+<ul>
+<li>persisted settings loaded when customization is loaded</li>
+</ul>
+<h1 id="section-14">1.4.0</h1>
+<ul>
+<li>Measure mesh quality algorithm redesigned to work with scanned data.</li>
+<li>Measure mesh quality dialog added to user interface.</li>
+<li>documentation update</li>
+</ul>
+<h1 id="section-15">1.3.2</h1>
+<ul>
+<li><em>Modeling Module Manager</em> intergration</li>
+<li>Packaged with CADM module installer</li>
+<li><em>Modeling</em> user interface integration (help menu)</li>
+</ul>
+<h1 id="section-16">1.3.0</h1>
+<ul>
+<li>3mf data import/export added</li>
+</ul>
+<h1 id="section-17">1.2.2</h1>
+<ul>
+<li>Mesh repair improved</li>
+<li>Plane recognition now computes the eigenvalues
+of the energy matrix to find best fit plane.</li>
+<li>Cylinder fitting based on a <em>gradient descent</em> algorithm added</li>
+<li>Automatic detection of best import resolution implemented.</li>
+</ul>
+<h1 id="section-18">1.2.0</h1>
+<ul>
+<li>Optional loading of STL data as <em>lightweight</em> model.</li>
+</ul>
+<h1 id="section-19">1.1.0</h1>
+<ul>
+<li>Handling of degenerate triangles (<em>slivers</em>) improved.</li>
+<li>Un-reparable triangles removed.</li>
+<li>Priority queue used to improve the detection of planar facet regions.</li>
+<li>Spur edge removal improved</li>
+<li>New configurable parameter <a href="3D-PRINTING/AA3dp-face-count-limitAA.var.html"><code>3d-printing:*3dp-face-count-limit*</code></a> to
+enforce data reduction if import model exceeds the face count limit.</li>
+<li>Default configuration settings optimized:
+<ul>
+<li><a href="3D-PRINTING/AA3dp-plane-recognition-enabledAA.var.html"><code>3d-printing:*3dp-plane-recognition-enabled*</code></a> set to <strong>off</strong>
+(<code>NIL</code>) by default to allow automatic selection of import precision.</li>
+<li><a href="3D-PRINTING/AA3dp-default-recognition-precisionAA.var.html"><code>3d-printing:*3dp-default-recognition-precision*</code></a> 
+changed to 0.01 mm to allow import of larger models.</li>
+<li><a href="3D-PRINTING/AA3dp-merge-enabledAA.var.html"><code>3d-printing:*3dp-merge-enabled*</code></a> changed to <strong>off</strong> (<code>NIL</code>) due to issues
+described in <a href="Limitations.html">Known Limitations</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="section-20">1.0.4</h1>
+<ul>
+<li>Backport of prototype to standard <em>Modeling</em> 19.</li>
+<li>HP specific optimizations and additions</li>
+</ul>
+
+        </article>
+        <footer>
+            <hr />
+            Extension <a href='Home.html'>3d_printing</a> - Version: 2.0 - <a href='https://cadm-inc-us.com/'>CADM, Inc</a>
+
+        </footer>
+    </main>
+</body>
+</html>

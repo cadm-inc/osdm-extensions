@@ -1,0 +1,319 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>3DP_FOCUS_STUDY_REGION [Public Dialog] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<div class='navlabel'>Page Content</div>
+<button class='navitem'><a href='#dp_focus_study_region-public-dialog'><span class='navitem1'>3DP_FOCUS_STUDY_REGION [Public Dialog]</span></a></button>
+<button class='navitem'><a href='#dialog-options'><span class='navitem1'>Dialog Options</span></a></button>
+<button class='navitem'><a href='#the-measurement-browser'><span class='navitem2'>The Measurement Browser</span></a></button>
+<button class='navitem'><a href='#syntax'><span class='navitem1'>Syntax</span></a></button>
+<button class='navitem'><a href='#command-line-options'><span class='navitem1'>Command Line Options</span></a></button>
+<button class='navitem'><a href='#show-mesh-panel'><span class='navitem2'><em>Show Mesh</em> Panel</span></a></button>
+<button class='navitem'><a href='#show-model-panel'><span class='navitem2'><em>Show Model</em> Panel</span></a></button>
+<button class='navitem'><a href='#search-by-geometry-panel'><span class='navitem2'><em>Search By Geometry</em> Panel</span></a></button>
+<button class='navitem'><a href='#search-result-panel'><span class='navitem2'><em>Search Result</em> Panel</span></a></button>
+<button class='navitem'><a href='#focus-measurement-by-box-panel'><span class='navitem2'><em>Focus Measurement (By Box)</em> Panel</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="dp_focus_study_region-public-dialog" class="title">3DP_FOCUS_STUDY_REGION [Public Dialog]</h1>
+<p class="package">Package: <a href="3D-PRINTING.pkg.html"><code>3d-printing</code></a> (Nick name(s): <code>:3dp</code>) </p>
+<p>Focus on a region of a mesh quality study by showing only items in a
+specified <em>region of interest</em> (box) or with similar geometry.</p>
+<p>The dialog offers two complementary approaches for filtering down the measurement to a manageable
+size:</p>
+<ul>
+<li>Bounding box based based filter. See options 2-9.</li>
+<li>Filter similar face geometry. See options 10-13.</li>
+</ul>
+<p>While the dialog is active, both approaches can be used in an alternating way to interactively
+switch between box or geometric filtering.</p>
+<p>It might be handy to also load the original CAD model for reference, but it is not required.
+The study contains a copy of all relevant faces from the CAD model.</p>
+<h1 id="dialog-options">Dialog Options</h1>
+<p><img src="images/focus_dia.png" class="rightfloat" alt="Study Region" /></p>
+<ol>
+<li>Show this help page.</li>
+<li>A mesh study container generated by the dialog <a href="3DP_MEASURE_MESH_QUALITY.dia.html"><code>3DP_MEASURE_MESH_QUALITY</code></a> (Measure the quality of a mesh with respect to the part it was derived from).
+See command line option <code>:STUDY</code> below.</li>
+</ol>
+<dl>
+<dt>Show Mesh Options</dt>
+<dd>
+<p>Selectively show/hide mesh regions from the study. Available choices are:</p>
+<ul>
+<li><em>Solid</em>: The faces of mesh regions are opaque</li>
+<li><em>Transparent</em>: The mesh regions are semi-transparent</li>
+<li><em>Hidden</em>: The mesh regions are hidden.
+ 
+Following kinds of mesh regions can be controlled with these options:</li>
+</ul>
+<ol start="3">
+<li>Error regions. Mesh regions exceeding the error tolerance.</li>
+<li>Warning regions. Mesh regions exceeding the warning tolerance.</li>
+<li>The entire imported mesh body (full mesh).</li>
+</ol>
+</dd>
+<dt>Show Model Options</dt>
+<dd>
+<p>Selectively show/hide CAD model regions from the study. Available choices are:</p>
+<ul>
+<li><em>Solid</em>: Faces of the CAD model opaque</li>
+<li><em>Transparent</em>: Faces of the CAD model are semi-transparent</li>
+<li><em>Hidden</em>: Faces of the CAD model are hidden.
+ 
+Following kinds of CAD model regions can be controlled with these options:</li>
+</ul>
+<ol start="6">
+<li>Model Faces. CAD model faces which could not be assigned to mesh faces
+or the measurment found errors/warnings for associates mesh regions.</li>
+<li>The CAD model uses as a reference for the mesh evaluation. This
+option is available only if the CAD model is available in session.
+The CAD model is not required to be in session as copies of relevant
+faces are part of the study. However, it might be handy for better
+context visualization.</li>
+</ol>
+</dd>
+<dt>Search by Geometry Options</dt>
+<dd>Use geometric rules to focus on faces with similar geometry.
+ 
+8. A reference model face to be used as a template for finding faces with similar geometries.
+Once a face has been selected additional geometry specific matching options appear.</dd>
+<dt>Search Result Options</dt>
+<dd>
+<ol start="9">
+<li>Show the number of matching geometries.
+See command line option <code>:GEOMETRY_NUMBER</code> below.</li>
+<li>Open the <em>Measurement Browser</em> (see section
+<a href="#the-measurement-browser">Measurement Browser</a> for details).</li>
+<li>Reapply the geometry filter. See command line option <code>:REAPPLY_RULE</code> below</li>
+</ol>
+</dd>
+<dt>Focus Measurement (By Box)</dt>
+<dd>Use part or assembly boxes to focus on a <em>region of interest</em>.
+ 
+12. One or more parts or assemblies from the <em>study</em> the mesh
+quality study container associated with a mesh.
+The bounding box of the selected parts / assemblies define the region of interest
+to focus on. You can use the structure browser for selection, pick, or use the
+measurement browser (recommended). See the <a href="#the-measurement-browser">Measurement Browser</a> section
+for more details. All parts from the mesh quality analysis which fully lie in the region of interest
+are drawn, all other parts are hidden. See option <code>:FOCUS_OBJECTS</code> below.
+Parts not contained in the region of interest are hidded (see illustration item <strong>14</strong> for an
+example).
+13. The inflation amount for the region of interest. The amount is calculated by increasing the
+bounding box up to the size of the entire measurement result.
+This is used to add more context to the focus region.
+See command line option <code>:REGION_SIZE</code> below.
+14. Show/hide the region-of-interest (box feedback).
+15. Reapply the region-of-interest (box) filter.
+16. Clear region-of-interest filter.</dd>
+</dl>
+<h2 id="the-measurement-browser" class="unfloat">The Measurement Browser</h2>
+<p><img src="images/MeasurementBrowser.png" class="rightfloat" alt="Measurement Browser" /></p>
+<p>The measurements browser is activated by pressing the <em>Browse</em> button_
+(see previous section). It shows measurement errors and warnings associated
+with model faces or unidentified geometries. Geometry filters described previous section,
+can be used to reduce the number of measurments shown in this dialog.</p>
+<ol>
+<li><p>List of measurements associated with model faces.
+A measurement contains a CAD model face, contiguous regions of facets
+exceeding the warning or error tolerance. If an association between
+facets and CAD model faces could not be established, these faces or
+facets are listed as <em>Unassigned Facets</em> or <em>Unassigned Faces</em>.</p>
+<p>The <em>Errors</em> and <em>Warnigs</em> columns
+show the accumulated area of the facet regions related to a model face.
+Facet regions with tiny areas are most likely insignificant and can be detected quickly.</p>
+<p>The <em>Max Dist</em> column shows the maximum distance of a mesh group to the
+associated model face. For unassigned facets or faces that distance is
+0 (unknown)</p>
+<p>Left Click on a table column header changes the sort order of that column.
+Right click on a table column header opens the <em>Column Filter</em> dialog. The
+<em>Column Filter</em> dialog can be used to reduce table content based on user
+defined filter criteria.</p>
+</li>
+<li><p>Selecting a measurement automatically defines a region-of-interest (box)
+filter.</p>
+</li>
+<li><p>List of face or facet regions in the measurement selected in <strong>(2)</strong>.
+Left Click on a table column header changes the sort order of that column.
+Right click on a table column header opens the <em>Column Filter</em> dialog. The
+<em>Column Filter</em> dialog can be used to reduce table content based on user
+defined filter criteria.</p>
+</li>
+<li><p>On selection the <em>region of interest</em> (box) filter is set to the chosen
+face or facet group.</p>
+<p>The <em>Area</em> column
+shows the accumulated area of a face or facet region.
+Elments with tiny areas are most likely insignificant
+and can be detected quickly.</p>
+<p>The <em>Max Dist</em> column shows the maximum distance of a face or facet group
+to the associated model face. For unassigned facets or faces
+that distance is 0 (unknown).</p>
+</li>
+</ol>
+<h1 id="syntax" class="unfloat">Syntax</h1>
+<pre><img src='3DP_FOCUS_STUDY_REGION.dia1.svg' alt='Diagram 1.' /></pre>
+<h1 id="command-line-options">Command Line Options</h1>
+<dl>
+<dt><code>:STUDY</code> {<code>container</code>}</dt>
+<dd>A study container generated by <a href="3DP_MEASURE_MESH_QUALITY.dia.html"><code>3DP_MEASURE_MESH_QUALITY</code></a> (Measure the quality of a mesh with respect to the part it was derived from).</dd>
+</dl>
+<h2 id="show-mesh-panel"><em>Show Mesh</em> Panel</h2>
+<dl>
+<dt><code>:SHOW_ERRORS</code> {<code>keyword</code>}</dt>
+<dd>
+<p>Show mesh regions whose maximum distance to the CAD model face exceed
+the error tolerance of the study in one of the following modes:</p>
+<ul>
+<li><code>:solid</code> - show regions opaque</li>
+<li><code>:transparent</code> - show regions semi-transparent.</li>
+<li>`:hidden' - regions are hidden</li>
+</ul>
+</dd>
+<dt><code>:SHOW_WARNINGS</code> {<code>keyword</code>}</dt>
+<dd>
+<p>Show mesh regions whose maximum distance to the CAD model face exceed
+the warning tolerance of the study in one of the following modes:</p>
+<ul>
+<li><code>:solid</code> - show regions opaque</li>
+<li><code>:transparent</code> - show regions semi-transparent.</li>
+<li>`:hidden' - regions are hidden</li>
+</ul>
+</dd>
+<dt><code>:SHOW_MESH</code> {<code>keyword</code>}</dt>
+<dd>
+<p>Show the entire mesh which the study is based upon in
+one of the following modes:</p>
+<ul>
+<li><code>:solid</code> - show mesh opaque</li>
+<li><code>:transparent</code> - show mesh semi-transparent.</li>
+<li>`:hidden' - hide mesh</li>
+</ul>
+</dd>
+</dl>
+<h2 id="show-model-panel"><em>Show Model</em> Panel</h2>
+<dl>
+<dt><code>:SHOW_FACES</code> {<code>keyword</code>}</dt>
+<dd>
+<p>Show model faces of the CAD model in one of the following modes:</p>
+<ul>
+<li><code>:solid</code> - show regions opaque</li>
+<li><code>:transparent</code> - show regions semi-transparent.</li>
+<li>`:hidden' - regions are hidden</li>
+</ul>
+</dd>
+<dt><code>:SHOW_FULL_MODEL</code> {<code>keyword</code>}</dt>
+<dd>
+<p>Show the entire CAD model which the study is based upon in
+one of the following modes:</p>
+<ul>
+<li><code>:solid</code> - show mesh opaque</li>
+<li><code>:transparent</code> - show mesh semi-transparent.</li>
+<li>`:hidden' - hide mesh</li>
+</ul>
+<p>This opton is only available if the CAD model is loaded into session. The
+CAD model is not part of the study and must be loaded explicitely.</p>
+</dd>
+</dl>
+<h2 id="search-by-geometry-panel"><em>Search By Geometry</em> Panel</h2>
+<dl>
+<dt><code>:XFACE</code> {<code>face</code>}</dt>
+<dd>A reference model face to be used as a template for finding faces with similar geometries.
+Upon selection populates the dialog with additional, geometry specific
+matching options.</dd>
+</dl>
+<h2 id="search-result-panel"><em>Search Result</em> Panel</h2>
+<dl>
+<dt><code>:GEOMETRY_NUMBER</code> </dt>
+<dd>Shows the number of matching geometries. This field is
+read-only.</dd>
+</dl>
+<p><code>:BROWSE_RESULT</code>
+:  Open the <em>Measurement Browser</em></p>
+<dl>
+<dt><code>:CLEAR_GEO_FILTER</code></dt>
+<dd>Action to clear the geometry rule filter showing all measurements in the
+measurement browser.</dd>
+</dl>
+<h2 id="focus-measurement-by-box-panel"><em>Focus Measurement (By Box)</em> Panel</h2>
+<dl>
+<dt><code>:FOCUS_OBJECTS</code> {<code>part(assembly) list</code>}</dt>
+<dd>One or more parts or assemblies whose bounding boxes define the region of interest
+to focus on. All selected parts or assemblies must be members of the
+same study.</dd>
+<dt><code>:REGION_SIZE</code> {<code>number</code>}</dt>
+<dd>Amount of additional inflation of the region of interest up to the size
+of the entire measurement. Used to add more context.</dd>
+</dl>
+<p><code>:SHOW_BOX</code> {<code>:ON | :OFF</code>}
+: Show or hide the feedback box of the region-of-interest.</p>
+<dl>
+<dt><code>:REAPPLY_BOX</code></dt>
+<dd>reapply the box filter with selected parts/assemblies.</dd>
+<dt><code>CLEAR_BOX</code></dt>
+<dd>
+<p>Remove the region-of-interest filter.</p>
+</dd>
+</dl>
+
+        </article>
+        <footer>
+            <hr />
+            Extension <a href='../Home.html'>3d_printing</a> - Version: 2.0 - <a href='https://cadm-inc-us.com/'>CADM, Inc</a>
+
+        </footer>
+    </main>
+</body>
+</html>
