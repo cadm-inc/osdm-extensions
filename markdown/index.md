@@ -2,6 +2,7 @@
 
 ## Creo Elements Direct Modeling Extensions
 
-| Extension                           | Description                       |
-| ----------------------------------- | --------------------------------- |
-| [3d_printing](3d_printing/index.md) | Tools for the 3-D printing process
+| Extension                           | Description                        |
+| ----------------------------------- | ---------------------------------- |
+| [3d_printing](3d_printing/index.md) | Tools for the 3-D printing process |
+| [ADGservice](ADGservice/index.md)   | Automated CAD Document Generator   |

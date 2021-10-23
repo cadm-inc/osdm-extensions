@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Extension Module Installation and Startup </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../vs2015.css" /> -->
+    <script src="../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Extensions</div>
+<button class='navitem'><a href='../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<div class='navlabel'>Page Content</div>
+<button class='navitem'><a href='#extension-module-installation-and-startup'><span class='navitem1'>Extension Module Installation and Startup</span></a></button>
+<button class='navitem'><a href='#prerequisites'><span class='navitem1'>Prerequisites</span></a></button>
+<button class='navitem'><a href='#installation-planning'><span class='navitem1'>Installation Planning</span></a></button>
+<button class='navitem'><a href='#installing-the-adg-modeling-extension'><span class='navitem1'>Installing the <em>ADG Modeling Extension</em></span></a></button>
+<button class='navitem'><a href='#installation-from-zip-archive'><span class='navitem2'>Installation from ZIP Archive</span></a></button>
+<button class='navitem'><a href='#using-the-installer-recommended'><span class='navitem2'>Using the Installer (recommended)</span></a></button>
+<button class='navitem'><a href='#manual-installation'><span class='navitem2'>Manual Installation</span></a></button>
+<button class='navitem'><a href='#startupConfig'><span class='navitem2'>Loading/Activating the Extension Module in <em>Modeling</em></span></a></button>
+<button class='navitem'><a href='#loading-the-extension-module-interactively'><span class='navitem3'>Loading the Extension Module Interactively</span></a></button>
+<button class='navitem'><a href='#some-commands-to-try'><span class='navitem3'>Some Commands to Try</span></a></button>
+<button class='navitem'><a href='#automatically-loading-the-module-when-modeling-starts-autoload'><span class='navitem2'>Automatically Loading the  Module when <em>Modeling</em> Starts (Autoload)</span></a></button>
+<button class='navitem'><a href='#module-on-demand-activation-deactivation'><span class='navitem2'>Module 'On-Demand' Activation / Deactivation</span></a></button>
+<button class='navitem'><a href='#activating-the-module-when-modeling-starts'><span class='navitem2'>Activating the Module when Modeling Starts</span></a></button>
+<button class='navitem'><a href='#loading-a-previous-version-of-the-module'><span class='navitem2'>Loading a Previous Version of the Module</span></a></button>
+<button class='navitem'><a href='#uninstalling-the-module'><span class='navitem2'>Uninstalling the Module</span></a></button>
+<button class='navitem'><a href='#the-adg-windows-service'><span class='navitem1'>The ADG Windows Service</span></a></button>
+<button class='navitem'><a href='#to-register-adg-as-windows-service'><span class='navitem2'>To register ADG as Windows service:</span></a></button>
+<button class='navitem'><a href='#unregister-the-adg-service'><span class='navitem2'>Unregister the ADG Service</span></a></button>
+<button class='navitem'><a href='#the-adg-webservice'><span class='navitem1'>The ADG Webservice</span></a></button>
+<button class='navitem'><a href='#preparing-iis-in-windows-server-2012-r2'><span class='navitem2'>Preparing IIS in Windows Server (2012 R2)</span></a></button>
+<button class='navitem'><a href='#deploying-modeling-on-the-server'><span class='navitem2'>Deploying Modeling on the server</span></a></button>
+<button class='navitem'><a href='#deploying-the-adg-web-service-components-to-iis'><span class='navitem2'>Deploying the ADG web service components  to IIS</span></a></button>
+<button class='navitem'><a href='#configuring-the-adgservice'><span class='navitem2'>Configuring the ADGservice</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="extension-module-installation-and-startup" class="title">Extension Module Installation and Startup</h1>
+<h1 id="prerequisites">Prerequisites</h1>
+<ul>
+<li>A complete, up-to-date <em>Creo Elements Direct Modeling</em> installation.</li>
+<li>Licenses for Modeling and <em>ADG</em></li>
+<li>Other licenses which are required to perform the operations within this
+configuration. Typical modules may include GD&amp;T, Parametrics, Assembly, or
+database licenses.</li>
+<li>Microsoft .NET Framework.</li>
+</ul>
+<h1 id="installation-planning">Installation Planning</h1>
+<p>The ADG has several components:</p>
+<ul>
+<li>The ADG Modeling extension. A Modeling module to perform document generation
+tasks in the background.</li>
+<li>The ADG service. Typically runs as Windows service to orchestrate one or more
+Modeling worker processes.</li>
+<li>The ADG webservice. A service component to allow submission of ADG jobs via a
+web interface.</li>
+</ul>
+<p>The component specific installation is described in the following sections.</p>
+<h1 id="installing-the-adg-modeling-extension">Installing the <em>ADG Modeling Extension</em></h1>
+<p>To perform a successfull installation of this <em>Modeling</em> extension module it is
+necessary to understand the relationship between the module startup
+configuration options and the module install location. Please read section
+<a href="#startupConfig">Loading/Activating the extension module in <em>Modeling</em></a>
+before installing the module.</p>
+<h2 id="installation-from-zip-archive">Installation from ZIP Archive</h2>
+<blockquote>
+<p>The <code>ADGService</code> extension module is shipped in a single ZIP
+archive. It can be installed in one of the following ways:</p>
+</blockquote>
+<h2 id="using-the-installer-recommended">Using the Installer (recommended)</h2>
+<blockquote>
+<p>The extension module comes with an installer written in Lisp (<code>install.lsp</code>).
+This installer is located at the root diectory of the ZIP archive. To install
+the extension module using the installer follow these steps:</p>
+<ul>
+<li>Unpack the ZIP archive to a temporary loctation.</li>
+<li>Start a version of <em>Modeling</em> supported by this extension module.</li>
+<li>In Modeling load <code>install.lsp.</code> by one of the following methods:
+<ul>
+<li>Open the <em>Load</em> dialog by clicking on <code>File --&gt; Open...</code> or by typing the
+<code>CTRL-O</code> keyboard shortcut, and then choose the <code>LISP source</code> file type
+from
+the <em>File type</em> options. Browse to the directory the module got unpacked
+to, and then select <code>install.lsp</code>.</li>
+<li>Load <code>install.lsp</code> from the <em>Modeling</em> command line by typing the Lisp
+expression:
+<pre><code class="language-Lisp">; '...' = path to the unpacked ZIP archive
+(load &quot;.../install.lsp&quot;)
+</code></pre>
+</li>
+</ul>
+</li>
+<li>Upon loading the installer, the extension module installation dialog opens.
+Make sure you understand the implications of the load and startup
+configuration of this module as described in the next section. If you need
+some explanation
+about any of the install options, click the <em>help</em> button <b>❔</b> at
+the top right corner of the dialog.</li>
+<li>Select an installation location and/or startup option and click the
+<em>Confirm</em> button. The module will be installed to the selected loaction and
+is ready for use.</li>
+</ul>
+</blockquote>
+<h2 id="manual-installation">Manual Installation</h2>
+<blockquote>
+<p>The extension module is <em>portable</em> and can be unpacked in any desired
+directory and executed from there.</p>
+<h2 id="startupConfig">Loading/Activating the Extension Module in <em>Modeling</em></h2>
+<p>To use the functionality provided by the extension module it needs to be first
+<em>loaded</em> into <em>Modeling</em>.</p>
+<p>The module can be then activated manually (interactively) or automatically
+when <em>Modeling</em> starts:</p>
+<h3 id="loading-the-extension-module-interactively">Loading the Extension Module Interactively</h3>
+<blockquote>
+<ul>
+<li><p>Open the <em>Load</em> dialog by clicking on <code>File --&gt; Open...</code> or pressing the
+<code>CTRL-O</code> keyboard shortcut and then choose the <code>LISP source</code> file type from
+the File type_ options. Browse to the 'ADGService' directory in the
+module's installation and then select <code>startup.lsp</code>.</p>
+</li>
+<li><p>Load <code>startup.lsp</code> from the <em>Modeling</em> command line by typing the Lisp
+expression:</p>
+<pre><code class="language-Lisp">; '...' -  path to the module's installation directory
+(load &quot;.../ADGService/startup.lsp&quot;)
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h3 id="some-commands-to-try">Some Commands to Try</h3>
+<blockquote>
+<p>Type any of the following commands into the <em>Modeling</em> command
+line and press <em>Enter</em> to execute:</p>
+<pre><code class="language-lisp">; Show information about the `ADGService` extension module
+(adg:about-module)
+
+; Show help information
+(adg:display-module-help)
+</code></pre>
+</blockquote>
+</blockquote>
+<h2 id="automatically-loading-the-module-when-modeling-starts-autoload">Automatically Loading the  Module when <em>Modeling</em> Starts (Autoload)</h2>
+<blockquote>
+<p>The extension module can be loaded automatically on <em>Modeling</em> startup by
+adding startup code to one of the <code>sd_customize</code> files:</p>
+<pre><code class="language-lisp">; '...' is the module installation directory
+(load &quot;.../ADGService/startup.lsp&quot;)
+</code></pre>
+<p>As described in the <em>Customization Guide for Administrators and Advanced
+Users</em> (<em>Modeling documentation</em>),
+<code>sd_customize</code> files can exist in any of the <em>Modeling</em> customization
+directories:</p>
+<ul>
+<li>SD (factory level)</li>
+<li>Corp (corporate level)</li>
+<li>Site (site level)</li>
+<li>User (user level)</li>
+</ul>
+<p>It is recommended to let the install dialog add this entry the optimal
+<code>sd_customize</code> file by <strong>checking</strong> the <em>Load when Modeling starts</em> option.
+The installer automatically chooses the optimal <code>sd_customize</code>
+file location for the selected install location.</p>
+</blockquote>
+<h2 id="module-on-demand-activation-deactivation">Module 'On-Demand' Activation / Deactivation</h2>
+<blockquote>
+<p>Once the module is loaded it needs to be turned on (activated) using
+the Modeling <em>Module Management Dialog</em> which opens when you click
+on <code>File -&gt; Modules ...</code>. All loaded CADM extension Modules can be found in
+the <code>CADM Extensions</code> section.</p>
+<p>To activate/deactivate a CADM module check/uncheck it in the dialog.</p>
+</blockquote>
+<h2 id="activating-the-module-when-modeling-starts">Activating the Module when Modeling Starts</h2>
+<blockquote>
+<p>To activate the module automatically when Modeling starts, perform these
+steps:</p>
+<ul>
+<li>Open the <em>Modeling Module Activation</em> dialog by clicking on
+<code>File -&gt; Modules ... -&gt; Startup ...</code>.</li>
+<li>Select the module to auto-activate from the <em>Modules</em> list on the right
+side.</li>
+<li>Click 'Add --&gt;' to add the module to the <em>Modeling Startup Sequence</em>.</li>
+</ul>
+</blockquote>
+<h2 id="loading-a-previous-version-of-the-module">Loading a Previous Version of the Module</h2>
+<blockquote>
+<p>All versions of a module are installed side-by-side. By default the newest
+installed version is started. In case is should be necessary to temporarily or
+permanently revert back to an older version of the module, this can be easily
+achieved by editing the module's <code>startup.lsp</code> file
+&quot;.../ADGService/startup.lsp&quot;. <code>...</code> represents the module's install
+location. The top of this <code>startup.lsp</code> looks like this:</p>
+<pre><code class="language-lisp">(in-package :cadm-extension-installer :use '(:lisp :oli))
+
+(let ((module-version &quot;1.2.8&quot;) ; &lt;-- change this version
+   ...
+)
+</code></pre>
+<p>To start an older version replace the current version with another installed
+version and save the changes.</p>
+</blockquote>
+<h2 id="uninstalling-the-module">Uninstalling the Module</h2>
+<blockquote>
+<p>CADM extension moduled are <em>portable</em> and can be easily deinstalled by
+deleting the module directory.</p>
+<p>To delete a particular version of the module, delete the <em>version</em> directory
+from the module's installation directory and update the
+&quot;.../ADGService/startup.lsp&quot; file to load one of the remaining
+versions as described in the previous section.</p>
+<p>To delete all versions of the module delete its installation directory
+and remove the load configuration from <code>sd_customize</code> or <code>pesd_startup</code>.</p>
+</blockquote>
+<h1 id="the-adg-windows-service">The ADG Windows Service</h1>
+<p>The <em>ADG Service</em> which orchestrates <em>Modeling</em> worker processs
+is located in the installation directory of the <em>Modeling</em>
+extension module in the <em>adg</em> subfolder.</p>
+<h2 id="to-register-adg-as-windows-service">To register ADG as Windows service:</h2>
+<blockquote>
+<ol>
+<li>Open a DOS cmd shell as <strong>administrator</strong></li>
+<li><code>cd</code> to the <code>adg</code> sub-directory of the <em>ADG</em> installation folder.</li>
+<li>Execute <code>ADGService -i</code> to register the ADG as Windows Service.
+After registration the ASG service is available in the <em>Services</em>
+application:
+<img src="images/ADGservice.png" alt="ADG service" /></li>
+</ol>
+<p><strong>Note</strong>: Before the service is started it should be configured. Please see
+<a href="Customization.html">ADG Service Configuration and Customization</a></p>
+<p><strong>Note</strong>: The service can be started via the <em>Services</em> application or by
+executing
+<code>net start ADG</code> in the dos shell.</p>
+</blockquote>
+<h2 id="unregister-the-adg-service">Unregister the ADG Service</h2>
+<blockquote>
+<p>To unregister ADG as Windows service follow these steps:</p>
+</blockquote>
+<blockquote>
+<ol>
+<li>Stop the ADG service in the <em>Services</em> application or from a DOS
+administrator shell
+by executing <code>net stop ADG</code></li>
+<li>Open a DOS cmd shell as <strong>administrator</strong></li>
+<li><code>cd</code> to the <code>adg</code> sub-directory of the ADG installation folder.</li>
+<li>Execute <code>ADGService -u</code> to unregister the ADG as Windows service.
+<strong>Note</strong>: This stops all worker processes. All unfinished jobs are lost.</li>
+</ol>
+</blockquote>
+<h1 id="the-adg-webservice">The ADG Webservice</h1>
+<p>The web user interface of the ADG runs on IIS (Internet Information service).
+It uses <em>ASP.net 5:</em> technology</p>
+<h2 id="preparing-iis-in-windows-server-2012-r2">Preparing IIS in Windows Server (2012 R2)</h2>
+<blockquote>
+<ol>
+<li><p>In the <em>Server Manager</em> application open the <em>Add Roles and Features</em> dialog
+and make sure the <em>Web Server</em> role is at least configured like so:</p>
+<p><img src="images/IISconfig.png" alt="IIS Configuration" /></p>
+</li>
+<li><p>To enable the <em>Blazor</em> technology used in the ADG web service
+the
+<a href="https://dotnet.microsoft.com/download/dotnet/thank-you/runtime-aspnetcore-5.0.0-windows-hosting-bundle-installer"><em>ASP.NET Core Runtime 5.0.0 Hosting Bundle</em></a>, which
+includes the .NET Runtime and IIS support needs to be
+downloaded and installed.</p>
+</li>
+</ol>
+</blockquote>
+<h2 id="deploying-modeling-on-the-server">Deploying Modeling on the server</h2>
+<blockquote>
+<p>The ADGweb web service uses a Modeling installation in the background
+to process jobs coming in via the web service.</p>
+<ol>
+<li>Install Modeling. If necessary also install the MEls license
+server</li>
+<li>Start Modeling and install the <em>ADGservice</em> extension using the installer.
+Use following options:
+<ul>
+<li>Choose Custom Install Location <code>c:/</code></li>
+<li>Uncheck <em>Load always on startup</em>.</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<h2 id="deploying-the-adg-web-service-components-to-iis">Deploying the ADG web service components  to IIS</h2>
+<blockquote>
+<ol>
+<li>copy the <code>adgweb</code> directory from the ZIP package to
+<code>c:/inetpub/wwwroot</code></li>
+<li>Create following directories if they do not exist:
+<ul>
+<li><code>c:/inetpub/wwwroot/adgweb/Data/Uploads</code></li>
+<li><code>c:/inetpub/wwwroot/adgweb/Data/Downloads</code></li>
+</ul>
+</li>
+<li>Make sure <code>c:/inetpub/wwwroot/adgweb/Data/Uploads</code> has
+<strong>write permission</strong> user ``IIS_IUSRS`.</li>
+<li>Open the <em>Internet Information Services (IIS) Manager</em>
+and create a new application with following parameters:
+<img src="images/IISAppConfig.png" alt="Application Configuration" /></li>
+<li>Create a new <em>Virtual Directory</em> mapping for <code>Downloads</code>
+to <code>c:/inetpub/wwwroot/adgweb/Data/Downloads</code>
+<img src="images/IISvirtualDir.png" alt="Virtual Directory" /></li>
+</ol>
+</blockquote>
+<h2 id="configuring-the-adgservice">Configuring the ADGservice</h2>
+<blockquote>
+<p>The <em>ADGservice</em> can run from the recommended install location
+<code>c:/ADGservice</code>. To work with the <code>ADGweb</code> web service following
+configuration is necessary.</p>
+<ol>
+<li>To be able run the <em>ADGservice</em> as interactive admin user,
+allow <em>Full Control</em> to <code>c:/inetpub/wwwroot/adgweb/Data</code> and
+its sub-directories.</li>
+<li>Configure the <em>ADGservice</em> by editing <em>ADGservice.exe.config</em>
+like so:
+<pre><code class="language-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;configuration&gt;
+  ...
+  &lt;appSettings&gt;
+    &lt;!-- Fully qualified Path to a Modeling executable (SolidDesigner.exe) to use as ADG worker. --&gt;
+    &lt;add key=&quot;ADG_WORKER_LOCATION&quot; value=&quot;C:/Program Files/PTC/Creo Elements/Direct Modeling 20.1/binx64/SolidDesigner.exe&quot; /&gt;
+    &lt;!-- When Modeling does not send any request before this timeout occurs, it is restarted. --&gt;
+    &lt;!-- Time is in minutes --&gt;
+    &lt;add key=&quot;ADG_WORKER_TIMEOUT&quot; value=&quot;5&quot; /&gt;
+    &lt;!-- Time to wait until the ADG worker (Modeling) has connected --&gt;
+    &lt;!-- Time is in minutes --&gt;
+    &lt;add key=&quot;ADG_START_TIMEOUT&quot; value=&quot;2&quot; /&gt;
+    &lt;!-- Number of concurrent worker (Modeling) processes --&gt;
+    &lt;add key=&quot;ADG_MAX_WORKER_COUNT&quot; value=&quot;1&quot; /&gt;
+    &lt;!-- License server host --&gt;
+    &lt;add key=&quot;ADG_MELS_HOST&quot; value=&quot;win7x64-vm-lab&quot; /&gt;
+    &lt;!-- relative path to ADG startup file ()--&gt;
+    &lt;add key=&quot;ADG_STARTUP_FILENAME&quot; value=&quot;startup&quot; /&gt;
+    &lt;!-- Fully qualified path to a ADG working directory --&gt;
+    &lt;!-- When emtpy the directory 'work_dir' in the ADG service installation directory is used --&gt;
+    &lt;add key=&quot;ADG_WORK_DIR&quot; value=&quot;C:/inetpub/wwwroot/adgweb/Data/Work&quot; /&gt;
+    &lt;!-- Fully qualified path to the ADG input directory --&gt;
+    &lt;!-- When emtpy the directory 'input_dir' in the ADG service installation directory is used --&gt;
+    &lt;add key=&quot;ADG_INPUT_DIR&quot; value=&quot;C:/inetpub/wwwroot/adgweb/Data/Uploads&quot; /&gt;
+    &lt;!-- Fully qualified path to the ADG output directory --&gt;
+    &lt;!-- When emtpy the directory 'output_dir' in the ADG service installation directory is used --&gt;
+    &lt;add key=&quot;ADG_OUTPUT_DIR&quot; value=&quot;C:/inetpub/wwwroot/adgweb/Data/Downloads&quot; /&gt;
+    &lt;!-- Fully qualified path to the ADG log directory --&gt;
+    &lt;!-- When emtpy the directory 'logs' in the ADG service installation directory is used --&gt;
+    &lt;add key=&quot;ADG_LOG_DIR&quot; value=&quot;C:/inetpub/wwwroot/adgweb/Data/Logs&quot; /&gt;
+    &lt;!-- Maximum time a worker may run before it is restarted  --&gt;
+    &lt;!-- Time is in minutes --&gt;
+    &lt;add key=&quot;ADG_MAX_UPTIME&quot; value=&quot;1440&quot; /&gt;
+    &lt;!-- Hostname ot IPV4 Address of the SMTP Server --&gt;
+    &lt;add key=&quot;ADG_SMTP_HOST&quot; value=&quot;hydrogen.portfast.net&quot;/&gt;
+    &lt;!-- SMPT Port --&gt;
+    &lt;add key=&quot;ADG_SMTP_PORT&quot; value=&quot;25&quot;/&gt;
+    &lt;!-- SMPT User Name --&gt;
+    &lt;add key=&quot;ADG_SMTP_USER&quot; value=&quot;adgweb@cadm-inc-us.com&quot;/&gt;
+    &lt;!-- SMPT Password --&gt;
+    &lt;add key=&quot;ADG_SMTP_PASSWORD&quot; value=&quot;********&quot;/&gt;
+    &lt;!-- SMPT connection encryption                                        --&gt;
+    &lt;!-- T to use SSL to encrypt the connection; NIL to disable encryption --&gt;
+    &lt;add key=&quot;ADG_SMTP_USE_SSL&quot; value=&quot;T&quot;/&gt;
+    &lt;!-- ADG service sender email address --&gt;
+    &lt;!-- When ADG sends out emails this address is used. --&gt;
+    &lt;!-- Preferrably an existing address so that recipients can reply to it. --&gt;
+    &lt;add key=&quot;ADG_SERVICE_MAIL_FROM&quot; value=&quot;adgweb@cadm-inc-us.com&quot;/&gt;
+    &lt;!-- One or more comma separated email addresses of ADG Administrators. --&gt;
+    &lt;!-- Status and error emails will be sent to these email addresses. --&gt;
+    &lt;add key=&quot;ADG_ADMINISTRATOR&quot; value=&quot;peter.ernst@cadm-inc-us.com&quot;/&gt;
+    &lt;!-- `CONTINUOUS` Keep all worker processes running continously.       --&gt;
+    &lt;!--   New jobs are picked up from `ADG_INPUT_DIR` by idle workers.    --&gt;
+    &lt;!-- `ON-DEMAND` Start a single, dedicated worker process for each job --&gt;
+    &lt;!--   appearing in `ADG_INPUT_DIR`.                                   --&gt;
+    &lt;add key=&quot;ADG_MODE&quot; value=&quot;ON-DEMAND&quot;/&gt;
+  &lt;/appSettings&gt;
+&lt;/configuration&gt;
+</code></pre>
+</li>
+</ol>
+</blockquote>
+
+        </article>
+        <footer>
+            <hr />
+            Extension <a href='Home.html'>ADGservice</a> - Version: 2.5 - <a href='https://cadm-inc-us.com/'>CADM, Inc</a>
+
+        </footer>
+    </main>
+</body>
+</html>

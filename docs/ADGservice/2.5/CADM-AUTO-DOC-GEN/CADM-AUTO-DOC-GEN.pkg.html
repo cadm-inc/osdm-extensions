@@ -1,0 +1,220 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>CADM-AUTO-DOC-GEN [Package] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- -->
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<div class='navlabel'>Page Content</div>
+<button class='navitem'><a href='#cadm-auto-doc-gen-package'><span class='navitem1'>CADM-AUTO-DOC-GEN [Package]</span></a></button>
+<button class='navitem'><a href='#programming-notes'><span class='navitem1'>Programming Notes</span></a></button>
+<button class='navitem'><a href='#package-contents'><span class='navitem1'>Package Contents</span></a></button>
+<button class='navitem'><a href='#dialogs'><span class='navitem2'>Dialogs</span></a></button>
+<button class='navitem'><a href='#variables-parameters-constants'><span class='navitem2'>Variables / Parameters / Constants</span></a></button>
+<button class='navitem'><a href='#generic-functions-macros-accessors'><span class='navitem2'>(Generic) Functions / Macros / Accessors</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="cadm-auto-doc-gen-package" class="title">CADM-AUTO-DOC-GEN [Package]</h1>
+<p>Primary Lisp package of the <code>ADGservice</code> <em>Modeling</em> extension module.</p>
+<p>The package <code>:CADM-AUTO-DOC-GEN</code> (nicknamed <code>:ADG</code>) contains
+tools to support <em>Automated Document Generator</em> infrastructure.</p>
+<h1 id="programming-notes">Programming Notes</h1>
+<p>This package is <strong>not</strong> intended to be included in the `:use' specification of
+other packages due to a high probability of name conflicts.
+To reference a facility provided by this package, code in another package
+must use an explicit package prefix, e.g.</p>
+<pre><code class="language-Lisp">(adg:load-module-customization)
+</code></pre>
+<h1 id="package-contents">Package Contents</h1>
+<h2 id="dialogs">Dialogs</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="ADG_SETTINGS.dia.html"><code>ADG_SETTINGS</code></a></td>
+<td style="text-align: left;">Edit customizable settings for the <code>ADGService</code> extension module.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variables-parameters-constants">Variables / Parameters / Constants</h2>
+<table _string_="" or="" _string="" list_="">
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="AAadg-administratorAA.var.html"><code>*adg-administrator*</code></a></td>
+<td style="text-align: left;">Recipient(s) for ADG notification emails </td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-debug-modeAA.var.html"><code>*adg-debug-mode*</code></a></td>
+<td style="text-align: left;"><code>T</code> To display all commands that are executed in the log file with their parameters.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-download-prefixAA.var.html"><code>*adg-download-prefix*</code></a></td>
+<td style="text-align: left;">The url prefix to use for ADG result downloads {<code>string</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-execution-modeAA.var.html"><code>*adg-execution-mode*</code></a></td>
+<td style="text-align: left;">Current mode of adg execution.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-input-dirAA.var.html"><code>*adg-input-dir*</code></a></td>
+<td style="text-align: left;">The fully qualified  path to the 'input directory' where all ADG input files must be placed for processing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-jobstat-prefixAA.var.html"><code>*adg-jobstat-prefix*</code></a></td>
+<td style="text-align: left;">The url prefix to use for ADG job status requests {<code>string</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-keep-sessionAA.var.html"><code>*adg-keep-session*</code></a></td>
+<td style="text-align: left;"><code>T</code> to keep the current session after a job is completed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-lib-dirAA.var.html"><code>*adg-lib-dir*</code></a></td>
+<td style="text-align: left;">Fully qualified path to the 'lib' directory under which all the ltabs and templates are stored.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-max-uptimeAA.var.html"><code>*adg-max-uptime*</code></a></td>
+<td style="text-align: left;">Maximum Modeling uptime { <code>fixnum</code>} in minutes.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-output-dirAA.var.html"><code>*adg-output-dir*</code></a></td>
+<td style="text-align: left;">The fully qualified path to the 'output directory' where ADG-generated output files will be placed for pickup or storing.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-pdm-activeAA.var.html"><code>*adg-pdm-active*</code></a></td>
+<td style="text-align: left;"><code>T</code> to use Product Data Management (ModelManager); <code>NIL</code> to use basic translator.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-start-time-utcAA.var.html"><code>*adg-start-time-utc*</code></a></td>
+<td style="text-align: left;">Start time of the Modeling process in seconds since epoch {<code>number</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-webrootAA.var.html"><code>*adg-webroot*</code></a></td>
+<td style="text-align: left;">The root url of the ADG webservice {<code>string</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAadg-work-dirAA.var.html"><code>*adg-work-dir*</code></a></td>
+<td style="text-align: left;">The fully qualified path to the working directory where the ADG produces any temporary or intermediate files.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAuser-interface-integrationAA.var.html"><code>*user-interface-integration*</code></a></td>
+<td style="text-align: left;">Modeling user interface integration level {<code>keyword</code>} for this extension module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="+module-id+.var.html"><code>+module-id+</code></a></td>
+<td style="text-align: left;">The extension module ID.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="generic-functions-macros-accessors">(Generic) Functions / Macros / Accessors</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="about-module.fun.html"><code>about-module</code></a></td>
+<td style="text-align: left;">Show the <code>ADGService</code> <em>about</em> information in the <em>Modeling</em> output textbox.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="activate-module.fun.html"><code>activate-module</code></a></td>
+<td style="text-align: left;">Activate this module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="deactivate-module.fun.html"><code>deactivate-module</code></a></td>
+<td style="text-align: left;">Deactivate this module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="display-module-help.fun.html"><code>display-module-help</code></a></td>
+<td style="text-align: left;">Display a module help page in the browser.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="get-available-commands.fun.html"><code>get-available-commands</code></a></td>
+<td style="text-align: left;">Get a list of commands availalable for this module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="get-module-manifest.fun.html"><code>get-module-manifest</code></a></td>
+<td style="text-align: left;">Get the extension module manifest.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="load-module-customization.fun.html"><code>load-module-customization</code></a></td>
+<td style="text-align: left;">Load or re-load the module customizations.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="module-active-p.fun.html"><code>module-active-p</code></a></td>
+<td style="text-align: left;">Predicate to termine if this extension module is active.</td>
+</tr>
+</tbody>
+</table>
+
+        </article>
+        <footer>
+            <hr />
+            Extension <a href='../Home.html'>ADGservice</a> - Version: 2.5 - <a href='https://cadm-inc-us.com/'>CADM, Inc</a>
+
+        </footer>
+    </main>
+</body>
+</html>
