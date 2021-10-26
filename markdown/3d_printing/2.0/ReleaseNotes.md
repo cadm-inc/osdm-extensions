@@ -1,6 +1,11 @@
 # Package Release Notes {.title}
 
-# 2.0.0
+# 2.0.1 - Bugfix Release
+
+* Show model of CAD model handled the same was as CAD model faces during focus operation
+* Model state restored to initial state when inspection is terminated
+
+# 2.0.0 - Feature Release
 
 * Measurement Browser Enhancements
   * Maximum distance of a mesh region to the associated CAD model faces recorded
@@ -19,17 +24,17 @@
   * Only model faces are shown now when faces for geometric filtering are
     selected.
 
-# 1.6.2
+# 1.6.2 - Bugfix Release
 
 * Bugfix: Fixed ugly _nil is not of type cons_ error when selecting 
   reference parts/assemblies which are not **below** the study container.
 
-# 1.6.1
+# 1.6.1 - Bugfix Release
 
 * resolution data type changed to number because it is always in mm
 * top level assembly naming fixed when unix style path is used for 3mf import
 
-# 1.6.0
+# 1.6.0 Maintenance Release
 
 * Upgrade to libmf 2.1. beta
 * culled recursion when checking coedges to avoid stack overflow on unpatched SolidDesigner.exe
