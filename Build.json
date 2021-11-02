@@ -36,6 +36,7 @@
         { "CADM Documentation Hub": "index.md" },
         { "Extensions": "" },
         { "3-D Manufacturing": "3d_printing/index.md" },
+        { "Automated Document Generator": "ADGservice/index.md" },
         { "Page Content": "" }
     ],
 

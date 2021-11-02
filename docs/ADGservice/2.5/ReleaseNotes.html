@@ -53,6 +53,7 @@
 <button class='navitem'><a href='../../index.html'>CADM Documentation Hub</a></button>
 <div class='navlabel'>Extensions</div>
 <button class='navitem'><a href='../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../ADGservice/index.html'>Automated Document Generator</a></button>
 <div class='navlabel'>Page Content</div>
 <button class='navitem'><a href='#adgservice-modeling-extension-release-notes'><span class='navitem1'><em>ADGservice</em> Modeling Extension Release Notes</span></a></button>
 <button class='navitem'><a href='#feature-release'><span class='navitem1'>2.5.0 - Feature Release</span></a></button>
@@ -63,6 +64,16 @@
         <article>
             <h1 id="adgservice-modeling-extension-release-notes" class="title"><em>ADGservice</em> Modeling Extension Release Notes</h1>
 <h1 id="feature-release">2.5.0 - Feature Release</h1>
+<ul>
+<li>use append instead of nconc for tracking 2d files generated</li>
+<li>handle am_load_any_mi file failures due to see log message error</li>
+<li>Auto submit option hidden until submit button is pressed with validation errors
+present</li>
+<li>Job context cleanup only if job is not going to be restarted</li>
+<li>lock the input file not the input folder</li>
+<li>Auto-submit job when uploads are finished option implemented</li>
+<li>Logging enhancements</li>
+</ul>
 <h1 id="maintenance-release">2.4.12 - Maintenance Release</h1>
 <ul>
 <li>modify input file batch suffix to .txt</li>
