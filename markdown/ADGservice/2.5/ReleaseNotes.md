@@ -1,5 +1,17 @@
 # _ADGservice_ Modeling Extension Release Notes {.title}
 
+# 2.5.1 - Bugfix Release
+
+* introduced new concept of :virutal groups
+* improved information in results report, orgainzed reports by subfolders
+* modified validate export options to appear below validate export button
+* added more details on validation help pages
+* fixed link problems
+* cleaned up some references to PTC
+* changed sender to submitter
+* don't report on affected_geometry in validation results
+* correct output name of folder for reports
+
 # 2.5.0 - Feature Release
 
 * use append instead of nconc for tracking 2d files generated
