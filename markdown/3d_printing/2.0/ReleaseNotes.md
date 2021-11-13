@@ -1,5 +1,9 @@
 # Package Release Notes {.title}
 
+# 2.0.2 - Bugfix Release
+
+* Fixed invalid import assembly name when path to mf file is given.
+
 # 2.0.1 - Bugfix Release
 
 * Show model of CAD model handled the same was as CAD model faces during focus operation
