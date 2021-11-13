@@ -2,6 +2,11 @@
 
 # 2.5.1 - Bugfix Release
 
+* Special case validation for option groups with constraints
+* if validation fails, continue processing rest of possible objects to validate
+* keep a copy of the invoice on the server with job data
+* use funcall-protected around calls to save
+* fix read-only issue with saving sdfiles, fix step export
 * introduced new concept of :virutal groups
 * improved information in results report, orgainzed reports by subfolders
 * modified validate export options to appear below validate export button

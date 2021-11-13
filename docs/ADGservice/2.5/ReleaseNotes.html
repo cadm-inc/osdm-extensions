@@ -66,6 +66,11 @@
             <h1 id="adgservice-modeling-extension-release-notes" class="title"><em>ADGservice</em> Modeling Extension Release Notes</h1>
 <h1 id="bugfix-release">2.5.1 - Bugfix Release</h1>
 <ul>
+<li>Special case validation for option groups with constraints</li>
+<li>if validation fails, continue processing rest of possible objects to validate</li>
+<li>keep a copy of the invoice on the server with job data</li>
+<li>use funcall-protected around calls to save</li>
+<li>fix read-only issue with saving sdfiles, fix step export</li>
 <li>introduced new concept of :virutal groups</li>
 <li>improved information in results report, orgainzed reports by subfolders</li>
 <li>modified validate export options to appear below validate export button</li>
