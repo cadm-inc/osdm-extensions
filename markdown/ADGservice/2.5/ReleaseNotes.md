@@ -1,5 +1,9 @@
 # _ADGservice_ Modeling Extension Release Notes {.title}
 
+# 2.5.2 - Bugfix Release
+
+* for step granite, always convert filenames to legal characters and then rename them back to original name
+
 # 2.5.1 - Bugfix Release
 
 * Special case validation for option groups with constraints
