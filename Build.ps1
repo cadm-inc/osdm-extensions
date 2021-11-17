@@ -98,8 +98,7 @@ $SCRIPT:contentMap = @{
 
 # Conversion pipeline
 $SCRIPT:markdown = Join-Path $projectDir $config.markdown_dir
-    
-write-host "!!!!!!! $($config.Exclude.GetType())"
+
 Find-MarkdownFiles $markdown -Exclude $config.Exclude `
 | Convert-MarkdownToHTMLFragment -IncludeExtension $config.markdown_extensions -Split `
 | Convert-SvgbobToSvg -SiteDirectory $staticSite -Options $SCRIPT:config.svgbob `
