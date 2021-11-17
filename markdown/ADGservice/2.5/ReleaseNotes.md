@@ -1,5 +1,10 @@
 # _ADGservice_ Modeling Extension Release Notes {.title}
 
+# 2.5.3 - Bugfix Release
+
+* show face area stats on body compare diffs
+* only mail validation reports when there are diffs
+
 # 2.5.2 - Bugfix Release
 
 * for step granite, always convert filenames to legal characters and then rename them back to original name
