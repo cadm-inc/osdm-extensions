@@ -1,9 +1,9 @@
 {
     "markdown_dir": "markdown",
 
-    "site_dir": "docs",
+    "site_dir": "html",
 
-    "HTML_template": "Template",
+    "HTML_template": "DocTemplate",
 
     "Exclude": [
     ],
@@ -12,14 +12,12 @@
         "common",
         "definitionlists",
         "mathematics",
-        "diagrams",
         "pipetables",
-        "autoidentifiers",
-        "attributes"
+        "attributes",
+        "medialinks",
+        "autolinks",
+        "autoidentifiers"
     ],
-
-    "extension_footer": "Extension <a href='{{relpath}}Home.html'>{{extensionname}}</a> - Version: {{version}} - <a href='https://cadm-inc-us.com/'>CADM, Inc</a>",
-    "generic_footer": "<a href='https://cadm-inc-us.com/'>CADM, Inc</a> Extension Documentation",
 
     "navigation_bar": {
         "capture_page_headings": "123456",
@@ -28,18 +26,23 @@
             "navlabel": "<div class='navlabel'>{{navtext}}</div>",
             "navseparator": "<hr/>",
             "navheading": "<span class='navitem{{level}}'>{{navtext}}</span>"
-        }
+      }
     },
 
     "site_navigation": [
-        { "<img width='90%' src='CADM-logo.jpg' />": "https://cadm-inc-us.com/" },
-        { "CADM Documentation Hub": "index.md" },
-        { "Extensions": "" },
-        { "3-D Manufacturing": "3d_printing/index.md" },
-        { "Automated Document Generator": "ADGservice/index.md" }
+        { "ADGService": "" },
+        { "<i>ADGService</i> <b>Home</b>": "Home.md" },
+        { "Architecture": "Architecture.md"},
+        { "Installation": "Installation.md"},
+        { "Customization": "Customization.md"},
+        { "User Interface": "UI.md"},
+        { "Release Notes": "ReleaseNotes.md"},
+        { "Lisp API" : ""},
+        { "CADM-AUTO-DOC-GEN": "CADM-AUTO-DOC-GEN/CADM-AUTO-DOC-GEN.pkg.md"},
+        { "Page Content": "" }
     ],
 
-    "github_pages": true,
+    "github_pages": false,
 
     "svgbob": {
         "background": "white",
@@ -47,6 +50,6 @@
         "font_size": 14,
         "font_family": "Monospace",
         "scale": 1,
-        "stroke_width": 2
+        "stroke_width": 1
     }
-  }
+}

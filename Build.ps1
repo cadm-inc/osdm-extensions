@@ -19,6 +19,8 @@ $SCRIPT:staticSite = Join-Path $projectDir $config.site_dir
 # Clean up the static HTML site before build.
 Remove-Item $staticSite -Recurse -Force -ErrorAction:SilentlyContinue
 
+$modulenav=@{}
+
 # Set-up the content mapping rules for replacing template placeholders
 # of the form {{name}}.
 $SCRIPT:contentMap = @{
@@ -44,6 +46,48 @@ $SCRIPT:contentMap = @{
 		New-SiteNavigation -NavitemSpecs $config.site_navigation `
 		                   -RelativePath $fragment.RelativePath `
 		                   -NavTemplate $navcfg.templates
+
+		# add module specific navigation if available
+		$pathelements = $fragment.RelativePath -split '/'
+		$module_navigation = $null
+	    if ($pathelements.Length -gt 2) {
+	        $modulepath="$($pathelements[0])/$($pathelements[1])"
+	        $module_navigation = $modulenav[$modulepath]
+	        if (!$module_navigation) {
+	            # attempt to load the module configuration
+	            $module_json =  Join-Path $projectDir "$($config.markdown_dir)/${modulepath}/Build.json"
+	            if (Test-Path -Path $module_json ) {
+	                $modulecfg = Get-Content "$module_json" | ConvertFrom-Json
+	                $module_navigation = $modulecfg.site_navigation
+
+	                # fix the module navlinks by prefixing them with the version
+	                # specific relative module directory path
+	                foreach ($entry in $module_navigation) {
+	                    $prop = Get-Member -InputObject $entry -MemberType NoteProperty | Select-Object -first 1
+	                    $name = $prop.Name
+	                    $val=$entry."$name"
+	                    if ($val.Length -gt 3 -and !$val.StartsWith('http')) {
+	                        $entry."$name" = "$modulepath/$val"
+	                    }
+	                }
+	                # update the cache
+	                $modulenav[$modulepath] = $module_navigation
+	            }
+	        }
+		}
+
+		if ($module_navigation)  {
+		   # add module specific navigation
+	       New-SiteNavigation -NavitemSpecs $module_navigation `
+		                      -RelativePath $fragment.RelativePath `
+		                      -NavTemplate $navcfg.templates
+        } else {
+            # page content label not provided by module navigation
+            # so we need to provide it
+            New-SiteNavigation -NavitemSpecs @(@{"Page Content" = "" })`
+        	                   -RelativePath $fragment.RelativePath `
+        	                   -NavTemplate $navcfg.templates
+        }
 		# Create navigation items to headings on the local page.
 		# This requires the `autoidentifiers` extension to be enabled.
 		New-PageHeadingNavigation -HTMLfragment $fragment.HTMLFragment `
@@ -54,6 +98,8 @@ $SCRIPT:contentMap = @{
 
 # Conversion pipeline
 $SCRIPT:markdown = Join-Path $projectDir $config.markdown_dir
+    
+write-host "!!!!!!! $($config.Exclude.GetType())"
 Find-MarkdownFiles $markdown -Exclude $config.Exclude `
 | Convert-MarkdownToHTMLFragment -IncludeExtension $config.markdown_extensions -Split `
 | Convert-SvgbobToSvg -SiteDirectory $staticSite -Options $SCRIPT:config.svgbob `
