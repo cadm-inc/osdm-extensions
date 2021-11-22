@@ -1,5 +1,10 @@
 # _ADGservice_ Modeling Extension Release Notes {.title}
 
+# 2.5.4 - Maintenance Release
+
+* allow 2d and 3d outputs to be specified in a batch job even if there is no
+  corresponding data without producing an error
+
 # 2.5.3 - Bugfix Release
 
 * show face area stats on body compare diffs

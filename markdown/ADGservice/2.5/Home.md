@@ -19,6 +19,8 @@ adgweb     | ASP.net Blazor web service for interactive form based ADG job creat
 # See Also
 
 * [ADG Service Architecture Overview](Architecture.md)
+* [_ADGservice_ Modeling Extension Release Notes](ReleaseNotes.md)
+* [Open Ensemble Transform Help Pages](https://cadm-inc-us.com/adg/help/index.htm)
 
 # Programming Interfaces
 
