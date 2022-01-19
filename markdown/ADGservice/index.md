@@ -13,7 +13,6 @@ The ADGservice extension module for Modeling provides servicecomponents for CAD 
 * 2.5.3: [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/ADGservice/ADGservice_x64_2.5.3.zip) -
          [Documentation](2.5/Home.md)  -
          [Release Notes](2.5/ReleaseNotes.md)
-
 * 2.5.2: [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/ADGservice/ADGservice_x64_2.5.2.zip) -
          [Documentation](2.5/Home.md)  -
          [Release Notes](2.5/ReleaseNotes.md)

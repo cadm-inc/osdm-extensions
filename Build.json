@@ -14,12 +14,13 @@
         "mathematics",
         "diagrams",
         "pipetables",
-        "autoidentifiers",
-        "attributes"
+        "attributes",
+        "medialinks",
+        "autolinks",
+        "autoidentifiers"
     ],
 
-    "extension_footer": "Extension <a href='{{relpath}}Home.html'>{{extensionname}}</a> - Version: {{version}} - <a href='https://cadm-inc-us.com/'>CADM, Inc</a>",
-    "generic_footer": "<a href='https://cadm-inc-us.com/'>CADM, Inc</a> Extension Documentation",
+    "footer": "Template project Created by PowerShell Module <a href='https://github.com/WetHat/MarkdownToHtml'>MarkdownToHTML</a>.",
 
     "navigation_bar": {
         "capture_page_headings": "123456",
@@ -37,6 +38,10 @@
         { "Extensions": "" },
         { "3-D Manufacturing": "3d_printing/index.md" },
         { "Automated Document Generator": "ADGservice/index.md" }
+    ],
+
+    "page_navigation_header": [
+        { "---": "" }
     ],
 
     "github_pages": true,

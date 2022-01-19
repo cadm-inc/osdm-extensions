@@ -32,6 +32,7 @@ must use an explicit package prefix, e.g.
 | [`*adg-debug-mode*`](AAadg-debug-modeAA.var.md) | `T` To display all commands that are executed in the log file with their parameters. |
 | [`*adg-download-prefix*`](AAadg-download-prefixAA.var.md) | The url prefix to use for ADG result downloads {`string`}. |
 | [`*adg-execution-mode*`](AAadg-execution-modeAA.var.md) | Current mode of adg execution. |
+| [`*adg-hp2xx*`](AAadg-hp2xxAA.var.md) | Path to the external `hp2xx` executable. |
 | [`*adg-input-dir*`](AAadg-input-dirAA.var.md) | The fully qualified  path to the 'input directory' where all ADG input files must be placed for processing. |
 | [`*adg-jobstat-prefix*`](AAadg-jobstat-prefixAA.var.md) | The url prefix to use for ADG job status requests {`string`}. |
 | [`*adg-keep-session*`](AAadg-keep-sessionAA.var.md) | `T` to keep the current session after a job is completed. |

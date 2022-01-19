@@ -12,12 +12,17 @@
         "common",
         "definitionlists",
         "mathematics",
+        "diagrams",
         "pipetables",
         "attributes",
         "medialinks",
         "autolinks",
         "autoidentifiers"
     ],
+
+    "github_pages": false,
+
+     "footer": "Module: ADGservice v2.5.4 - Build Date: Nov 22 2021; Copyright 2018-2021 CADM, Inc",
 
     "navigation_bar": {
         "capture_page_headings": "123456",
@@ -39,10 +44,12 @@
         { "Release Notes": "ReleaseNotes.md"},
         { "Lisp API" : ""},
         { "CADM-AUTO-DOC-GEN": "CADM-AUTO-DOC-GEN/CADM-AUTO-DOC-GEN.pkg.md"},
-        { "Page Content": "" }
+        {"---":""}
     ],
 
-    "github_pages": false,
+    "page_navigation_header": [
+        { "Page Contents": "" }
+    ],
 
     "svgbob": {
         "background": "white",

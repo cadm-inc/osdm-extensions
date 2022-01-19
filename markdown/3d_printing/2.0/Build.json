@@ -8,6 +8,10 @@
     "Exclude": [
     ],
 
+    "github_pages": false,
+
+     "footer": "Module: 3d_printing v2.0.2 - Build Date: Nov 13 2021; Copyright 2014-2021 CADM, Inc",
+
     "markdown_extensions": [
         "common",
         "definitionlists",
@@ -30,19 +34,24 @@
     },
 
     "site_navigation": [
-        { "ADGService": "" },
-        { "<i>ADGService</i> <b>Home</b>": "Home.md" },
-        { "Architecture": "Architecture.md"},
+        { "3d_printing": "" },
+        { "<i>3d_printing</i> <b>Home</b>": "Home.md" },
         { "Installation": "Installation.md"},
         { "Customization": "Customization.md"},
         { "User Interface": "UI.md"},
+        { "Limitations": "Limitations.md"},
+        { "Import Examples": "ImportExamples.md"},
         { "Release Notes": "ReleaseNotes.md"},
         { "Lisp API" : ""},
-        { "CADM-AUTO-DOC-GEN": "CADM-AUTO-DOC-GEN/CADM-AUTO-DOC-GEN.pkg.md"},
-        { "Page Content": "" }
+        { "3D-PRINTING": "3D-PRINTING/3D-PRINTING.pkg.md"},
+        { "3D-PRINTING.DATA-EXCHANGE": "3D-PRINTING.DATA-EXCHANGE/3D-PRINTING.DATA-EXCHANGE.pkg.md"},
+        {"---":""}
+
     ],
 
-    "github_pages": false,
+    "page_navigation_header": [
+        { "Page Contents": "" }
+    ],
 
     "svgbob": {
         "background": "white",

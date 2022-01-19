@@ -46,7 +46,8 @@
         };
           // ]]>
     </script>
-    <!-- -->
+    <!-- add page icon link -->
+    <link rel="icon" href="../../PageIcon.png" type="image/x-icon" />
 </head>
 <body>
     <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
@@ -54,7 +55,7 @@
 <div class='navlabel'>Extensions</div>
 <button class='navitem'><a href='../../3d_printing/index.html'>3-D Manufacturing</a></button>
 <button class='navitem'><a href='../../ADGservice/index.html'>Automated Document Generator</a></button>
-<div class='navlabel'>Page Content</div>
+<hr/>
 <button class='navitem'><a href='#package-release-notes'><span class='navitem1'>Package Release Notes</span></a></button>
 <button class='navitem'><a href='#section'><span class='navitem1'>1.6.2</span></a></button>
 <button class='navitem'><a href='#section-1'><span class='navitem1'>1.6.1</span></a></button>
@@ -89,7 +90,7 @@
             <h1 id="package-release-notes" class="title">Package Release Notes</h1>
 <h1 id="section">1.6.2</h1>
 <ul>
-<li>Bugfix: Fixed ugly <em>nil is not of type cons</em> error when selecting 
+<li>Bugfix: Fixed ugly <em>nil is not of type cons</em> error when selecting
 reference parts/assemblies which are not <strong>below</strong> the study container.</li>
 </ul>
 <h1 id="section-1">1.6.1</h1>
@@ -226,7 +227,7 @@ enforce data reduction if import model exceeds the face count limit.</li>
 <ul>
 <li><a href="3D-PRINTING/AA3dp-plane-recognition-enabledAA.var.html"><code>3d-printing:*3dp-plane-recognition-enabled*</code></a> set to <strong>off</strong>
 (<code>NIL</code>) by default to allow automatic selection of import precision.</li>
-<li><a href="3D-PRINTING/AA3dp-default-recognition-precisionAA.var.html"><code>3d-printing:*3dp-default-recognition-precision*</code></a> 
+<li><a href="3D-PRINTING/AA3dp-default-recognition-precisionAA.var.html"><code>3d-printing:*3dp-default-recognition-precision*</code></a>
 changed to 0.01 mm to allow import of larger models.</li>
 <li><a href="3D-PRINTING/AA3dp-merge-enabledAA.var.html"><code>3d-printing:*3dp-merge-enabled*</code></a> changed to <strong>off</strong> (<code>NIL</code>) due to issues
 described in <a href="Limitations.html">Known Limitations</a></li>
@@ -242,7 +243,7 @@ described in <a href="Limitations.html">Known Limitations</a></li>
         </article>
         <footer>
             <hr />
-            Extension <a href='Home.html'>3d_printing</a> - Version: 1.6 - <a href='https://cadm-inc-us.com/'>CADM, Inc</a>
+            Template project Created by PowerShell Module <a href='https://github.com/WetHat/MarkdownToHtml'>MarkdownToHTML</a>.
 
         </footer>
     </main>
