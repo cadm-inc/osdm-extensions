@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Modeling Extension Module _[:MODULE-TITLE](:RCR :resource)_ </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../vs2015.css" /> -->
+    <script src="../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>soco_router</div>
+<button class='navitem'><a href='Home.html'><i>soco_router</i> <b>Home</b></a></button>
+<button class='navitem'><a href='Architecture.html'>Auto-Router Architecture</a></button>
+<hr/>
+<div class='navlabel'>Page Contents</div>
+<button class='navitem'><a href='#modeling-extension-module-module-titlercr-resource'><span class='navitem1'>Modeling Extension Module <em>[:MODULE-TITLE](:RCR :resource)</em></span></a></button>
+<button class='navitem'><a href='#routing-components'><span class='navitem2'>Routing Components</span></a></button>
+<button class='navitem'><a href='#direct'><span class='navitem3'>Direct</span></a></button>
+<button class='navitem'><a href='#u-or-v'><span class='navitem3'>U or V</span></a></button>
+<button class='navitem'><a href='#u-v-u-or-v-u-v'><span class='navitem3'>U-V-U or V-U-V</span></a></button>
+<button class='navitem'><a href='#getting-started'><span class='navitem1'>Getting Started</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="modeling-extension-module-module-titlercr-resource" class="title">Modeling Extension Module <em>[:MODULE-TITLE](:RCR :resource)</em></h1>
+<p>This extension module provides automatic cable routing functionality for
+the <em>Rigid Cable Advisor</em>.</p>
+<p>Automatic routing is performed on one or more routing layers. If multiple layers
+are provided the router picks the best layer based on smallest estimated
+cable length and lowest number of bends required.</p>
+<h2 id="routing-components">Routing Components</h2>
+<blockquote>
+<h3 id="direct">Direct</h3>
+<p><img src="images/cableDirect.png" alt="Direct Routing" /></p>
+<p>The <strong>Direct</strong> component chooses the shortest (direct) connection between cable start and end.</p>
+</blockquote>
+<blockquote>
+<h3 id="u-or-v">U or V</h3>
+<p><img src="images/cableUV.png" alt="Isoparameter routing" /></p>
+<p>The <strong>U</strong> or <strong>V</strong> components route the cable along isoparameter lines of the
+routing layer</p>
+<h3 id="u-v-u-or-v-u-v">U-V-U or V-U-V</h3>
+<p><img src="images/cableUVU.png" alt="Stepped Routing" /></p>
+</blockquote>
+<blockquote>
+<p>The <strong>U-V-U</strong> or <strong>V-U-V</strong> components route the cable along two parallel
+isoparameter lines an connect them via a <em>step</em>&quot;</p>
+</blockquote>
+<h1 id="getting-started">Getting Started</h1>
+<ul>
+<li>[](:Installation :file)</li>
+<li>[](:Customization :file)</li>
+<li>[](:UI :file)</li>
+</ul>
+
+        </article>
+        <footer>
+            <hr />
+            Module: soco_router v1.3.19 - Build Date: Jan 20 2022; Copyright 2020 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>
