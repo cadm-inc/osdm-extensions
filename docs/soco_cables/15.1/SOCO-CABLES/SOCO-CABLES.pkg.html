@@ -1,0 +1,229 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SOCO-CABLES [Package] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_cables/index.html'>Rigid Cable Modeler</a></button>
+<div class='navlabel'>soco_cables</div>
+<button class='navitem'><a href='../Home.html'><i>soco_cables</i> <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization Overview</a></button>
+<button class='navitem'><a href='../rca_customize.html'>Cable Modeler Customization Guide</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface Overview</a></button>
+<button class='navitem'><a href='../user-manual.html'>Cable Modeler User Manual</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../SOCO-CABLES/SOCO-CABLES.pkg.html'>SOCO-CABLES</a></button>
+<hr/>
+<div class='navlabel'>Page Contents</div>
+<button class='navitem'><a href='#soco-cables-package'><span class='navitem1'>SOCO-CABLES [Package]</span></a></button>
+<button class='navitem'><a href='#programming-notes'><span class='navitem1'>Programming Notes</span></a></button>
+<button class='navitem'><a href='#package-contents'><span class='navitem1'>Package Contents</span></a></button>
+<button class='navitem'><a href='#dialogs'><span class='navitem2'>Dialogs</span></a></button>
+<button class='navitem'><a href='#variables-parameters-constants'><span class='navitem2'>Variables / Parameters / Constants</span></a></button>
+<button class='navitem'><a href='#generic-functions-macros-accessors'><span class='navitem2'>(Generic) Functions / Macros / Accessors</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="soco-cables-package" class="title">SOCO-CABLES [Package]</h1>
+<p>Primary Lisp package of the <code>soco_cables</code> <em>Modeling</em> extension module.</p>
+<p>The package <code>:SOCO-CABLES</code> (nicknamed <code>:RCA</code> or <code>:SOCO_CABLES</code>) contains
+cable modeling dialogs and a connector library for the <em>Rigid Cable Modeler</em>.</p>
+<h1 id="programming-notes">Programming Notes</h1>
+<p>This package is <strong>not</strong> intended to be included in the `:use' specification of
+other packages due to a high probability of name conflicts.
+To reference a facility provided by this package, code in another package
+must use an explicit package prefix, e.g.</p>
+<pre><code class="language-Lisp">(rca:load-module-customization)
+</code></pre>
+<h1 id="package-contents">Package Contents</h1>
+<h2 id="dialogs">Dialogs</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="RCA_SETTINGS.dia.html"><code>RCA_SETTINGS</code></a></td>
+<td style="text-align: left;">Edit customizable module settings.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variables-parameters-constants">Variables / Parameters / Constants</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="AArca-auto-clear-offset-pointsAA.var.html"><code>*rca-auto-clear-offset-points*</code></a></td>
+<td style="text-align: left;">Should point offset values be reset (i.e.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-cable-colorAA.var.html"><code>*rca-cable-color*</code></a></td>
+<td style="text-align: left;">Default color for cables {<code>integer</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-check-illegal-condAA.var.html"><code>*rca-check-illegal-cond*</code></a></td>
+<td style="text-align: left;">Show violated rules in display window {<code>boolean</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-comp-colorAA.var.html"><code>*rca-comp-color*</code></a></td>
+<td style="text-align: left;">Default color for components {<code>integer</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-conn1-colorAA.var.html"><code>*rca-conn1-color*</code></a></td>
+<td style="text-align: left;">Default color for connector1 {<code>integer</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-conn2-colorAA.var.html"><code>*rca-conn2-color*</code></a></td>
+<td style="text-align: left;">Default color for connector1 {<code>integer</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-create-lbl-comp-feedbackAA.var.html"><code>*rca-create-lbl-comp-feedback*</code></a></td>
+<td style="text-align: left;">Determine if labels for components should be shown {<code>boolean</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-display-cable-path-onlyAA.var.html"><code>*rca-display-cable-path-only*</code></a></td>
+<td style="text-align: left;">Only display cable path when adding/editing points {<code>boolean</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-enable-cell-editingAA.var.html"><code>*rca-enable-cell-editing*</code></a></td>
+<td style="text-align: left;">Allow editing of point values directly in table (no multi-selection) {<code>boolean</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-keep-current-partAA.var.html"><code>*rca-keep-current-part*</code></a></td>
+<td style="text-align: left;">Keep current part when editing cable (if nil, cable becomes current part) {<code>boolean</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-lbl-rel-sizeAA.var.html"><code>*rca-lbl-rel-size*</code></a></td>
+<td style="text-align: left;">Relative size of label with regard to total length of cable {<code>float</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-model-tip-distAA.var.html"><code>*rca-model-tip-dist*</code></a></td>
+<td style="text-align: left;">Let cable protrude through the connector {<code>boolean</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AArca-use-previous-cabledataAA.var.html"><code>*rca-use-previous-cabledata*</code></a></td>
+<td style="text-align: left;">Reuse previous points if creating a new cable {<code>boolean</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAuser-interface-integrationAA.var.html"><code>*user-interface-integration*</code></a></td>
+<td style="text-align: left;">Modeling user interface integration level {<code>keyword</code>} for this extension module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="+module-id+.var.html"><code>+module-id+</code></a></td>
+<td style="text-align: left;">The extension module ID.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="generic-functions-macros-accessors">(Generic) Functions / Macros / Accessors</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="about-module.fun.html"><code>about-module</code></a></td>
+<td style="text-align: left;">Show the <code>soco_cables</code> <em>about</em> information in the <em>Modeling</em> output textbox.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="activate-module.fun.html"><code>activate-module</code></a></td>
+<td style="text-align: left;">Activate this module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="deactivate-module.fun.html"><code>deactivate-module</code></a></td>
+<td style="text-align: left;">Deactivate this module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="display-module-help.fun.html"><code>display-module-help</code></a></td>
+<td style="text-align: left;">Display a module help page in the browser.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="get-available-commands.fun.html"><code>get-available-commands</code></a></td>
+<td style="text-align: left;">Get a list of commands availalable for this module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="get-module-manifest.fun.html"><code>get-module-manifest</code></a></td>
+<td style="text-align: left;">Get the extension module manifest.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="load-module-customization.fun.html"><code>load-module-customization</code></a></td>
+<td style="text-align: left;">Load or re-load the module customizations.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="module-active-p.fun.html"><code>module-active-p</code></a></td>
+<td style="text-align: left;">Predicate to termine if this extension module is active.</td>
+</tr>
+</tbody>
+</table>
+
+        </article>
+        <footer>
+            <hr />
+            Module: soco_cables v15.1.4 - Build Date: Jan 20 2022; Copyright 2020 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>

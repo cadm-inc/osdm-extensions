@@ -1,0 +1,205 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>RCA_SETTINGS [Public Dialog] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_cables/index.html'>Rigid Cable Modeler</a></button>
+<div class='navlabel'>soco_cables</div>
+<button class='navitem'><a href='../Home.html'><i>soco_cables</i> <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization Overview</a></button>
+<button class='navitem'><a href='../rca_customize.html'>Cable Modeler Customization Guide</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface Overview</a></button>
+<button class='navitem'><a href='../user-manual.html'>Cable Modeler User Manual</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../SOCO-CABLES/SOCO-CABLES.pkg.html'>SOCO-CABLES</a></button>
+<hr/>
+<div class='navlabel'>Page Contents</div>
+<button class='navitem'><a href='#rca_settings-public-dialog'><span class='navitem1'>RCA_SETTINGS [Public Dialog]</span></a></button>
+<button class='navitem'><a href='#dialog'><span class='navitem1'>Dialog</span></a></button>
+<button class='navitem'><a href='#syntax'><span class='navitem1'>Syntax</span></a></button>
+<button class='navitem'><a href='#options'><span class='navitem1'>Options</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="rca_settings-public-dialog" class="title">RCA_SETTINGS [Public Dialog]</h1>
+<p class="package">Package: <a href="SOCO-CABLES.pkg.html"><code>soco-cables</code></a> (Nick name(s): <code>:rca</code> <code>:soco_cables</code>) </p>
+<p>Edit customizable module settings.</p>
+<p>The settings dialog can be activated via the <em>Modeling Settings</em> user interface
+(<code>File -&gt; Settings -&gt; Extensions -&gt; Rigid Cable Settings ...</code>).</p>
+<p><strong>See also</strong>: The <a href="../rca_customize.html">Rigid Cable Advisor Customization Guide</a>
+for all customization options.</p>
+<h1 id="dialog">Dialog</h1>
+<p><img src="images/Settings_dia.png" class="leftfloat" alt="Settings Dialog" /></p>
+<ol>
+<li>Changes <a href="AArca-conn1-colorAA.var.html"><code>*rca-conn1-color*</code></a> (Default color for connector1 {<code>integer</code>})</li>
+<li>Changes <a href="AArca-conn2-colorAA.var.html"><code>*rca-conn2-color*</code></a> (Default color for connector1 {<code>integer</code>})</li>
+<li>Changes <a href="AArca-cable-colorAA.var.html"><code>*rca-cable-color*</code></a> (Default color for cables {<code>integer</code>})</li>
+<li>Changes <a href="AArca-comp-colorAA.var.html"><code>*rca-comp-color*</code></a> (Default color for components {<code>integer</code>})</li>
+<li>Changes <a href="AArca-lbl-rel-sizeAA.var.html"><code>*rca-lbl-rel-size*</code></a> (Relative size of label with regard to total length of cable {<code>float</code>})</li>
+<li>Changes <a href="AArca-model-tip-distAA.var.html"><code>*rca-model-tip-dist*</code></a> (Let cable protrude through the connector {<code>boolean</code>})</li>
+<li>Changes <a href="AArca-create-lbl-comp-feedbackAA.var.html"><code>*rca-create-lbl-comp-feedback*</code></a> (Determine if labels for components should be shown {<code>boolean</code>})</li>
+<li>Changes <a href="AArca-use-previous-cabledataAA.var.html"><code>*rca-use-previous-cabledata*</code></a> (Reuse previous points if creating a new cable {<code>boolean</code>})</li>
+<li>Changes <a href="AArca-auto-clear-offset-pointsAA.var.html"><code>*rca-auto-clear-offset-points*</code></a> (Should point offset values be reset (i.e)</li>
+<li>Changes <a href="AArca-display-cable-path-onlyAA.var.html"><code>*rca-display-cable-path-only*</code></a> (Only display cable path when adding/editing points {<code>boolean</code>})</li>
+<li>Changes <a href="AArca-check-illegal-condAA.var.html"><code>*rca-check-illegal-cond*</code></a> (Show violated rules in display window {<code>boolean</code>})</li>
+<li>Changes <a href="AArca-enable-cell-editingAA.var.html"><code>*rca-enable-cell-editing*</code></a> (Allow editing of point values directly in table (no multi-selection) {<code>boolean</code>})</li>
+<li>Changes <a href="AArca-keep-current-partAA.var.html"><code>*rca-keep-current-part*</code></a> (Keep current part when editing cable (if nil, cable becomes current part) {<code>boolean</code>})</li>
+<li>Reset the settings to the startup configuration.</li>
+</ol>
+<h1 id="syntax">Syntax</h1>
+<div class="mermaid">graph LR
+
+action(RCA_SETTINGS) --> in{ }
+
+in --> MODEL_TIP_DIST(:MODEL_TIP_DIST)
+MODEL_TIP_DIST -.-> MODEL_TIP_DIST-arg[":YES | :NO"]
+MODEL_TIP_DIST-arg --> out{ }
+
+in --> CONN1_COLOR(:CONN1_COLOR)
+CONN1_COLOR -.-> CONN1_COLOR-arg[rgb]
+CONN1_COLOR-arg --> out{ }
+
+in --> CONN2_COLOR(:CONN2_COLOR)
+CONN2_COLOR -.-> CONN2_COLOR-arg[rgb]
+CONN2_COLOR-arg --> out{ }
+
+in --> CABLE_COLOR(:CABLE_COLOR)
+CABLE_COLOR -.-> CABLE_COLOR-arg[rgb]
+CABLE_COLOR-arg --> out{ }
+
+in --> COMP_COLOR(:COMP_COLOR)
+COMP_COLOR -.-> COMP_COLOR-arg[rgb]
+COMP_COLOR-arg --> out{ }
+
+in --> REL_LBL_SIZE(:REL_LBL_SIZE)
+REL_LBL_SIZE -.-> REL_LBL_SIZE-arg[scale]
+REL_LBL_SIZE-arg --> out{ }
+
+in --> LBL_COMP_FEEDBACK(:LBL_COMP_FEEDBACK)
+LBL_COMP_FEEDBACK -.-> LBL_COMP_FEEDBACK-arg[":YES | :NO"]
+LBL_COMP_FEEDBACK-arg --> out{ }
+
+in --> USE_PREVIOUS_CABLEDATA(:USE_PREVIOUS_CABLEDATA)
+USE_PREVIOUS_CABLEDATA -.-> USE_PREVIOUS_CABLEDATA-arg[":YES | :NO"]
+USE_PREVIOUS_CABLEDATA-arg --> out{ }
+
+in --> CLEAR_OFFSET_POINTS(:CLEAR_OFFSET_POINTS)
+CLEAR_OFFSET_POINTS -.-> CLEAR_OFFSET_POINTS-arg[":YES | :NO"]
+CLEAR_OFFSET_POINTS-arg --> out{ }
+
+in --> CABLE_PATH_ONLY(:CABLE_PATH_ONLY)
+CABLE_PATH_ONLY -.-> CABLE_PATH_ONLY-arg[":YES | :NO"]
+CABLE_PATH_ONLY-arg --> out{ }
+
+in --> CHECK_RULES(:CHECK_RULES)
+CHECK_RULES -.-> CHECK_RULES-arg[":YES | :NO"]
+CHECK_RULES-arg --> out{ }
+
+in --> ENABLE_CELL_EDITING(:ENABLE_CELL_EDITING)
+ENABLE_CELL_EDITING -.-> ENABLE_CELL_EDITING-arg[":YES | :NO"]
+ENABLE_CELL_EDITING-arg --> out{ }
+
+in --> KEEP_CURRENT_PART(:KEEP_CURRENT_PART)
+KEEP_CURRENT_PART -.-> KEEP_CURRENT_PART-arg[":YES | :NO"]
+KEEP_CURRENT_PART-arg --> out{ }
+
+in --> reset(:RESET)
+reset --> out
+
+out--> in
+out --> OK(COMPLETE)
+</div>
+<h1 id="options">Options</h1>
+<dl>
+<dt><code>:MODEL_TIP_DIST</code> {<code>:YES</code> | <code>:NO</code>}</dt>
+<dd>Configures <a href="AArca-model-tip-distAA.var.html"><code>*rca-model-tip-dist*</code></a> (Let cable protrude through the connector {<code>boolean</code>})</dd>
+<dt><code>:CONN1_COLOR</code> {<code>integer</code>}</dt>
+<dd>Configures <a href="AArca-conn1-colorAA.var.html"><code>*rca-conn1-color*</code></a> (Default color for connector1 {<code>integer</code>})</dd>
+<dt><code>CONN2_COLOR</code> {<code>integer</code>}</dt>
+<dd>Configures <a href="AArca-conn2-colorAA.var.html"><code>*rca-conn2-color*</code></a> (Default color for connector1 {<code>integer</code>})</dd>
+<dt><code>:CABLE_COLOR</code> {<code>integer</code>}</dt>
+<dd>Configures <a href="AArca-cable-colorAA.var.html"><code>*rca-cable-color*</code></a> (Default color for cables {<code>integer</code>})</dd>
+<dt><code>:COMP_COLOR</code> {<code>integer</code>}</dt>
+<dd>Configures <a href="AArca-comp-colorAA.var.html"><code>*rca-comp-color*</code></a> (Default color for components {<code>integer</code>})</dd>
+<dt><code>:REL_LBL_SIZE</code> {<code>float</code>}</dt>
+<dd>Configures <a href="AArca-lbl-rel-sizeAA.var.html"><code>*rca-lbl-rel-size*</code></a> (Relative size of label with regard to total length of cable {<code>float</code>})</dd>
+<dt><code>:LBL_COMP_FEEDBACK</code> {<code>:YES</code> | <code>:NO</code>}</dt>
+<dd>Configures <a href="AArca-create-lbl-comp-feedbackAA.var.html"><code>*rca-create-lbl-comp-feedback*</code></a> (Determine if labels for components should be shown {<code>boolean</code>})</dd>
+<dt><code>:USE_PREVIOUS_CABLEDATA</code> {<code>:YES</code> | <code>:NO</code>}</dt>
+<dd>Configures <a href="AArca-use-previous-cabledataAA.var.html"><code>*rca-use-previous-cabledata*</code></a> (Reuse previous points if creating a new cable {<code>boolean</code>})</dd>
+<dt><code>:CLEAR_OFFSET_POINTS</code> {<code>:YES</code> | <code>:NO</code>}</dt>
+<dd>Configures <a href="AArca-auto-clear-offset-pointsAA.var.html"><code>*rca-auto-clear-offset-points*</code></a> (Should point offset values be reset (i.e)</dd>
+<dt><code>:CABLE_PATH_ONLY</code> {<code>:YES</code> | <code>:NO</code>}</dt>
+<dd>Configures <a href="AArca-display-cable-path-onlyAA.var.html"><code>*rca-display-cable-path-only*</code></a> (Only display cable path when adding/editing points {<code>boolean</code>})</dd>
+<dt><code>:CHECK_RULES</code> {<code>:YES</code> | <code>:NO</code>}</dt>
+<dd>Configures <a href="AArca-check-illegal-condAA.var.html"><code>*rca-check-illegal-cond*</code></a> (Show violated rules in display window {<code>boolean</code>})</dd>
+<dt><code>:ENABLE_CELL_EDITING</code> {<code>:YES</code> | <code>:NO</code>}</dt>
+<dd>Configures <a href="AArca-enable-cell-editingAA.var.html"><code>*rca-enable-cell-editing*</code></a> (Allow editing of point values directly in table (no multi-selection) {<code>boolean</code>})</dd>
+<dt><code>:KEEP_CURRENT_PART</code> {<code>:YES</code> | <code>:NO</code>}</dt>
+<dd>
+<p>Configures <a href="AArca-keep-current-partAA.var.html"><code>*rca-keep-current-part*</code></a> (Keep current part when editing cable (if nil, cable becomes current part) {<code>boolean</code>})</p>
+</dd>
+</dl>
+
+        </article>
+        <footer>
+            <hr />
+            Module: soco_cables v15.1.4 - Build Date: Jan 20 2022; Copyright 2020 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,62 @@
+{
+    "markdown_dir": "markdown",
+
+    "site_dir": "html",
+
+    "HTML_template": "DocTemplate",
+    
+    "Exclude": [
+    ],
+
+    "markdown_extensions": [
+        "common",
+        "definitionlists",
+        "mathematics",
+        "diagrams",
+        "pipetables",
+        "attributes",
+        "medialinks",
+        "autolinks",
+        "autoidentifiers"
+    ],
+
+    "github_pages": false,
+
+     "footer": "Module: soco_cables v15.1.4 - Build Date: Jan 20 2022; Copyright 2020 CADM, Inc",
+
+    "navigation_bar": {
+        "capture_page_headings": "123456",
+        "templates": {
+            "navitem": "<button class='navitem'><a href='{{navurl}}'>{{navtext}}</a></button>",
+            "navlabel": "<div class='navlabel'>{{navtext}}</div>",
+            "navseparator": "<hr/>",
+            "navheading": "<span class='navitem{{level}}'>{{navtext}}</span>"
+      }
+    },
+
+    "site_navigation": [
+        { "soco_cables": "" },
+        { "<i>soco_cables</i> <b>Home</b>": "Home.md" },
+        { "Installation": "Installation.md"},
+        { "Customization Overview": "Customization.md"},
+        { "Cable Modeler Customization Guide": "rca_customize.html"},
+        { "User Interface Overview": "UI.md"},
+        { "Cable Modeler User Manual": "user-manual.html"},
+        { "Lisp API" : ""},
+        { "SOCO-CABLES": "SOCO-CABLES/SOCO-CABLES.pkg.md"},
+        {"---":""}
+    ],
+
+    "page_navigation_header": [
+        { "Page Contents": "" }
+    ],
+
+    "svgbob": {
+        "background": "white",
+        "fill_color": "black",
+        "font_size": 14,
+        "font_family": "Monospace",
+        "scale": 1,
+        "stroke_width": 1
+    }
+}

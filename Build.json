@@ -20,7 +20,7 @@
         "autoidentifiers"
     ],
 
-    "footer": "Template project Created by PowerShell Module <a href='https://github.com/WetHat/MarkdownToHtml'>MarkdownToHTML</a>.",
+    "footer": "<a href='https://cadm-inc-us.com/'>CADM, Inc</a> Providing Solutions for Creo Elements/Direct (CoCreate)",
 
     "navigation_bar": {
         "capture_page_headings": "123456",
@@ -35,13 +35,14 @@
     "site_navigation": [
         { "<img width='90%' src='CADM-logo.jpg' />": "https://cadm-inc-us.com/" },
         { "CADM Documentation Hub": "index.md" },
-        { "Extensions": "" },
+        { "Modeling Extensions": "" },
         { "3-D Manufacturing": "3d_printing/index.md" },
-        { "Automated Document Generator": "ADGservice/index.md" }
+        { "Automated Document Generator": "ADGservice/index.md" },
+        { "Rigid Cable Modeler": "soco_cables/index.md" }
     ],
 
     "page_navigation_header": [
-        { "---": "" }
+        { "Page Contents": "" }
     ],
 
     "github_pages": true,
