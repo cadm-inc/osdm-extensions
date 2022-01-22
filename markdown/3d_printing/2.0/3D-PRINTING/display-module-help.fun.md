@@ -13,7 +13,7 @@ Display a module help page in the browser.
 _page_ {`string` ["Home.html"]}
 :   Optional relative path to help page. The path is relative to the extension module's
     `documentation/pub/html` directory. If this parameter is not provided, the module
-    documentation [Modeling Extension Module '3d_printing'](../Home.md) is opened.
+    documentation [Manufacturing Data Extension Module '3-D Printing'](../Home.md) is opened.
 
 # Returns
 

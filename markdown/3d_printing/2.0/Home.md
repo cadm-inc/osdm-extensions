@@ -1,4 +1,4 @@
-# Modeling Extension Module '3d_printing' {.title}
+# Manufacturing Data Extension Module '3-D Printing' {.title}
 
 # 3D Printing Extension Data Sheet
 

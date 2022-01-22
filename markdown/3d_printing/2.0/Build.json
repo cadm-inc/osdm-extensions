@@ -34,8 +34,8 @@
     },
 
     "site_navigation": [
-        { "3d_printing": "" },
-        { "<i>3d_printing</i> <b>Home</b>": "Home.md" },
+        { "3-D Printing": "" },
+        { "Module <b>Home</b>": "Home.md" },
         { "Installation": "Installation.md"},
         { "Customization": "Customization.md"},
         { "User Interface": "UI.md"},
