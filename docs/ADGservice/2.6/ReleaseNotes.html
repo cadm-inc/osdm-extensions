@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>_ADGservice_ Modeling Extension Release Notes </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../vs2015.css" /> -->
+    <script src="../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>ADGService</div>
+<button class='navitem'><a href='Home.html'><i>ADGService</i> <b>Home</b></a></button>
+<button class='navitem'><a href='Architecture.html'>Architecture</a></button>
+<button class='navitem'><a href='Installation.html'>Installation</a></button>
+<button class='navitem'><a href='Customization.html'>Customization</a></button>
+<button class='navitem'><a href='UI.html'>User Interface</a></button>
+<button class='navitem'><a href='ReleaseNotes.html'>Release Notes</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='CADM-AUTO-DOC-GEN/CADM-AUTO-DOC-GEN.pkg.html'>CADM-AUTO-DOC-GEN</a></button>
+<hr/>
+<div class='navlabel'>Page Contents</div>
+<button class='navitem'><a href='#adgservice-modeling-extension-release-notes'><span class='navitem1'><em>ADGservice</em> Modeling Extension Release Notes</span></a></button>
+<button class='navitem'><a href='#feature-release'><span class='navitem1'>2.6.0 - Feature Release</span></a></button>
+<button class='navitem'><a href='#maintenance-release'><span class='navitem1'>2.5.4 - Maintenance Release</span></a></button>
+<button class='navitem'><a href='#bugfix-release'><span class='navitem1'>2.5.3 - Bugfix Release</span></a></button>
+<button class='navitem'><a href='#bugfix-release-1'><span class='navitem1'>2.5.2 - Bugfix Release</span></a></button>
+<button class='navitem'><a href='#bugfix-release-2'><span class='navitem1'>2.5.1 - Bugfix Release</span></a></button>
+<button class='navitem'><a href='#feature-release-1'><span class='navitem1'>2.5.0 - Feature Release</span></a></button>
+<button class='navitem'><a href='#maintenance-release-1'><span class='navitem1'>2.4.12 - Maintenance Release</span></a></button>
+<button class='navitem'><a href='#bugfix-release-3'><span class='navitem1'>2.4.11 - Bugfix Release</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="adgservice-modeling-extension-release-notes" class="title"><em>ADGservice</em> Modeling Extension Release Notes</h1>
+<h1 id="feature-release">2.6.0 - Feature Release</h1>
+<ul>
+<li>SVG export option added for 2d files. Current implementation only supports the
+basic 8 colors.</li>
+<li>added ability to include containers in step-direct-options.</li>
+<li>fixed problem with creo nuetral file creations (error with zip files).</li>
+</ul>
+<h1 id="maintenance-release">2.5.4 - Maintenance Release</h1>
+<ul>
+<li>allow 2d and 3d outputs to be specified in a batch job even if there is no
+corresponding data without producing an error</li>
+</ul>
+<h1 id="bugfix-release">2.5.3 - Bugfix Release</h1>
+<ul>
+<li>show face area stats on body compare diffs</li>
+<li>only mail validation reports when there are diffs</li>
+</ul>
+<h1 id="bugfix-release-1">2.5.2 - Bugfix Release</h1>
+<ul>
+<li>for step granite, always convert filenames to legal characters and then rename them back to original name</li>
+</ul>
+<h1 id="bugfix-release-2">2.5.1 - Bugfix Release</h1>
+<ul>
+<li>Special case validation for option groups with constraints</li>
+<li>if validation fails, continue processing rest of possible objects to validate</li>
+<li>keep a copy of the invoice on the server with job data</li>
+<li>use funcall-protected around calls to save</li>
+<li>fix read-only issue with saving sdfiles, fix step export</li>
+<li>introduced new concept of :virutal groups</li>
+<li>improved information in results report, orgainzed reports by subfolders</li>
+<li>modified validate export options to appear below validate export button</li>
+<li>added more details on validation help pages</li>
+<li>fixed link problems</li>
+<li>cleaned up some references to PTC</li>
+<li>changed sender to submitter</li>
+<li>don't report on affected_geometry in validation results</li>
+<li>correct output name of folder for reports</li>
+</ul>
+<h1 id="feature-release-1">2.5.0 - Feature Release</h1>
+<ul>
+<li>use append instead of nconc for tracking 2d files generated</li>
+<li>handle am_load_any_mi file failures due to see log message error</li>
+<li>Auto submit option hidden until submit button is pressed with validation errors
+present</li>
+<li>Job context cleanup only if job is not going to be restarted</li>
+<li>lock the input file not the input folder</li>
+<li>Auto-submit job when uploads are finished option implemented</li>
+<li>Logging enhancements</li>
+</ul>
+<h1 id="maintenance-release-1">2.4.12 - Maintenance Release</h1>
+<ul>
+<li>modify input file batch suffix to .txt</li>
+<li>change all log file attachments sent to customers to have .txt suffix</li>
+</ul>
+<h1 id="bugfix-release-3">2.4.11 - Bugfix Release</h1>
+<ul>
+<li>Email spam folder check hint added to job status.</li>
+<li>Wording of email check warning improved as per Marc's request.</li>
+<li>Protected against invoice tokens with control characters.</li>
+<li>set email_errors to email_from if not set</li>
+</ul>
+
+        </article>
+        <footer>
+            <hr />
+            Module: ADGservice v2.6.0 - Build Date: Feb  2 2022; Copyright 2018-2021 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>

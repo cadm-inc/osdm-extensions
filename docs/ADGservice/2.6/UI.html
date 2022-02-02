@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>The Extension Module User Interface </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../vs2015.css" /> -->
+    <script src="../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>ADGService</div>
+<button class='navitem'><a href='Home.html'><i>ADGService</i> <b>Home</b></a></button>
+<button class='navitem'><a href='Architecture.html'>Architecture</a></button>
+<button class='navitem'><a href='Installation.html'>Installation</a></button>
+<button class='navitem'><a href='Customization.html'>Customization</a></button>
+<button class='navitem'><a href='UI.html'>User Interface</a></button>
+<button class='navitem'><a href='ReleaseNotes.html'>Release Notes</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='CADM-AUTO-DOC-GEN/CADM-AUTO-DOC-GEN.pkg.html'>CADM-AUTO-DOC-GEN</a></button>
+<hr/>
+<div class='navlabel'>Page Contents</div>
+<button class='navitem'><a href='#the-extension-module-user-interface'><span class='navitem1'>The Extension Module User Interface</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="the-extension-module-user-interface" class="title">The Extension Module User Interface</h1>
+<p>The functionality of this extension module is accessible from the <em>Modeling</em> user interface
+in several locations. The most used dialogs of the extension module are accessible via a command group in
+the <strong>Extensions</strong> tab of the
+<em>Modeling</em> ribbon bar.</p>
+<p><img src="images/Ribbon.png" class="leftfloat" alt="Module Command Group in the Ribbon" /></p>
+<ol>
+<li>[:summary]</li>
+<li>Help actions:
+<ul>
+<li>Display the doc documentation for the Auto Doc Generator</li>
+<li>Display general module information. See also <a href="CADM-AUTO-DOC-GEN/about-module.fun.html"><code>cadm-auto-doc-gen:about-module</code></a></li>
+</ul>
+</li>
+<li><a href="CADM-AUTO-DOC-GEN/ADG_SETTINGS.dia.html"><code>cadm-auto-doc-gen:ADG_SETTINGS</code></a> (Edit customizable settings for the <code>ADGService</code> extension module)</li>
+</ol>
+<p>Module help and management dialogs are available in following locations:</p>
+<ul>
+<li><em>File -&gt; Settings -&gt; Extensions -&gt;</em>
+<strong>ADGService Settings ...</strong>: The <a href="CADM-AUTO-DOC-GEN/ADG_SETTINGS.dia.html"><code>cadm-auto-doc-gen:ADG_SETTINGS</code></a> (Edit customizable settings for the <code>ADGService</code> extension module)</li>
+<li><em>File -&gt;</em> <strong>Modules</strong>_: Opens the <em>Modeling</em> module management dialog where the extension module
+can be (de)activated in the CADM Extensions tab by
+(de)selecting <em>Auto Doc Generator</em></li>
+<li>In the <b>❔</b> command group located at the right end of the <em>Modeling</em> ribbon bar where
+the action <em>Auto Doc Generator</em> opens the module documentation in the browser.</li>
+</ul>
+
+        </article>
+        <footer>
+            <hr />
+            Module: ADGservice v2.6.0 - Build Date: Feb  2 2022; Copyright 2018-2021 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>
