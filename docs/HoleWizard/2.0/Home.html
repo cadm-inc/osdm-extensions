@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Modeling Extension Module _Hole Features_ </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../vs2015.css" /> -->
+    <script src="../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>HoleWizard</div>
+<button class='navitem'><a href='Home.html'><i>HoleWizard</i> <b>Home</b></a></button>
+<button class='navitem'><a href='Installation.html'>Installation</a></button>
+<button class='navitem'><a href='Customization.html'>Customization</a></button>
+<button class='navitem'><a href='UI.html'>User Interface</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='HOLEWIZARD/HOLEWIZARD.pkg.html'>HOLEWIZARD</a></button>
+<hr/>
+<div class='navlabel'>Page Contents</div>
+<button class='navitem'><a href='#modeling-extension-module-hole-features'><span class='navitem1'>Modeling Extension Module <em>Hole Features</em></span></a></button>
+<button class='navitem'><a href='#getting-started'><span class='navitem1'>Getting Started</span></a></button>
+<button class='navitem'><a href='#programming-interfaces'><span class='navitem1'>Programming Interfaces</span></a></button>
+<button class='navitem'><a href='#lisp-packages-in-this-module'><span class='navitem2'>Lisp packages in this module</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="modeling-extension-module-hole-features" class="title">Modeling Extension Module <em>Hole Features</em></h1>
+<p>The <em>Hole Feature</em> extension substantialy enhances the built-in <em>Machining</em> module and
+provides:</p>
+<p><img src="images/Holewizard.png" class="rightfloat" alt="HoleWizard UI" /></p>
+<ul>
+<li><p>A new graphical <em>Hole Feature Tool</em> dialog to allow hole creation and modification
+in an organized, easy-to-use way, including</p>
+<ul>
+<li>Management of frequently used hole specifications (favorites)</li>
+<li>Simple and advanced user interface</li>
+<li>All hole types accessible from one dialog</li>
+</ul>
+</li>
+<li><p>Configuration tools to define and manage hole features compliant with
+company standards. Full support of the <em>Modeling</em> customization infrastructure;</p>
+<ul>
+<li>hole features can be specified at <em>user</em>, <em>site</em>, and <em>company</em> levels.</li>
+<li>Customizable feature label templates</li>
+</ul>
+</li>
+<li><p>Support for common industry standard hole types</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: left;">Hole Type(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="images/CounterboredHole.png" alt="Counterbored Holes" /></td>
+<td style="text-align: left;">Counterbore Through Holes</td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="images/CountersunkHole.png" alt="Countersunk Holes" /></td>
+<td style="text-align: left;">Countersunk Through/Blind Holes</td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="images/DrilledHole.png" alt="Drilled Holes" /></td>
+<td style="text-align: left;">Drilled Through/Blind Holes</td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="images/ThreadedHole.png" alt="Threaded Holes" /></td>
+<td style="text-align: left;">Threaded Through/Blind Holes</td>
+</tr>
+</tbody>
+</table>
+<p>All hole features from the <em>Machining</em> module are available by default</p>
+</li>
+</ul>
+<h1 id="getting-started" class="unfloat">Getting Started</h1>
+<ul>
+<li><a href="Installation.html">Extension Module Installation and Startup</a></li>
+<li><a href="Customization.html">Extension Module Customization Overview</a></li>
+<li><a href="UI.html">The Extension Module User Interface</a></li>
+</ul>
+<h1 id="programming-interfaces">Programming Interfaces</h1>
+<h2 id="lisp-packages-in-this-module">Lisp packages in this module</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="HOLEWIZARD/HOLEWIZARD.pkg.html"><code>holewizard</code></a></td>
+<td style="text-align: left;">Primary Lisp package of the <code>HoleWizard</code> <em>Modeling</em> extension module.</td>
+</tr>
+</tbody>
+</table>
+
+        </article>
+        <footer>
+            <hr />
+            Module: HoleWizard v2.0.0 - Build Date: Jan 31 2022; Copyright 2015-2022 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>

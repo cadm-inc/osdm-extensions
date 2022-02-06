@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SHOW-HOLEWIZARD [Public Function] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>HoleWizard</div>
+<button class='navitem'><a href='../Home.html'><i>HoleWizard</i> <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../HOLEWIZARD/HOLEWIZARD.pkg.html'>HOLEWIZARD</a></button>
+<hr/>
+<div class='navlabel'>Page Contents</div>
+<button class='navitem'><a href='#show-holewizard-public-function'><span class='navitem1'>SHOW-HOLEWIZARD [Public Function]</span></a></button>
+<button class='navitem'><a href='#parameters'><span class='navitem1'>Parameters</span></a></button>
+<button class='navitem'><a href='#feature'><span class='navitem2'>:feature</span></a></button>
+<button class='navitem'><a href='#mode'><span class='navitem2'>:mode</span></a></button>
+<button class='navitem'><a href='#returns'><span class='navitem1'>Returns</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="show-holewizard-public-function" class="title">SHOW-HOLEWIZARD [Public Function]</h1>
+<p class="package">Package: <a href="HOLEWIZARD.pkg.html"><code>holewizard</code></a> (Nick name(s): <code>:hw</code>) </p>
+<pre><code class="language-lisp">(show-holewizard :feature feature
+                 :mode    action)
+</code></pre>
+<p>Show the <em>Hole Feature Tool</em> UICT UICT dialog.</p>
+<h1 id="parameters">Parameters</h1>
+<blockquote>
+<h2 id="feature" _SEL_ITEM_="">:feature</h2>
+<blockquote>
+<p>Hole feature to open the dialog with.
+Can be <code>nil</code> if the operation mode is <code>:CREATE</code>.</p>
+</blockquote>
+<h2 id="mode" _keyword_="">:mode</h2>
+<blockquote>
+<p>Operation mode. Can be <code>:CREATE</code>, <code>:MODIFY</code>, or <code>:COPY</code></p>
+</blockquote>
+</blockquote>
+<h1 id="returns">Returns</h1>
+<blockquote>
+<p><code>T</code> for success</p>
+</blockquote>
+
+        </article>
+        <footer>
+            <hr />
+            Module: HoleWizard v2.0.0 - Build Date: Jan 31 2022; Copyright 2015-2022 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>

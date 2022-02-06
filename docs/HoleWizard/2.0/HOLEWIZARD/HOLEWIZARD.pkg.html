@@ -1,0 +1,216 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HOLEWIZARD [Package] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>HoleWizard</div>
+<button class='navitem'><a href='../Home.html'><i>HoleWizard</i> <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../HOLEWIZARD/HOLEWIZARD.pkg.html'>HOLEWIZARD</a></button>
+<hr/>
+<div class='navlabel'>Page Contents</div>
+<button class='navitem'><a href='#holewizard-package'><span class='navitem1'>HOLEWIZARD [Package]</span></a></button>
+<button class='navitem'><a href='#supported-hole-types'><span class='navitem1'>Supported Hole Types</span></a></button>
+<button class='navitem'><a href='#integration-architecture-diagram'><span class='navitem1'>Integration Architecture Diagram</span></a></button>
+<button class='navitem'><a href='#programming-notes'><span class='navitem1'>Programming Notes</span></a></button>
+<button class='navitem'><a href='#package-contents'><span class='navitem1'>Package Contents</span></a></button>
+<button class='navitem'><a href='#dialogs'><span class='navitem2'>Dialogs</span></a></button>
+<button class='navitem'><a href='#variables-parameters-constants'><span class='navitem2'>Variables / Parameters / Constants</span></a></button>
+<button class='navitem'><a href='#generic-functions-macros-accessors'><span class='navitem2'>(Generic) Functions / Macros / Accessors</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="holewizard-package" class="title">HOLEWIZARD [Package]</h1>
+<p>Primary Lisp package of the <code>HoleWizard</code> <em>Modeling</em> extension module.</p>
+<p>The package <code>:HOLEWIZARD</code> (nicknamed <code>:HW</code>) provides dialogs, UICT controls and
+configuration tools to enhance the functionality of the built-in <em>Machining</em>
+module in following areas:</p>
+<ul>
+<li>An UICT based dialog shell for creation and modification of hole features in an
+simple and organized way.</li>
+<li>Configuration tools to define company specific hole features.</li>
+</ul>
+<h1 id="supported-hole-types">Supported Hole Types</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: left;">Hole Type(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><img src="images/CounterboredHole.png" alt="Counterbored Holes" /></td>
+<td style="text-align: left;">Counterbore Through Holes</td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="images/CountersunkHole.png" alt="Countersunk Holes" /></td>
+<td style="text-align: left;">Countersunk Through/Blind Holes</td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="images/DrilledHole.png" alt="Drilled Holes" /></td>
+<td style="text-align: left;">Drilled Through/Blind Holes</td>
+</tr>
+<tr>
+<td style="text-align: center;"><img src="images/ThreadedHole.png" alt="Threaded Holes" /></td>
+<td style="text-align: left;">Threaded Through/Blind Holes</td>
+</tr>
+</tbody>
+</table>
+<h1 id="integration-architecture-diagram">Integration Architecture Diagram</h1>
+<p><a href="images/HoleWizardArchitecture.png">Integration Architecture</a></p>
+<h1 id="programming-notes">Programming Notes</h1>
+<p>This package is <strong>not</strong> intended to be included in the <code>:use</code> specification of
+other packages due to a high probability of name conflicts.
+To reference a facility provided by this package, code in another package
+must use an explicit package prefix, e.g.</p>
+<pre><code class="language-Lisp">(hw:load-module-customization)
+</code></pre>
+<h1 id="package-contents">Package Contents</h1>
+<h2 id="dialogs">Dialogs</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="HW_SETTINGS.dia.html"><code>HW_SETTINGS</code></a></td>
+<td style="text-align: left;">Edit customizable settings for the <code>HoleWizard</code> extension module.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variables-parameters-constants">Variables / Parameters / Constants</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="AAuser-interface-integrationAA.var.html"><code>*user-interface-integration*</code></a></td>
+<td style="text-align: left;">Modeling user interface integration level {<code>keyword</code>} for this extension module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="+module-id+.var.html"><code>+module-id+</code></a></td>
+<td style="text-align: left;">The extension module ID.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="generic-functions-macros-accessors">(Generic) Functions / Macros / Accessors</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="about-module.fun.html"><code>about-module</code></a></td>
+<td style="text-align: left;">Show the <code>HoleWizard</code> <em>about</em> information in the <em>Modeling</em> output textbox.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="activate-module.fun.html"><code>activate-module</code></a></td>
+<td style="text-align: left;">Activate this module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="deactivate-module.fun.html"><code>deactivate-module</code></a></td>
+<td style="text-align: left;">Deactivate this module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="display-module-help.fun.html"><code>display-module-help</code></a></td>
+<td style="text-align: left;">Display a module help page in the browser.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="get-available-commands.fun.html"><code>get-available-commands</code></a></td>
+<td style="text-align: left;">Get a list of commands availalable for this module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="get-module-manifest.fun.html"><code>get-module-manifest</code></a></td>
+<td style="text-align: left;">Get the extension module manifest.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="load-module-customization.fun.html"><code>load-module-customization</code></a></td>
+<td style="text-align: left;">Load or re-load the module customizations.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="module-active-p.fun.html"><code>module-active-p</code></a></td>
+<td style="text-align: left;">Predicate to termine if this extension module is active.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="show-holewizard.fun.html"><code>show-holewizard</code></a></td>
+<td style="text-align: left;">Show the <em>Hole Feature Tool</em> UICT UICT dialog.</td>
+</tr>
+</tbody>
+</table>
+
+        </article>
+        <footer>
+            <hr />
+            Module: HoleWizard v2.0.0 - Build Date: Jan 31 2022; Copyright 2015-2022 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>
