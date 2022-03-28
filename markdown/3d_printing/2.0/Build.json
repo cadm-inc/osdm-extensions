@@ -10,7 +10,7 @@
 
     "github_pages": false,
 
-     "footer": "Module: 3d_printing v2.0.2 - Build Date: Nov 13 2021; Copyright 2014-2021 CADM, Inc",
+     "footer": "Module: 3d_printing v2.0.3 - Build Date: Mar 28 2022; Copyright 2014-2022 CADM, Inc",
 
     "markdown_extensions": [
         "common",

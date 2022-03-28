@@ -5,11 +5,15 @@ The 3d_printing extension module for Modeling provides tools for the
 
 # Latest Version
 
-* 2.0.2: [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/3d_printing/3d_printing_x64_2.0.2.zip) -
+* 2.0.3: [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/3d_printing/3d_printing_x64_2.0.3.zip) -
          [Documentation](2.0/Home.md) -
          [Release Notes](2.0/ReleaseNotes.md)
 
 # Previous Versions
+
+* 2.0.2: [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/3d_printing/3d_printing_x64_2.0.2.zip) -
+         [Documentation](2.0/Home.md) -
+         [Release Notes](2.0/ReleaseNotes.md)
 
 * 2.0.1: [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/3d_printing/3d_printing_x64_2.0.1.zip) -
          [Documentation](2.0/Home.md) -

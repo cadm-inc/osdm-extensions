@@ -1,5 +1,10 @@
 # Package Release Notes {.title}
 
+# 2.0.3 - Bugfix Release
+
+Fixed 'Nil is not of type cons' error due to change in k2 mass property API for
+Modeling 20.4.
+
 # 2.0.2 - Bugfix Release
 
 * Fixed invalid import assembly name when path to mf file is given.
