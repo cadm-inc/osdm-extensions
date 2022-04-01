@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Manufacturing Data Extension Module '3-D Printing' </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../vs2015.css" /> -->
+    <script src="../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>3-D Printing</div>
+<button class='navitem'><a href='Home.html'>Module <b>Home</b></a></button>
+<button class='navitem'><a href='Installation.html'>Installation</a></button>
+<button class='navitem'><a href='Customization.html'>Customization</a></button>
+<button class='navitem'><a href='UI.html'>User Interface</a></button>
+<button class='navitem'><a href='Limitations.html'>Limitations</a></button>
+<button class='navitem'><a href='ImportExamples.html'>Import Examples</a></button>
+<button class='navitem'><a href='ReleaseNotes.html'>Release Notes</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='3D-PRINTING/3D-PRINTING.pkg.html'>3D-PRINTING</a></button>
+<button class='navitem'><a href='3D-PRINTING.DATA-EXCHANGE/3D-PRINTING.DATA-EXCHANGE.pkg.html'>3D-PRINTING.DATA-EXCHANGE</a></button>
+<hr/>
+<div class='navlabel'>Page Contents</div>
+<button class='navitem'><a href='#manufacturing-data-extension-module-3-d-printing'><span class='navitem1'>Manufacturing Data Extension Module '3-D Printing'</span></a></button>
+<button class='navitem'><a href='#d-printing-extension-data-sheet'><span class='navitem1'>3D Printing Extension Data Sheet</span></a></button>
+<button class='navitem'><a href='#feature-overview'><span class='navitem1'>Feature Overview</span></a></button>
+<button class='navitem'><a href='#manufacturing-data-export'><span class='navitem2'>Manufacturing Data Export</span></a></button>
+<button class='navitem'><a href='#manufacturing-data-import'><span class='navitem2'>Manufacturing Data Import</span></a></button>
+<button class='navitem'><a href='#reverse-engineering-of-analytic-surfaces'><span class='navitem2'>Reverse Engineering of Analytic Surfaces</span></a></button>
+<button class='navitem'><a href='#mesh-quality-assessment'><span class='navitem2'>Mesh Quality Assessment</span></a></button>
+<button class='navitem'><a href='#getting-started'><span class='navitem1'>Getting Started</span></a></button>
+<button class='navitem'><a href='#programming-interfaces'><span class='navitem1'>Programming Interfaces</span></a></button>
+<button class='navitem'><a href='#lisp-packages-in-this-module'><span class='navitem2'>Lisp packages in this module</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="manufacturing-data-extension-module-3-d-printing" class="title">Manufacturing Data Extension Module '3-D Printing'</h1>
+<h1 id="d-printing-extension-data-sheet">3D Printing Extension Data Sheet</h1>
+<p>The <code>3d_printing</code> extension module for <em>Modeling</em> provides tools for the
+3-D printing process chain. It adds utilities and dialogs
+to import, export and work with manufacturing data in the industry standard
+formats <em>STL</em> and <em>3MF</em>.</p>
+<h1 id="feature-overview">Feature Overview</h1>
+<h2 id="manufacturing-data-export" class="unfloat">Manufacturing Data Export</h2>
+<blockquote>
+<p><img src="images/3mfExport.png" class="rightfloat" alt="Export Example" />
+3D CAD Models can be exported in popular manufacturing data formats STL and 3MF:</p>
+<ul>
+<li>Manufacturing data can be generated from CAD models with full control of linear and angular precision
+of the triangular mesh.</li>
+<li>3MF data export supports:
+<ul>
+<li>Assembly structures and part positioning</li>
+<li>Geometry sharing (Shared parts)</li>
+<li>Part colors</li>
+<li>Custom metadata</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="manufacturing-data-import" class="unfloat">Manufacturing Data Import</h2>
+<blockquote>
+<p><img src="images/3mfImport.png" class="rightfloat" alt="Import Example" />
+<em>STL</em> and <em>3MF</em> data can be imported to Modeling as:</p>
+<ul>
+<li>Lightweight graphical model supporting geometry inspection</li>
+<li>3D CAD model supporting modeling operation (depending on the data quality)</li>
+<li>3MF data import supports:
+<ul>
+<li>Metadata</li>
+<li>Component Structure (represented as assembly structure)</li>
+<li>Shared Components (represented as shared parts)</li>
+<li>Color</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="reverse-engineering-of-analytic-surfaces" class="unfloat">Reverse Engineering of Analytic Surfaces</h2>
+<blockquote>
+<p><img src="images/ReverseEngineered.png" class="rightfloat" alt="Surface Reconstruction Example" /></p>
+<ul>
+<li>Higher level surface regions are reconstructed from the triangular facet model with
+automatic or manual precision control.</li>
+<li>Based on supervised machine-learning algorithms.</li>
+<li>Significant data reduction</li>
+<li>Model and surface manipulation (depending on the data quality)</li>
+</ul>
+</blockquote>
+<h2 id="mesh-quality-assessment" class="unfloat">Mesh Quality Assessment</h2>
+<blockquote>
+<p><img src="images/MeshQuality.png" class="rightfloat" alt="Mesh Quality Assessment" />
+Compare manufacturing models (STL or 3mf) with their original CAD models
+to detect quality issues introduced during mesh postprocessing.</p>
+</blockquote>
+<h1 id="getting-started" class="unfloat">Getting Started</h1>
+<ul>
+<li><a href="Installation.html">Extension Module Installation and Startup</a></li>
+<li><a href="Customization.html">Extension Module Customization Overview</a></li>
+<li><a href="UI.html">The Extension Module User Interface</a></li>
+<li><a href="Limitations.html">Known Limitations</a></li>
+<li><a href="ImportExamples.html">Import Examples</a></li>
+<li><a href="ReleaseNotes.html">Package Release Notes</a></li>
+</ul>
+<h1 id="programming-interfaces">Programming Interfaces</h1>
+<h2 id="lisp-packages-in-this-module">Lisp packages in this module</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="3D-PRINTING/3D-PRINTING.pkg.html"><code>3d-printing</code></a></td>
+<td style="text-align: left;">Primary package of the <code>3d_printing</code> extension module for <em>Modeling</em>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="3D-PRINTING.DATA-EXCHANGE/3D-PRINTING.DATA-EXCHANGE.pkg.html"><code>3d-printing.data-exchange</code></a></td>
+<td style="text-align: left;">The package <code>:3D-PRINTING.DATA-EXCHANGE</code> (nicknamed <code>:3DP.X</code>) contains a LISP API and dialogs to import or export manufacturing data such as <em>STL</em> or <em>3MF</em> with optional reverse-engineering of facet-data into analytical surfaces.</td>
+</tr>
+</tbody>
+</table>
+
+        </article>
+        <footer>
+            <hr />
+            Module: 3d_printing v3.0.0 - Build Date: Apr  1 2022; Copyright 2014-2022 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="240">
+    <style>
+        line, path, circle, rect, polygon{stroke:black;stroke-width:1;stroke-opacity:1;fill-opacity:1;stroke-linecap:round;stroke-linejoin:miter;}text{font-family:Monospace;font-size:14px;}rect.backdrop{stroke:none;fill:white;}.broken{stroke-dasharray:8;}.filled{fill:black;}.bg_filled{fill:white;}.nofill{fill:white;}.end_marked_arrow{marker-end:url(#arrow);}.start_marked_arrow{marker-start:url(#arrow);}.end_marked_diamond{marker-end:url(#diamond);}.start_marked_diamond{marker-start:url(#diamond);}.end_marked_circle{marker-end:url(#circle);}.start_marked_circle{marker-start:url(#circle);}.end_marked_open_circle{marker-end:url(#open_circle);}.start_marked_open_circle{marker-start:url(#open_circle);}.end_marked_big_open_circle{marker-end:url(#big_open_circle);}.start_marked_big_open_circle{marker-start:url(#big_open_circle);}
+        <!--separator-->
+        
+    </style>
+    <defs>
+        <marker id="arrow" viewBox="-2 -2 8 8" refX="4" refY="2" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,0 0,4 4,2 0,0"></polygon>
+        </marker>
+        <marker id="diamond" viewBox="-2 -2 8 8" refX="4" refY="2" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,2 2,0 4,2 2,4 0,2"></polygon>
+        </marker>
+        <marker id="circle" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <circle cx="4" cy="4" r="2" class="filled"></circle>
+        </marker>
+        <marker id="open_circle" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <circle cx="4" cy="4" r="2" class="bg_filled"></circle>
+        </marker>
+        <marker id="big_open_circle" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <circle cx="4" cy="4" r="3" class="bg_filled"></circle>
+        </marker>
+    </defs>
+    <rect class="backdrop" x="0" y="0" width="680" height="240"></rect>
+    <text x="18" y="60" >SAVE</text>
+    <line x1="48" y1="64" x2="56" y2="64" class="solid"></line>
+    <text x="58" y="60" >3MF</text>
+    <line x1="80" y1="64" x2="88" y2="64" class="solid"></line>
+    <text x="90" y="60" >MODEL</text>
+    <circle cx="172" cy="56" r="4" class="nofill"></circle>
+    <text x="218" y="60" >:3MF</text>
+    <line x1="248" y1="64" x2="256" y2="64" class="solid"></line>
+    <text x="258" y="60" >FILENAME</text>
+    <text x="378" y="60" >file</text>
+    <circle cx="548" cy="56" r="4" class="nofill"></circle>
+    <text x="594" y="60" >COMPLETE</text>
+    <text x="218" y="108" >:OBJECTS</text>
+    <text x="378" y="108" >parts</text>
+    <line x1="424" y1="96" x2="416" y2="112" class="solid"></line>
+    <text x="426" y="108" >assemblies</text>
+    <text x="218" y="156" >:DISTANCE</text>
+    <text x="378" y="156" >length</text>
+    <text x="218" y="204" >:ANGLE</text>
+    <text x="378" y="204" >angle</text>
+    <g>
+        <path d="M 180,8 A 8,8 0,0,0 172,16" class="nofill"></path>
+        <line x1="180" y1="8" x2="192" y2="8" class="solid"></line>
+        <polygon points="200,4 192,8 200,12" class="filled"></polygon>
+        <line x1="200" y1="8" x2="344" y2="8" class="solid"></line>
+        <polygon points="352,4 344,8 352,12" class="filled"></polygon>
+        <line x1="352" y1="8" x2="528" y2="8" class="solid"></line>
+        <polygon points="536,4 528,8 536,12" class="filled"></polygon>
+        <line x1="536" y1="8" x2="544" y2="8" class="solid"></line>
+        <path d="M 544,8 A 4,4 0,0,1 548,12" class="nofill"></path>
+        <line x1="548" y1="12" x2="548" y2="52" class="solid"></line>
+        <line x1="172" y1="16" x2="172" y2="52" class="solid"></line>
+    </g>
+    <g>
+        <line x1="4" y1="40" x2="140" y2="40" class="solid"></line>
+        <line x1="4" y1="40" x2="4" y2="72" class="solid"></line>
+        <line x1="140" y1="40" x2="140" y2="72" class="solid"></line>
+        <line x1="140" y1="56" x2="152" y2="56" class="solid"></line>
+        <polygon points="152,52 160,56 152,60" class="filled"></polygon>
+        <line x1="160" y1="56" x2="168" y2="56" class="solid"></line>
+        <line x1="4" y1="72" x2="140" y2="72" class="solid"></line>
+    </g>
+    <g>
+        <path d="M 208,40 A 4,4 0,0,0 204,44" class="nofill"></path>
+        <line x1="204" y1="44" x2="204" y2="68" class="solid"></line>
+        <line x1="208" y1="40" x2="328" y2="40" class="solid"></line>
+        <path d="M 328,40 A 4,4 0,0,1 332,44" class="nofill"></path>
+        <line x1="332" y1="44" x2="332" y2="68" class="solid"></line>
+        <line x1="332" y1="56" x2="344" y2="56" class="solid"></line>
+        <polygon points="344,52 352,56 344,60" class="filled"></polygon>
+        <path d="M 204,68 A 4,4 0,0,0 208,72" class="nofill"></path>
+        <line x1="208" y1="72" x2="328" y2="72" class="solid"></line>
+        <path d="M 332,68 A 4,4 0,0,1 328,72" class="nofill"></path>
+        <path d="M 376,40 A 8,8 0,0,0 370,44" class="nofill"></path>
+        <line x1="370" y1="44" x2="358" y2="68" class="solid"></line>
+        <line x1="376" y1="40" x2="424" y2="40" class="solid"></line>
+        <path d="M 424,40 A 3,3 0,0,1 426,44" class="nofill"></path>
+        <line x1="426" y1="44" x2="414" y2="68" class="solid"></line>
+        <line x1="352" y1="56" x2="364" y2="56" class="solid"></line>
+        <line x1="420" y1="56" x2="528" y2="56" class="solid"></line>
+        <polygon points="528,52 536,56 528,60" class="filled"></polygon>
+        <line x1="536" y1="56" x2="544" y2="56" class="solid"></line>
+        <path d="M 358,68 A 3,3 0,0,0 360,72" class="nofill"></path>
+        <line x1="360" y1="72" x2="408" y2="72" class="solid"></line>
+        <path d="M 414,68 A 8,8 0,0,1 408,72" class="nofill"></path>
+        <line x1="176" y1="56" x2="184" y2="56" class="solid"></line>
+        <polygon points="184,52 192,56 184,60" class="filled"></polygon>
+        <line x1="192" y1="56" x2="204" y2="56" class="solid"></line>
+    </g>
+    <g>
+        <line x1="580" y1="40" x2="668" y2="40" class="solid"></line>
+        <line x1="580" y1="40" x2="580" y2="72" class="solid"></line>
+        <line x1="668" y1="40" x2="668" y2="72" class="solid"></line>
+        <line x1="580" y1="72" x2="668" y2="72" class="solid"></line>
+        <line x1="552" y1="56" x2="560" y2="56" class="solid"></line>
+        <polygon points="560,52 568,56 560,60" class="filled"></polygon>
+        <line x1="568" y1="56" x2="580" y2="56" class="solid"></line>
+    </g>
+    <g>
+        <line x1="172" y1="60" x2="172" y2="196" class="solid"></line>
+        <line x1="172" y1="104" x2="184" y2="104" class="solid"></line>
+        <polygon points="184,100 192,104 184,108" class="filled"></polygon>
+        <line x1="172" y1="152" x2="184" y2="152" class="solid"></line>
+        <polygon points="184,148 192,152 184,156" class="filled"></polygon>
+        <path d="M 172,196 A 4,4 0,0,0 176,200" class="nofill"></path>
+        <line x1="176" y1="200" x2="184" y2="200" class="solid"></line>
+        <polygon points="184,196 192,200 184,204" class="filled"></polygon>
+        <path d="M 208,88 A 4,4 0,0,0 204,92" class="nofill"></path>
+        <line x1="204" y1="92" x2="204" y2="116" class="solid"></line>
+        <line x1="208" y1="88" x2="288" y2="88" class="solid"></line>
+        <path d="M 288,88 A 4,4 0,0,1 292,92" class="nofill"></path>
+        <line x1="292" y1="92" x2="292" y2="116" class="solid"></line>
+        <line x1="192" y1="104" x2="204" y2="104" class="solid"></line>
+        <line x1="292" y1="104" x2="344" y2="104" class="solid"></line>
+        <polygon points="344,100 352,104 344,108" class="filled"></polygon>
+        <path d="M 204,116 A 4,4 0,0,0 208,120" class="nofill"></path>
+        <line x1="208" y1="120" x2="288" y2="120" class="solid"></line>
+        <path d="M 292,116 A 4,4 0,0,1 288,120" class="nofill"></path>
+        <path d="M 376,88 A 8,8 0,0,0 370,92" class="nofill"></path>
+        <line x1="370" y1="92" x2="358" y2="116" class="solid"></line>
+        <line x1="376" y1="88" x2="520" y2="88" class="solid"></line>
+        <path d="M 520,88 A 3,3 0,0,1 522,92" class="nofill"></path>
+        <line x1="522" y1="92" x2="510" y2="116" class="solid"></line>
+        <line x1="352" y1="104" x2="364" y2="104" class="solid"></line>
+        <line x1="516" y1="104" x2="528" y2="104" class="solid"></line>
+        <polygon points="528,100 536,104 528,108" class="filled"></polygon>
+        <line x1="536" y1="104" x2="548" y2="104" class="solid"></line>
+        <path d="M 358,116 A 3,3 0,0,0 360,120" class="nofill"></path>
+        <line x1="360" y1="120" x2="504" y2="120" class="solid"></line>
+        <path d="M 510,116 A 8,8 0,0,1 504,120" class="nofill"></path>
+        <path d="M 208,136 A 4,4 0,0,0 204,140" class="nofill"></path>
+        <line x1="204" y1="140" x2="204" y2="164" class="solid"></line>
+        <line x1="208" y1="136" x2="296" y2="136" class="solid"></line>
+        <path d="M 296,136 A 4,4 0,0,1 300,140" class="nofill"></path>
+        <line x1="300" y1="140" x2="300" y2="164" class="solid"></line>
+        <line x1="192" y1="152" x2="204" y2="152" class="solid"></line>
+        <line x1="300" y1="152" x2="344" y2="152" class="solid"></line>
+        <polygon points="344,148 352,152 344,156" class="filled"></polygon>
+        <path d="M 204,164 A 4,4 0,0,0 208,168" class="nofill"></path>
+        <line x1="208" y1="168" x2="296" y2="168" class="solid"></line>
+        <path d="M 300,164 A 4,4 0,0,1 296,168" class="nofill"></path>
+        <path d="M 376,136 A 8,8 0,0,0 370,140" class="nofill"></path>
+        <line x1="370" y1="140" x2="358" y2="164" class="solid"></line>
+        <line x1="376" y1="136" x2="440" y2="136" class="solid"></line>
+        <path d="M 440,136 A 3,3 0,0,1 442,140" class="nofill"></path>
+        <line x1="442" y1="140" x2="430" y2="164" class="solid"></line>
+        <line x1="352" y1="152" x2="364" y2="152" class="solid"></line>
+        <line x1="436" y1="152" x2="528" y2="152" class="solid"></line>
+        <polygon points="528,148 536,152 528,156" class="filled"></polygon>
+        <line x1="536" y1="152" x2="548" y2="152" class="solid"></line>
+        <path d="M 358,164 A 3,3 0,0,0 360,168" class="nofill"></path>
+        <line x1="360" y1="168" x2="424" y2="168" class="solid"></line>
+        <path d="M 430,164 A 8,8 0,0,1 424,168" class="nofill"></path>
+        <path d="M 208,184 A 4,4 0,0,0 204,188" class="nofill"></path>
+        <line x1="204" y1="188" x2="204" y2="212" class="solid"></line>
+        <line x1="208" y1="184" x2="280" y2="184" class="solid"></line>
+        <path d="M 280,184 A 4,4 0,0,1 284,188" class="nofill"></path>
+        <line x1="284" y1="188" x2="284" y2="212" class="solid"></line>
+        <line x1="192" y1="200" x2="204" y2="200" class="solid"></line>
+        <line x1="284" y1="200" x2="344" y2="200" class="solid"></line>
+        <polygon points="344,196 352,200 344,204" class="filled"></polygon>
+        <path d="M 204,212 A 4,4 0,0,0 208,216" class="nofill"></path>
+        <line x1="208" y1="216" x2="280" y2="216" class="solid"></line>
+        <path d="M 284,212 A 4,4 0,0,1 280,216" class="nofill"></path>
+        <path d="M 376,184 A 8,8 0,0,0 370,188" class="nofill"></path>
+        <line x1="370" y1="188" x2="358" y2="212" class="solid"></line>
+        <line x1="376" y1="184" x2="432" y2="184" class="solid"></line>
+        <path d="M 432,184 A 3,3 0,0,1 434,188" class="nofill"></path>
+        <line x1="434" y1="188" x2="422" y2="212" class="solid"></line>
+        <line x1="352" y1="200" x2="364" y2="200" class="solid"></line>
+        <line x1="428" y1="200" x2="528" y2="200" class="solid"></line>
+        <polygon points="528,196 536,200 528,204" class="filled"></polygon>
+        <line x1="536" y1="200" x2="544" y2="200" class="solid"></line>
+        <path d="M 548,196 A 4,4 0,0,1 544,200" class="nofill"></path>
+        <path d="M 358,212 A 3,3 0,0,0 360,216" class="nofill"></path>
+        <line x1="360" y1="216" x2="416" y2="216" class="solid"></line>
+        <path d="M 422,212 A 8,8 0,0,1 416,216" class="nofill"></path>
+        <line x1="548" y1="60" x2="548" y2="196" class="solid"></line>
+    </g>
+</svg>

@@ -1,0 +1,64 @@
+{
+    "markdown_dir": "markdown",
+
+    "site_dir": "html",
+
+    "HTML_template": "DocTemplate",
+
+    "Exclude": [
+    ],
+
+    "github_pages": false,
+
+     "footer": "Module: 3d_printing v3.0.0 - Build Date: Apr  1 2022; Copyright 2014-2022 CADM, Inc",
+
+    "markdown_extensions": [
+        "common",
+        "definitionlists",
+        "mathematics",
+        "pipetables",
+        "attributes",
+        "medialinks",
+        "autolinks",
+        "autoidentifiers"
+    ],
+
+    "navigation_bar": {
+        "capture_page_headings": "123456",
+        "templates": {
+            "navitem": "<button class='navitem'><a href='{{navurl}}'>{{navtext}}</a></button>",
+            "navlabel": "<div class='navlabel'>{{navtext}}</div>",
+            "navseparator": "<hr/>",
+            "navheading": "<span class='navitem{{level}}'>{{navtext}}</span>"
+      }
+    },
+
+    "site_navigation": [
+        { "3-D Printing": "" },
+        { "Module <b>Home</b>": "Home.md" },
+        { "Installation": "Installation.md"},
+        { "Customization": "Customization.md"},
+        { "User Interface": "UI.md"},
+        { "Limitations": "Limitations.md"},
+        { "Import Examples": "ImportExamples.md"},
+        { "Release Notes": "ReleaseNotes.md"},
+        { "Lisp API" : ""},
+        { "3D-PRINTING": "3D-PRINTING/3D-PRINTING.pkg.md"},
+        { "3D-PRINTING.DATA-EXCHANGE": "3D-PRINTING.DATA-EXCHANGE/3D-PRINTING.DATA-EXCHANGE.pkg.md"},
+        {"---":""}
+
+    ],
+
+    "page_navigation_header": [
+        { "Page Contents": "" }
+    ],
+
+    "svgbob": {
+        "background": "white",
+        "fill_color": "black",
+        "font_size": 14,
+        "font_family": "Monospace",
+        "scale": 1,
+        "stroke_width": 1
+    }
+}

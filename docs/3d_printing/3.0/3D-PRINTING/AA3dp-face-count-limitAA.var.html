@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>`*3DP-FACE-COUNT-LIMIT*` [Public Variable] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>3-D Printing</div>
+<button class='navitem'><a href='../Home.html'>Module <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface</a></button>
+<button class='navitem'><a href='../Limitations.html'>Limitations</a></button>
+<button class='navitem'><a href='../ImportExamples.html'>Import Examples</a></button>
+<button class='navitem'><a href='../ReleaseNotes.html'>Release Notes</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../3D-PRINTING/3D-PRINTING.pkg.html'>3D-PRINTING</a></button>
+<button class='navitem'><a href='../3D-PRINTING.DATA-EXCHANGE/3D-PRINTING.DATA-EXCHANGE.pkg.html'>3D-PRINTING.DATA-EXCHANGE</a></button>
+<hr/>
+<div class='navlabel'>Page Contents</div>
+<button class='navitem'><a href='#dp-face-count-limit-public-variable'><span class='navitem1'><code>*3DP-FACE-COUNT-LIMIT*</code> [Public Variable]</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="dp-face-count-limit-public-variable" class="title"><code>*3DP-FACE-COUNT-LIMIT*</code> [Public Variable]</h1>
+<p class="package">Package: <a href="3D-PRINTING.pkg.html"><code>3d-printing</code></a> (Nick name(s): <code>:3dp</code>) </p>
+<p>Maximum number of faces {<code>integer</code>} an imported body can have before data reduction is enforced.
+Defaults to 150,000. Can be customized in <code>3dp_customize.lsp</code>.</p>
+
+        </article>
+        <footer>
+            <hr />
+            Module: 3d_printing v3.0.0 - Build Date: Apr  1 2022; Copyright 2014-2022 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>

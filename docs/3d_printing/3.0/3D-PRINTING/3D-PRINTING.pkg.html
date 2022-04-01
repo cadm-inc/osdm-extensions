@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>3D-PRINTING [Package] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../vs2015.css" /> -->
+    <script src="../../../js/highlight.pack.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>3-D Printing</div>
+<button class='navitem'><a href='../Home.html'>Module <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface</a></button>
+<button class='navitem'><a href='../Limitations.html'>Limitations</a></button>
+<button class='navitem'><a href='../ImportExamples.html'>Import Examples</a></button>
+<button class='navitem'><a href='../ReleaseNotes.html'>Release Notes</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../3D-PRINTING/3D-PRINTING.pkg.html'>3D-PRINTING</a></button>
+<button class='navitem'><a href='../3D-PRINTING.DATA-EXCHANGE/3D-PRINTING.DATA-EXCHANGE.pkg.html'>3D-PRINTING.DATA-EXCHANGE</a></button>
+<hr/>
+<div class='navlabel'>Page Contents</div>
+<button class='navitem'><a href='#d-printing-package'><span class='navitem1'>3D-PRINTING [Package]</span></a></button>
+<button class='navitem'><a href='#package-contents'><span class='navitem1'>Package Contents</span></a></button>
+<button class='navitem'><a href='#dialogs'><span class='navitem2'>Dialogs</span></a></button>
+<button class='navitem'><a href='#variables-parameters-constants'><span class='navitem2'>Variables / Parameters / Constants</span></a></button>
+<button class='navitem'><a href='#generic-functions-macros-accessors'><span class='navitem2'>(Generic) Functions / Macros / Accessors</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="d-printing-package" class="title">3D-PRINTING [Package]</h1>
+<p>Primary package of the <code>3d_printing</code> extension module for <em>Modeling</em>.</p>
+<p>The <code>:3D - PRINTING</code> package(nicknamed <code>:3DP</code>) contains:</p>
+<ul>
+<li>the customization tools for the <code>3d_printing</code> extension module</li>
+<li>module manifest data</li>
+<li>dialogs and Lisp APIs to measure the quality of meshes.</li>
+<li>the sub-package <a href="../3D-PRINTING.DATA-EXCHANGE/3D-PRINTING.DATA-EXCHANGE.pkg.html"><code>3d-printing.data-exchange</code></a>
+containing dialogs and Lisp APIs to import manufacturing data such as
+<em>STL</em> and <em>3MF</em> as solids or face parts into the <em>Modeling</em>
+CAD application.</li>
+</ul>
+<h1 id="package-contents">Package Contents</h1>
+<h2 id="dialogs">Dialogs</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="3DP_FOCUS_STUDY_REGION.dia.html"><code>3DP_FOCUS_STUDY_REGION</code></a></td>
+<td style="text-align: left;">Focus on a region of a mesh quality study by showing only items in a specified <em>region of interest</em> (box) or with similar geometry.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="3DP_MEASURE_MESH_QUALITY.dia.html"><code>3DP_MEASURE_MESH_QUALITY</code></a></td>
+<td style="text-align: left;">Measure the quality of a mesh with respect to the part it was derived from.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="3DP_SETTINGS.dia.html"><code>3DP_SETTINGS</code></a></td>
+<td style="text-align: left;">Edit customizable module settings for the 3d printing extension.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variables-parameters-constants">Variables / Parameters / Constants</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="AA3dp-cylinder-recognition-enabledAA.var.html"><code>*3dp-cylinder-recognition-enabled*</code></a></td>
+<td style="text-align: left;">Cylinder recognition option default.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AA3dp-default-recognition-precisionAA.var.html"><code>*3dp-default-recognition-precision*</code></a></td>
+<td style="text-align: left;">Default precision for surface recognition {<code>number</code>}.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AA3dp-face-count-limitAA.var.html"><code>*3dp-face-count-limit*</code></a></td>
+<td style="text-align: left;">Maximum number of faces {<code>integer</code>} an imported body can have before data reduction is enforced.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AA3dp-lightweight-model-enabledAA.var.html"><code>*3dp-lightweight-model-enabled*</code></a></td>
+<td style="text-align: left;">Option to import STL data as lightweigth model (<code>T</code>) or full model (<code>NIL</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AA3dp-merge-enabledAA.var.html"><code>*3dp-merge-enabled*</code></a></td>
+<td style="text-align: left;">Merge option.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AA3dp-plane-recognition-enabledAA.var.html"><code>*3dp-plane-recognition-enabled*</code></a></td>
+<td style="text-align: left;">Plane recognition option default.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="AAuser-interface-integrationAA.var.html"><code>*user-interface-integration*</code></a></td>
+<td style="text-align: left;">Modeling user interface integration level {<code>keyword</code>} for this extension module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="+module-id+.var.html"><code>+module-id+</code></a></td>
+<td style="text-align: left;">The extension module ID.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="generic-functions-macros-accessors">(Generic) Functions / Macros / Accessors</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="about-module.fun.html"><code>about-module</code></a></td>
+<td style="text-align: left;">Show the <code>3d_printing</code> <em>about</em> information in the <em>Modeling</em> output textbox.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="activate-module.fun.html"><code>activate-module</code></a></td>
+<td style="text-align: left;">Activate this module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="deactivate-module.fun.html"><code>deactivate-module</code></a></td>
+<td style="text-align: left;">Deactivate this module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="display-module-help.fun.html"><code>display-module-help</code></a></td>
+<td style="text-align: left;">Display a module help page in the browser.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="get-available-commands.fun.html"><code>get-available-commands</code></a></td>
+<td style="text-align: left;">Get a list of commands availalable for this module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="get-module-manifest.fun.html"><code>get-module-manifest</code></a></td>
+<td style="text-align: left;">Get the extension module manifest.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="load-module-customization.fun.html"><code>load-module-customization</code></a></td>
+<td style="text-align: left;">Load or re-load the module customizations.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="module-active-p.fun.html"><code>module-active-p</code></a></td>
+<td style="text-align: left;">Predicate to termine if this extension module is active.</td>
+</tr>
+</tbody>
+</table>
+
+        </article>
+        <footer>
+            <hr />
+            Module: 3d_printing v3.0.0 - Build Date: Apr  1 2022; Copyright 2014-2022 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>
