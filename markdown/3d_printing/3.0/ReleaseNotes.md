@@ -4,7 +4,7 @@
 
 * Fixed unitialized variable in callback method which caused load/save 3mf to abort immediately
 * Upgraded to lib3MF 2.2
-* Dropped support for Modeling versins older than 20.3 (due to lib3MF requirements)
+* Dropped support for Modeling versions older than 20.3 (due to lib3MF requirements)
 
 # 2.0.3 - Bugfix Release
 
