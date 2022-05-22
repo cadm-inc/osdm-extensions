@@ -1,6 +1,6 @@
 # Downloads and Documentation for the _soco_cables_ Creo Elements Direct Modeling Extension {.title}
 
-The _soco_cables_extension module for Modeling provides service components for CAD document generation and translation.
+The _soco_cables_extension module for Modeling provides  tools to simplify the process of design and routing of "cable" type assemblies..
 
 # Releases
 
