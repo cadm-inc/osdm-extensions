@@ -17,6 +17,7 @@
         "attributes",
         "medialinks",
         "autolinks",
+        "emojis",
         "autoidentifiers"
     ],
 
@@ -38,6 +39,7 @@
         { "Modeling Extensions": "" },
         { "3-D Manufacturing": "3d_printing/index.md" },
         { "Automated Document Generator": "ADGservice/index.md" },
+        { "Rigid Cable Modeler": "soco_cables/index.md" },
         { "Cable Auto-Router": "soco_router/index.md" }
     ],
 

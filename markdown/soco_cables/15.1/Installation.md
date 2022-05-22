@@ -28,7 +28,7 @@ module using the installer follow these steps:
 * Unpack the ZIP archive to a temporary loctation.
 * Start a version of _Modeling_ supported by this extension module.
 * In Modeling load `install.lsp.` by one of the following methods:
-  * Open the _Load_ dialog by clicking on `File --> Open...` or pressing the
+  * Open the _Load_ dialog by clicking on `File --> Open...` or by typing the
    `CTRL-O` keyboard shortcut, and then choose the `LISP source` file type from
    the _File type_ options. Browse to the directory the module got unpacked to,
     and then select `install.lsp`.
@@ -44,7 +44,7 @@ module using the installer follow these steps:
   of this module as described in the next section. If you need some explanation
   about any of the install options, click the _help_ button <b>&#x2754;</b> at the top right
   corner of the dialog.
-* Select an installation location and/or startup option and press the _Confirm_ button.
+* Select an installation location and/or startup option and click the _Confirm_ button.
   The module will be installed to the selected loaction and is ready for use.
 
 ## Manual Installation

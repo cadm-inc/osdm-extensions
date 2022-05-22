@@ -1,0 +1,59 @@
+{
+    "markdown_dir": "markdown",
+
+    "site_dir": "html",
+
+    "HTML_template": "DocTemplate",
+    
+    "Exclude": [
+    ],
+
+    "markdown_extensions": [
+        "common",
+        "definitionlists",
+        "mathematics",
+        "diagrams",
+        "pipetables",
+        "attributes",
+        "medialinks",
+        "autolinks",
+        "autoidentifiers"
+    ],
+
+    "github_pages": false,
+
+     "footer": "Module: cadm_tools v1.3.4 - Build Date: May 22 2022; Copyright 2014-2022 CADM, Inc",
+
+    "navigation_bar": {
+        "capture_page_headings": "123456",
+        "templates": {
+            "navitem": "<button class='navitem'><a href='{{navurl}}'>{{navtext}}</a></button>",
+            "navlabel": "<div class='navlabel'>{{navtext}}</div>",
+            "navseparator": "<hr/>",
+            "navheading": "<span class='navitem{{level}}'>{{navtext}}</span>"
+      }
+    },
+
+    "site_navigation": [
+        { "cadm_tools": "" },
+        { "<i>cadm_tools</i> <b>Home</b>": "Home.md" },
+        { "Installation": "Installation.md"},
+        { "Customization": "Customization.md"},
+        { "Lisp API" : ""},
+        { "CADM-TOOLS": "CADM-TOOLS/CADM-TOOLS.pkg.md"},
+        {"---":""}
+    ],
+
+    "page_navigation_header": [
+        { "Page Contents": "" }
+    ],
+
+    "svgbob": {
+        "background": "white",
+        "fill_color": "black",
+        "font_size": 14,
+        "font_family": "Monospace",
+        "scale": 1,
+        "stroke_width": 1
+    }
+}
