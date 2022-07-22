@@ -1,5 +1,10 @@
 # Package Release Notes {.title}
 
+# 3.0.1
+
+* improved elimination of degenerate polygons
+* switched from stream IO to low level IO (fixes debbug version issue)
+
 # 3.0.0
 
 * Fixed unitialized variable in callback method which caused load/save 3mf to abort immediately
