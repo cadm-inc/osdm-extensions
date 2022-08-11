@@ -1,5 +1,13 @@
 # _ADGservice_ Modeling Extension Release Notes {.title}
 
+# 2.6.1 - Maintenance Release
+
+* Support for Modeling 20.3 or later
+' cleaned up some messages,
+* ensure ReadAllLayout in dxfconfig file is set
+* update inventor help file to show supported versions
+*  made the expiration year of a token explict (i.e. 4 digits instead of 2)
+
 # 2.6.0 - Feature Release
 
 * SVG export option added for 2d files. Current implementation only supports the
