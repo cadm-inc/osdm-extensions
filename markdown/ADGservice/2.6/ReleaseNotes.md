@@ -1,12 +1,17 @@
 # _ADGservice_ Modeling Extension Release Notes {.title}
 
+# 2.6.2 - Bugfix Release
+
+* write_pro_atb missing command options, fixed.
+* provide an abort action hook to be executed when a command aborts abnormally.
+* cleanup proatb files that are created during an abort of the command
+
 # 2.6.1 - Maintenance Release
 
-* Support for Modeling 20.3 or later
-' cleaned up some messages,
+* Support for Modeling 20.3 or later ' cleaned up some messages,
 * ensure ReadAllLayout in dxfconfig file is set
 * update inventor help file to show supported versions
-*  made the expiration year of a token explict (i.e. 4 digits instead of 2)
+* made the expiration year of a token explict (i.e. 4 digits instead of 2)
 
 # 2.6.0 - Feature Release
 
