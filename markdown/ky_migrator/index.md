@@ -8,4 +8,4 @@ facilitate the migration of 2d drawings and 3d models into and out of _ModelMana
 {style="border-collapse:collapse"}
 |            |        |                                                                      |
 | :--------: | -------| -------------------------------------------------------------------- |
-| :sparkles: |**v0.1**| [Documentation](0.1/Home.md) - [Installation](0.1/Installation.md) | 
+| :sparkles: |**v0.1**| [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/ky_migrator/ky_migrator_x64_0.1.0.zip) - [Documentation](0.1/Home.md) - [Installation](0.1/Installation.md) | 
