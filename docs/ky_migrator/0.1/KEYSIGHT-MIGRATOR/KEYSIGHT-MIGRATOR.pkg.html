@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>KEYSIGHT-MIGRATOR [Package] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.min.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/vs2015.min.css" /> -->
+    <script src="../../../js/highlight.min.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_cables/index.html'>Rigid Cable Modeler</a></button>
+<button class='navitem'><a href='../../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>ky_migrator</div>
+<button class='navitem'><a href='../Home.html'><i>ky_migrator</i> <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../KEYSIGHT-MIGRATOR/KEYSIGHT-MIGRATOR.pkg.html'>KEYSIGHT-MIGRATOR</a></button>
+<hr/>
+<div class='navlabel'>On this Page</div>
+<button class='navitem'><a href='#keysight-migrator-package'><span class='navitem1'>KEYSIGHT-MIGRATOR [Package]</span></a></button>
+<button class='navitem'><a href='#programming-notes'><span class='navitem1'>Programming Notes</span></a></button>
+<button class='navitem'><a href='#package-contents'><span class='navitem1'>Package Contents</span></a></button>
+<button class='navitem'><a href='#dialogs'><span class='navitem2'>Dialogs</span></a></button>
+<button class='navitem'><a href='#variables-parameters-constants'><span class='navitem2'>Variables / Parameters / Constants</span></a></button>
+<button class='navitem'><a href='#generic-functions-macros-accessors'><span class='navitem2'>(Generic) Functions / Macros / Accessors</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="keysight-migrator-package" class="title">KEYSIGHT-MIGRATOR [Package]</h1>
+<p>Primary Lisp package of the <code>ky_migrator</code> <em>Modeling</em> extension module.</p>
+<p>The package <code>:KEYSIGHT-MIGRATOR</code> (nicknamed <code>:KYM</code>) contains dialogs and tools
+to facilitate the migration of <em>Modeling</em> 3d and 2d models to <em>ModelManager</em>
+or <em>Enovia</em>.</p>
+<h1 id="programming-notes">Programming Notes</h1>
+<p>This package is <strong>not</strong> intended to be included in the <code>:use</code> specification of
+other packages due to a high probability of name conflicts.
+To reference a facility provided by this package, code in another package
+must use an explicit package prefix, e.g.</p>
+<pre><code class="language-Lisp">(kym:load-module-customization)
+</code></pre>
+<h1 id="package-contents">Package Contents</h1>
+<h2 id="dialogs">Dialogs</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.html"><code>KEYSIGHT_MM_IMPORT_ASSEMBLER</code></a></td>
+<td style="text-align: left;">Prepare <em>Modeling</em> 2d and 3d models for <em>ModelManager</em> check-in.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="KYM_SETTINGS.dia.html"><code>KYM_SETTINGS</code></a></td>
+<td style="text-align: left;">Edit customizable settings for the <code>ky_migrator</code> extension module.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="variables-parameters-constants">Variables / Parameters / Constants</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="AAuser-interface-integrationAA.var.html"><code>*user-interface-integration*</code></a></td>
+<td style="text-align: left;">Modeling user interface integration level {<code>keyword</code>} for this extension module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="+module-id+.var.html"><code>+module-id+</code></a></td>
+<td style="text-align: left;">The extension module ID.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="generic-functions-macros-accessors">(Generic) Functions / Macros / Accessors</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="about-module.fun.html"><code>about-module</code></a></td>
+<td style="text-align: left;">Show the <code>ky_migrator</code> <em>about</em> information in the <em>Modeling</em> output textbox.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="activate-module.fun.html"><code>activate-module</code></a></td>
+<td style="text-align: left;">Activate this module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="deactivate-module.fun.html"><code>deactivate-module</code></a></td>
+<td style="text-align: left;">Deactivate this module.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="display-module-help.fun.html"><code>display-module-help</code></a></td>
+<td style="text-align: left;">Display a module help page in the browser.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="get-available-commands.fun.html"><code>get-available-commands</code></a></td>
+<td style="text-align: left;">Get a list of commands availalable for this module</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="get-module-manifest.fun.html"><code>get-module-manifest</code></a></td>
+<td style="text-align: left;">Get the extension module manifest.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="load-module-customization.fun.html"><code>load-module-customization</code></a></td>
+<td style="text-align: left;">Load or re-load the module customizations.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="module-active-p.fun.html"><code>module-active-p</code></a></td>
+<td style="text-align: left;">Predicate to termine if this extension module is active.</td>
+</tr>
+</tbody>
+</table>
+
+        </article>
+        <footer>
+            <hr />
+            Module: ky_migrator v0.1.0 - Build Date: Mar 13 2023; Copyright 2023 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>
