@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>COMPONENT-INFO-PERSISTED-P [Public Function] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.min.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/vs2015.min.css" /> -->
+    <script src="../../../js/highlight.min.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_cables/index.html'>Rigid Cable Modeler</a></button>
+<button class='navitem'><a href='../../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>ky_migrator</div>
+<button class='navitem'><a href='../Home.html'><i>ky_migrator</i> <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../KEYSIGHT-MIGRATOR/KEYSIGHT-MIGRATOR.pkg.html'>KEYSIGHT-MIGRATOR</a></button>
+<hr/>
+<div class='navlabel'>On this Page</div>
+<button class='navitem'><a href='#component-info-persisted-p-public-function'><span class='navitem1'>COMPONENT-INFO-PERSISTED-P [Public Function]</span></a></button>
+<button class='navitem'><a href='#arguments'><span class='navitem1'>Arguments</span></a></button>
+<button class='navitem'><a href='#returns'><span class='navitem1'>Returns</span></a></button>
+<button class='navitem'><a href='#related-structures'><span class='navitem1'>Related Structures</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="component-info-persisted-p-public-function" class="title">COMPONENT-INFO-PERSISTED-P [Public Function]</h1>
+<p class="package">Package: <a href="KEYSIGHT-MIGRATOR.pkg.html"><code>keysight-migrator</code></a> (Nick name(s): <code>:kym</code>) </p>
+<p>Predicate to determine if a <a href="component-info.struct.html"><code>component-info</code></a> object has been
+persisted and contains actual sysids rather than [<code>entity</code>]
+handles.</p>
+<pre><code class="language-lisp">(component-info-persisted-p arg)
+</code></pre>
+<h1 id="arguments">Arguments</h1>
+<dl>
+<dt><em>this</em> {<a href="component-info.struct.html"><code>component-info</code></a>}</dt>
+<dd>The component info object to apply the predicate to.</dd>
+</dl>
+<h1 id="returns">Returns</h1>
+<p><code>T</code> if the component info object is in the <em>resolved</em> state; <code>NIL</code> otherwise.</p>
+<h1 id="related-structures">Related Structures</h1>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="component-info.struct.html"><code>component-info</code></a></td>
+<td style="text-align: left;">Common data for model component records.</td>
+</tr>
+</tbody>
+</table>
+
+        </article>
+        <footer>
+            <hr />
+            Module: ky_migrator v0.3.1 - Build Date: May 24 2023; Copyright 2023 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>

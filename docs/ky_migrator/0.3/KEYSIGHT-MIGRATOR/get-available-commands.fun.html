@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>GET-AVAILABLE-COMMANDS [Public Function] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.min.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/vs2015.min.css" /> -->
+    <script src="../../../js/highlight.min.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_cables/index.html'>Rigid Cable Modeler</a></button>
+<button class='navitem'><a href='../../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>ky_migrator</div>
+<button class='navitem'><a href='../Home.html'><i>ky_migrator</i> <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../KEYSIGHT-MIGRATOR/KEYSIGHT-MIGRATOR.pkg.html'>KEYSIGHT-MIGRATOR</a></button>
+<hr/>
+<div class='navlabel'>On this Page</div>
+<button class='navitem'><a href='#get-available-commands-public-function'><span class='navitem1'>GET-AVAILABLE-COMMANDS [Public Function]</span></a></button>
+<button class='navitem'><a href='#arguments'><span class='navitem1'>Arguments</span></a></button>
+<button class='navitem'><a href='#returns'><span class='navitem1'>Returns</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="get-available-commands-public-function" class="title">GET-AVAILABLE-COMMANDS [Public Function]</h1>
+<p class="package">Package: <a href="KEYSIGHT-MIGRATOR.pkg.html"><code>keysight-migrator</code></a> (Nick name(s): <code>:kym</code>) </p>
+<p>Get a list of commands availalable for this module</p>
+<pre><code class="language-lisp">(get-available-commands [group-id])
+</code></pre>
+<h1 id="arguments">Arguments</h1>
+<dl>
+<dt>group-id {<code>keyword</code>} - optional</dt>
+<dd>If specified returns the command group matching the given id.</dd>
+</dl>
+<h1 id="returns">Returns</h1>
+<p>One (if group-id is provided) or more lists of grouped command identifiers
+of the form:</p>
+<pre><code class="language-Lisp">(&lt;group&gt; &lt;group label&gt; &lt;availCmd&gt; ...)
+</code></pre>
+<p>where</p>
+<dl>
+<dt><code>&lt;group&gt;</code> {<code>keyword</code>}</dt>
+<dd>key of a command group such as <code>:settings</code> or <code>:help</code></dd>
+<dt><code>&lt;group name&gt;</code> {<code>string</code>}</dt>
+<dd>Label of command group for use in the user interface.</dd>
+<dt><code>&lt;availCmd&gt;</code> {<code>string list</code>}</dt>
+<dd>One or more triplets of strings to uniquely identify a command.
+The triplet has the form <code>(&lt;app-name&gt; &lt;group-name&gt; &lt;cmd-name&gt;)</code>
+and is intended to be used for building custom user interfaces.</dd>
+</dl>
+<p><code>NIL</code> is returned if:</p>
+<ul>
+<li>the module was never activated (commands available after activation)</li>
+<li>the module does not define any commands for the user interface.</li>
+<li>a <code>group-id</code> was given, but there is no matching group.</li>
+</ul>
+
+        </article>
+        <footer>
+            <hr />
+            Module: ky_migrator v0.3.1 - Build Date: May 24 2023; Copyright 2023 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>
