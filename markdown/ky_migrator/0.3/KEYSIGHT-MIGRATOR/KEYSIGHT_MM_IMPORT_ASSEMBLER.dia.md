@@ -15,17 +15,17 @@ This dialog can be activated by:
                                       .-<-----------------------<-----------------<-.
                                       |                                             |
   +-------------------------------+   |  .------------------.       .-----------.   |   +----------+
-->| KEYSIGHT_MM_IMPORT_ASSEMBLER  |->-O->| :INPUT_DIRECTORY |--->- / directory /-->-O->-| COMPLETE |
+->| KEYSIGHT_MM_IMPORT_ASSEMBLER  |->-O->| :INPUT_DIRECTORY |--->--/ directory /-->-O->-| COMPLETE |
   +-------------------------------+   |  '------------------'     '-----------'     |   +----------+
                                       |  .--------------------.     .-----------.   |
-                                      O->| :STAGING_DIRECTORY |->- / directory /-->-O
-                                      |   '--------------------'   '-----------'    |
-                                      |  .--------.              .---------.        |
-                                      O->| :CHECK |---------->- / :ON/:OFF /------>-O
-                                      |  '--------'            '----------'         |
-                                      |  .-----------------.     .---------.        |
-                                      '->| :DISPLAY_REPORT |->- / :ON/:OFF /------>-O
-                                         '-----------------'   '----------'
+                                      O->| :STAGING_DIRECTORY |->--/ directory /-->-O
+                                      |   '-------------------'   '-----------'     |
+                                      |  .--------.                 .----------.    |
+                                      O->| :CHECK |------------->--/ :ON/:OFF /--->-O
+                                      |  '--------'               '----------'      |
+                                      |  .-----------------.        .----------.    |
+                                      '->| :DISPLAY_REPORT |---->--/ :ON/:OFF /--->-'
+                                         '-----------------'      '----------'
 ~~~
 
 # Options
@@ -36,7 +36,9 @@ This dialog can be activated by:
     to keep related files together.
 
 `:STAGING_DIRECTORY`
-:   The models in native _Modeling_ format (.sd*). Filenames are component
+:   The models in native _Modeling_ format (.sd*) and log files (*-lsp) prepared
+    for the migration stage 2 dialog [`KEYSIGHT_MM_ASSISTED_CHECKIN`](KEYSIGHT_MM_ASSISTED_CHECKIN.dia.md).
+    Filenames are component
     sysids to guarantee uniqueness.
 
 `:CHECK`

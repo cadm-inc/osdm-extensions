@@ -24,6 +24,7 @@ must use an explicit package prefix, e.g.
 
 | Name | Summary |
 | :---- | :---- |
+| [`KEYSIGHT_MM_ASSISTED_CHECKIN`](KEYSIGHT_MM_ASSISTED_CHECKIN.dia.md) | Decription |
 | [`KEYSIGHT_MM_IMPORT_ASSEMBLER`](KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.md) | Prepare _Modeling_ 2d and 3d models for _ModelManager_ check-in. |
 | [`KYM_SETTINGS`](KYM_SETTINGS.dia.md) | Edit customizable settings for the `ky_migrator` extension module. |
 

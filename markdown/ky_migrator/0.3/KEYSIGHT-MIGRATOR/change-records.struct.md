@@ -9,7 +9,7 @@ Package: [`keysight-migrator`](KEYSIGHT-MIGRATOR.pkg.md) (Nick name(s): `:kym`) 
 
 A logger for changes to [`component-info`](component-info.struct.md) objects.
 
-The logs are cached in memory until [](flush-chenge-records :function is called).
+The logs are cached in memory until [`flush-change-records`] is called.
 Changes can be logged by calling [`log-component-change`].
 
 # Slots

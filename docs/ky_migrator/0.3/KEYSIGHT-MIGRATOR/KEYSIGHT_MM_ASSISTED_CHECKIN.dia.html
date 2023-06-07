@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>CHANGE-INFO [Public Structure] </title>
+    <title>KEYSIGHT_MM_ASSISTED_CHECKIN [Public Dialog] </title>
     <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
 
     <!-- Code syntax highlighting configuration -->
@@ -66,28 +66,24 @@
 <button class='navitem'><a href='../KEYSIGHT-MIGRATOR/KEYSIGHT-MIGRATOR.pkg.html'>KEYSIGHT-MIGRATOR</a></button>
 <hr/>
 <div class='navlabel'>On this Page</div>
-<button class='navitem'><a href='#change-info-public-structure'><span class='navitem1'>CHANGE-INFO [Public Structure]</span></a></button>
-<button class='navitem'><a href='#slots'><span class='navitem1'>Slots</span></a></button>
+<button class='navitem'><a href='#keysight_mm_assisted_checkin-public-dialog'><span class='navitem1'>KEYSIGHT_MM_ASSISTED_CHECKIN [Public Dialog]</span></a></button>
+<button class='navitem'><a href='#syntax'><span class='navitem1'>Syntax</span></a></button>
+<button class='navitem'><a href='#options'><span class='navitem1'>Options</span></a></button>
 </nav>
     <main>
         <article>
-            <h1 id="change-info-public-structure" class="title">CHANGE-INFO [Public Structure]</h1>
-<p class="hierarchy">
-<strong><code>CHANGE-INFO</code></strong>
- </p>
+            <h1 id="keysight_mm_assisted_checkin-public-dialog" class="title">KEYSIGHT_MM_ASSISTED_CHECKIN [Public Dialog]</h1>
 <p class="package">Package: <a href="KEYSIGHT-MIGRATOR.pkg.html"><code>keysight-migrator</code></a> (Nick name(s): <code>:kym</code>) </p>
-<p>Log for one model change.</p>
-<h1 id="slots">Slots</h1>
+<p>Decription</p>
+<h1 id="syntax">Syntax</h1>
+<pre><img src='KEYSIGHT_MM_ASSISTED_CHECKIN.dia1.svg' alt='Diagram 1.' /></pre>
+<h1 id="options">Options</h1>
 <dl>
-<dt><em>locations</em> {<code>string</code> list}</dt>
-<dd>The human-readable paths of the changed components in the model structure.</dd>
-<dt><em>key-before</em> {<a href="cluster-composite-key.struct.html"><code>cluster-composite-key</code></a>}</dt>
-<dd>Composite of the cluster before change.</dd>
-<dt><em>key-after</em> {<a href="cluster-composite-key.struct.html"><code>cluster-composite-key</code></a>}</dt>
-<dd>composite key of the cluster after the change.</dd>
-<dt><em>reason</em> {<code>keyword</code>}</dt>
+<dt><code>:STAGING_DIRECTORY</code></dt>
 <dd>
-<p>A keyword describing the change reason.</p>
+<p>The models in native <em>Modeling</em> format (.sd*) prepared by the migration
+stage 1 dialog <a href="KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.html"><code>KEYSIGHT_MM_IMPORT_ASSEMBLER</code></a>.
+Filenames are component sysids to guarantee uniqueness.</p>
 </dd>
 </dl>
 
