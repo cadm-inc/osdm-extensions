@@ -90,7 +90,7 @@ contained in local folders to <em>ModelManager</em> in preparation for migrating
 </ul>
 <h1 id="migration-processes-and-tools">Migration Processes and Tools</h1>
 <h2 id="drawing-association">Drawing Association</h2>
-<p>The Drawing Association Tool [<code>keysight_drawing_associator</code>] uses comma
+<p>The Drawing Association Tool <a href="KEYSIGHT-MIGRATOR/KEYSIGHT_DRAWING_ASSOCIATOR.dia.html"><code>keysight-migrator:KEYSIGHT_DRAWING_ASSOCIATOR</code></a> uses comma
 separated records read from a <em>Master Extraction List</em> to obtain information about
 drawings and 3d models (parts / assemblies) located in an 'extraction folder'.
 This information is used in the following ways to establish an association between
@@ -103,8 +103,13 @@ drawings and 3d models (parts / assemblies):</p>
 </ol>
 <pre><img src='Home1.svg' alt='Diagram 1.' /></pre>
 <h2 id="migration-of-unmanaged-2d3d-data-to-modelmanager">Migration of unmanaged 2d/3d Data to ModelManager</h2>
-<p>The migration process imports unmanaged models and drawings from a local folder to ModelManager in a two-stage process.
-Data is passed between the stages via file system directories.</p>
+<p>The migration process imports unmanaged models and drawings from a local folder to ModelManager is a two-stage process. Each process stage has a
+dedicated dialog:</p>
+<ol>
+<li><a href="KEYSIGHT-MIGRATOR/KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.html"><code>keysight-migrator:KEYSIGHT_MM_IMPORT_ASSEMBLER</code></a> (Stage <em>Modeling</em> 2d and 3d models for <em>ModelManager</em> check-in)</li>
+<li><a href="KEYSIGHT-MIGRATOR/KEYSIGHT_MM_ASSISTED_CHECKIN.dia.html"><code>keysight-migrator:KEYSIGHT_MM_ASSISTED_CHECKIN</code></a> (Assisted _ModelManager check-in of 2d/3d models in a staging directory)</li>
+</ol>
+<p>Data is passed between the stages via file system directories.</p>
 <pre><img src='Home2.svg' alt='Diagram 2.' /></pre>
 <p>where:</p>
 <dl>
@@ -127,29 +132,7 @@ this directory typically has following structure and contents:</p>
 <dd>
 <p>This stage does <strong>not</strong> require the <em>ModelManager</em> module to be activated nor does it require
 the user to have <em>ModelManager</em> specific knowledge.</p>
-<p>All models and drawings contained in the <code>Input Directory</code> are loaded into
-<em>Modeling</em> to perform specific actions:</p>
-<ul>
-<li><strong>Drawings</strong>:
-<ul>
-<li>Determine the drawing type (Annotation or ME10).</li>
-<li>Log <em>drawing owners for</em> <em>Annotation</em> drawings.</li>
-<li>Copy <em>Annotation</em> to <code>drawings.ami</code> in the <code>Staging Directory</code></li>
-<li>Copy <em>Drafting (ME10)</em> to <code>drawings.ami</code> in the <code>Staging Directory</code></li>
-</ul>
-</li>
-<li><strong>3d Models</strong>
-<ul>
-<li>Reintegrate versioned parts</li>
-<li>Mark simplified objects as <em>untouchable</em> and delete the simplifiication feature.</li>
-<li>Mark PC Board Assemblies as <em>untouchable</em> and delete any contained coordinate systems.</li>
-<li>Run a part-check.</li>
-<li>Resolve SYSID conflicts (by assigning new sysids to convert
-sysid conflicts into  model name conflicts).</li>
-<li>Save each loaded model (top-level instance) to <code>models</code> in the <code>Staging Directory</code></li>
-</ul>
-</li>
-</ul>
+<p>Associated dialog: <a href="KEYSIGHT-MIGRATOR/KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.html"><code>keysight-migrator:KEYSIGHT_MM_IMPORT_ASSEMBLER</code></a></p>
 <p>During processing of models and drawings a report of required user actions is compiled. The user
 is expected to address all items in the action list before handing the <code>Staging Directory</code>
 down to stage 2.</p>
@@ -159,6 +142,7 @@ down to stage 2.</p>
 <p>This stage requires the <em>ModelManager</em> module to be activated. The user is expected to have basic
 <em>ModelManager</em> knowledge to perform the assisted check-ins. The import uses the data passed down
 from stage 1 in the <code>Staging Directory</code>.</p>
+<p>Associated dialog: <a href="KEYSIGHT-MIGRATOR/KEYSIGHT_MM_ASSISTED_CHECKIN.dia.html"><code>keysight-migrator:KEYSIGHT_MM_ASSISTED_CHECKIN</code></a></p>
 <p>All models and drawings contained in the <code>Input Directory</code> are loaded into
 <em>Modeling</em> via an <em>Assisted Check-in</em> dialog which:</p>
 <ul>
@@ -208,7 +192,7 @@ from stage 1 in the <code>Staging Directory</code>.</p>
         </article>
         <footer>
             <hr />
-            Module: ky_migrator v0.3.5 - Build Date: Jun 30 2023; Copyright 2023 CADM, Inc
+            Module: ky_migrator v0.3.6 - Build Date: Jul  7 2023; Copyright 2023 CADM, Inc
 
         </footer>
     </main>

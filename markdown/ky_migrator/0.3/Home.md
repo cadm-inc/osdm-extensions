@@ -14,7 +14,7 @@ contained in local folders to _ModelManager_ in preparation for migrating the da
 
 ## Drawing Association
 
-The Drawing Association Tool [`keysight_drawing_associator`] uses comma
+The Drawing Association Tool [`keysight-migrator:KEYSIGHT_DRAWING_ASSOCIATOR`](KEYSIGHT-MIGRATOR/KEYSIGHT_DRAWING_ASSOCIATOR.dia.md) uses comma
 separated records read from a _Master Extraction List_ to obtain information about
 drawings and 3d models (parts / assemblies) located in an 'extraction folder'.
 This information is used in the following ways to establish an association between
@@ -45,7 +45,12 @@ Association Process Diagram
 
 ## Migration of unmanaged 2d/3d Data to ModelManager
 
-The migration process imports unmanaged models and drawings from a local folder to ModelManager in a two-stage process.
+The migration process imports unmanaged models and drawings from a local folder to ModelManager is a two-stage process. Each process stage has a
+dedicated dialog:
+
+1. [`keysight-migrator:KEYSIGHT_MM_IMPORT_ASSEMBLER`](KEYSIGHT-MIGRATOR/KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.md) (Stage _Modeling_ 2d and 3d models for _ModelManager_ check-in)
+2. [`keysight-migrator:KEYSIGHT_MM_ASSISTED_CHECKIN`](KEYSIGHT-MIGRATOR/KEYSIGHT_MM_ASSISTED_CHECKIN.dia.md) (Assisted _ModelManager check-in of 2d/3d models in a staging directory)
+
 Data is passed between the stages via file system directories.
 
 ~~~ bob
@@ -102,7 +107,10 @@ where:
     |      |
     |      '-- *.sd* (3d models)
     |
-    '-- *.lsp (Log files)
+    +-- *.lsp (Log files)
+    |
+    |
+    '-- report.htm (staging report)
     ~~~
 
 `Model Manager`
@@ -114,21 +122,7 @@ Stage 1 (not connected to MM)
 :   This stage does **not** require the _ModelManager_ module to be activated nor does it require
     the user to have _ModelManager_ specific knowledge.
 
-    All models and drawings contained in the `Input Directory` are loaded into
-    _Modeling_ to perform specific actions:
-    * **Drawings**:
-      * Determine the drawing type (Annotation or ME10).
-      * Log _drawing owners for_ _Annotation_ drawings.
-      * Copy _Annotation_ to `drawings.ami` in the `Staging Directory`
-      * Copy _Drafting (ME10)_ to `drawings.ami` in the `Staging Directory`
-    * **3d Models**
-      * Reintegrate versioned parts
-      * Mark simplified objects as _untouchable_ and delete the simplifiication feature.
-      * Mark PC Board Assemblies as _untouchable_ and delete any contained coordinate systems.
-      * Run a part-check.
-      * Resolve SYSID conflicts (by assigning new sysids to convert
-        sysid conflicts into  model name conflicts).
-      * Save each loaded model (top-level instance) to `models` in the `Staging Directory`
+    Associated dialog: [`keysight-migrator:KEYSIGHT_MM_IMPORT_ASSEMBLER`](KEYSIGHT-MIGRATOR/KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.md)
 
     During processing of models and drawings a report of required user actions is compiled. The user
     is expected to address all items in the action list before handing the `Staging Directory`
@@ -138,6 +132,8 @@ Stage 2 (Connected to ModelManager)
 :   This stage requires the _ModelManager_ module to be activated. The user is expected to have basic
     _ModelManager_ knowledge to perform the assisted check-ins. The import uses the data passed down
     from stage 1 in the `Staging Directory`.
+
+    Associated dialog: [`keysight-migrator:KEYSIGHT_MM_ASSISTED_CHECKIN`](KEYSIGHT-MIGRATOR/KEYSIGHT_MM_ASSISTED_CHECKIN.dia.md)
 
     All models and drawings contained in the `Input Directory` are loaded into
     _Modeling_ via an _Assisted Check-in_ dialog which:
