@@ -143,8 +143,8 @@ _Modeling_ to perform specific actions:
     Filenames in the `models` sub-directory are component sysids to guarantee uniqueness.
 
 `:CHECK`
-:   Option to run a part check to all parts.
+:   Option to run a part check on all parts.
 
 `:DISPLAY_REPORT`
-:   Show a report when all models are staged is finished.
+:   Show a report when all models are staged.
 
