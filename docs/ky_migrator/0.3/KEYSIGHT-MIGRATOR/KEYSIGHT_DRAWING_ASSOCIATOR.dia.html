@@ -201,28 +201,55 @@ The first line (header) of this file defines the field names of the records:</p>
 </tbody>
 </table>
 <p>Status messages:</p>
-<p>+---------------------------------+-----------------------------------------------------------------------------------+
-| Status                          | Comment                                                                           |
-+=================================+===================================================================================+
-| SUCCESS                         | Viewset owner was successfully identified                                         |
-+---------------------------------+-----------------------------------------------------------------------------------+
-| n of m viewset owners were      | n viewset owners could not be indentified                                         |
-| not found in any 3d model!      |                                                                                   |
-+---------------------------------+-----------------------------------------------------------------------------------+
-| Drawing imported with warnings. | Import warnings are written to a log file located at <code>filepath</code>.                  |
-| See log file: <code>filepath</code>        | This is not fatal. The viewset owners could still be retrieved.                   |
-+---------------------------------+-----------------------------------------------------------------------------------+
-| Drawing is not associated with  | Drawing was imported successfully, but is plain 2d                                |
-| any 3d model                    | and is not associated with any 3d model.                                          |
-+---------------------------------+-----------------------------------------------------------------------------------+
-| Please have a look into the log | Drawing import failed. Details are logged to a file                               |
-| file <filepath>                 | located at <code>filepath</code>.                                                            |
-+---------------------------------+-----------------------------------------------------------------------------------+
-| Viewset owner found multiple    | More than one model qualifies as a viewset owner. <code>name list</code> is the list of names|
-| times in: <code>name list</code>           | as defined in the <em>Master Extraction List</em> (NAME field).                          |
-+---------------------------------+-----------------------------------------------------------------------------------+
-| KPN-link                        | The association was established by one of the metadata matching rules.            |
-+---------------------------------+-----------------------------------------------------------------------------------+</p>
+<table>
+<col style="width:28.45%" />
+<col style="width:71.55%" />
+<thead>
+<tr>
+<th>Status</th>
+<th>Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SUCCESS</td>
+<td>Viewset owner was successfully identified</td>
+</tr>
+<tr>
+<td>n of m viewset owners were
+not found in any 3d model!</td>
+<td>n viewset owners could not be indentified</td>
+</tr>
+<tr>
+<td>Drawing imported with warnings.
+See log file: <code>filepath</code></td>
+<td>Import warnings are written to a log file located at <code>filepath</code>.
+This is not fatal. The viewset owners could still be retrieved.</td>
+</tr>
+<tr>
+<td>Drawing is not associated with
+any 3d model</td>
+<td>Drawing was imported successfully, but is plain 2d
+and is not associated with any 3d model.</td>
+</tr>
+<tr>
+<td>Please have a look into the log
+file <filepath></td>
+<td>Drawing import failed. Details are logged to a file
+located at <code>filepath</code>.</td>
+</tr>
+<tr>
+<td>Viewset owner found multiple
+times in: <code>name list</code></td>
+<td>More than one model qualifies as a viewset owner. <code>name list</code> is the list of names
+as defined in the <em>Master Extraction List</em> (NAME field).</td>
+</tr>
+<tr>
+<td>KPN-link</td>
+<td>The association was established by one of the metadata matching rules.</td>
+</tr>
+</tbody>
+</table>
 </dd>
 </dl>
 <h1 id="syntax">Syntax</h1>
