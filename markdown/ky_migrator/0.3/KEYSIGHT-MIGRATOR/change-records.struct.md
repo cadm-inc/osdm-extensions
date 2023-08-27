@@ -14,6 +14,10 @@ Changes can be logged by calling [`log-component-change`].
 
 # Slots
 
+_changes_ {`hash-table`}
+:   Maps [`cluster-composite-key`](cluster-composite-key.struct.md) key objects to associated
+    change logs of type [`change-info`](change-info.struct.md).
+
 _buffer_ {`list`}
 :   A cached list of [`change-info`](change-info.struct.md) records.
 

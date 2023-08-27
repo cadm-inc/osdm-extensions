@@ -19,7 +19,7 @@ _metakey_ {}
 :   A composite metadata key.
 
 _shares_ {`list`}
-:   List of human readable pathnames created for the shares
+:   List of human readable pathnames {`string`} created for the shares
     of this cluster or [`sel_item`] objects if
     info object has not been _persisted_ yet.
 
