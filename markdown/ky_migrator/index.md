@@ -6,8 +6,8 @@ facilitate the migration of 2d drawings and 3d models into and out of _ModelMana
 # Releases
 
 {style="border-collapse:collapse"}
-|            |        |                                                                      |
-| :--------: | -------| -------------------------------------------------------------------- |
-| :sparkles: |**v0.3.9**| [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/ky_migrator/ky_migrator_x64_0.3.9.zip) - [Documentation](0.3/Home.md) - [Installation](0.3/Installation.md) |
-|            |**v0.2.5**| [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/ky_migrator/ky_migrator_x64_0.2.5.zip) - [Documentation](0.2/Home.md) - [Installation](0.2/Installation.md) |
-|            |**v0.1.0**| [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/ky_migrator/ky_migrator_x64_0.1.0.zip) - [Documentation](0.1/Home.md) - [Installation](0.1/Installation.md) |
+|            |           |                                                                      |
+| :--------: | ----------| -------------------------------------------------------------------- |
+| :sparkles: |**v0.3.10**| [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/ky_migrator/ky_migrator_x64_0.3.10.zip) - [Documentation](0.3/Home.md) - [Installation](0.3/Installation.md) |
+|            |**v0.2.5** | [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/ky_migrator/ky_migrator_x64_0.2.5.zip) - [Documentation](0.2/Home.md) - [Installation](0.2/Installation.md)  |
+|            |**v0.1.0** | [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/ky_migrator/ky_migrator_x64_0.1.0.zip) - [Documentation](0.1/Home.md) - [Installation](0.1/Installation.md)  |
