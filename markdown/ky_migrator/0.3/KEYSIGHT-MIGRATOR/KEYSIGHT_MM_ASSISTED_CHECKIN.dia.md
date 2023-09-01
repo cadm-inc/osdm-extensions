@@ -60,8 +60,9 @@ Several steps are needed to prepare a model for _ModelManager_ check-in:
      * _Type mismatch_ - Components of different type (part/assembly) have the same name.
      * _Local_ - More than one local component of the same type have the same name.
      * _Database ID_ - name revision and status of a component with that name in the database
-  9. The number of distinct components sharing the same model name.
-  10. Options to resolve the name conflict. Model name conflicts are resolved pairwise. Hence it might be necessary
+  9. Option to automatically focus on the component selected for conflict resolution when checked.
+  10. The number of distinct components sharing the same model name.
+  11. Options to resolve the name conflict. Model name conflicts are resolved pairwise. Hence it might be necessary
       to resolve more than one conflict for the same model name.
 
       The resolution options depend on the context of conflict:
@@ -105,15 +106,15 @@ Several steps are needed to prepare a model for _ModelManager_ check-in:
           revert the change. In that case the the model **must** be scanned again with the _Re-Analyze_ action **(13)**
           to pick up the changes.
 
-  11. Compare two conflicting components. :warning: The comparison is performed by an external dialog which terminates
+  12. Compare two conflicting components. :warning: The comparison is performed by an external dialog which terminates
       this dialog. Just restart this dialog once comparison is complete to resume name conflict resolution.
-  12. Apply the resolution selected in **(11)**.
-  13. Re-analyze the current model after a manual model change including rollbacks (_UNDO_) of previous conflict
+  13. Apply the resolution selected in **(11)**.
+  14. Re-analyze the current model after a manual model change including rollbacks (_UNDO_) of previous conflict
       resolutions. :warning: Model Analysis is an expensive operation and may take a while.
-  14. Check-in the current model to _ModelManager_. This actions is available only when all conflicts are resolved.
+  15. Check-in the current model to _ModelManager_. This actions is available only when all conflicts are resolved.
       This action opens the _ModelManager_ _Save Modified_ dialog to perform final checks and allow for a review
       of the components being checked in.
-  15. Retry failed queries. Particularly when working with large models, model name queries fail. The `Retry` button can be used
+  16. Retry failed queries. Particularly when working with large models, model name queries fail. The `Retry` button can be used
       to recover from these failures.
 
       ![Model Name Query Errors](images/QueryError.png)
