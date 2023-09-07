@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="328" height="288">
+    <style>
+        line, path, circle, rect, polygon{stroke:black;stroke-width:1;stroke-opacity:1;fill-opacity:1;stroke-linecap:round;stroke-linejoin:miter;}text{font-family:Monospace;font-size:14px;}rect.backdrop{stroke:none;fill:white;}.broken{stroke-dasharray:8;}.filled{fill:black;}.bg_filled{fill:white;}.nofill{fill:white;}.end_marked_arrow{marker-end:url(#arrow);}.start_marked_arrow{marker-start:url(#arrow);}.end_marked_diamond{marker-end:url(#diamond);}.start_marked_diamond{marker-start:url(#diamond);}.end_marked_circle{marker-end:url(#circle);}.start_marked_circle{marker-start:url(#circle);}.end_marked_open_circle{marker-end:url(#open_circle);}.start_marked_open_circle{marker-start:url(#open_circle);}.end_marked_big_open_circle{marker-end:url(#big_open_circle);}.start_marked_big_open_circle{marker-start:url(#big_open_circle);}
+        <!--separator-->
+        
+    </style>
+    <defs>
+        <marker id="arrow" viewBox="-2 -2 8 8" refX="4" refY="2" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,0 0,4 4,2 0,0"></polygon>
+        </marker>
+        <marker id="diamond" viewBox="-2 -2 8 8" refX="4" refY="2" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <polygon points="0,2 2,0 4,2 2,4 0,2"></polygon>
+        </marker>
+        <marker id="circle" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <circle cx="4" cy="4" r="2" class="filled"></circle>
+        </marker>
+        <marker id="open_circle" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <circle cx="4" cy="4" r="2" class="bg_filled"></circle>
+        </marker>
+        <marker id="big_open_circle" viewBox="0 0 8 8" refX="4" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <circle cx="4" cy="4" r="3" class="bg_filled"></circle>
+        </marker>
+    </defs>
+    <rect class="backdrop" x="0" y="0" width="328" height="288"></rect>
+    <rect x="0" y="4" width="8" height="8" class="solid filled" rx="0"></rect>
+    <text x="34" y="28" >drawings.ami</text>
+    <text x="90" y="60" >*.ami</text>
+    <path d="M 144,48 A 16,16 0,0,0 144,64" class="nofill"></path>
+    <text x="146" y="60" >Annotation</text>
+    <text x="234" y="60" >drawings</text>
+    <path d="M 296,48 A 16,16 0,0,1 296,64" class="nofill"></path>
+    <text x="34" y="92" >drawings.mi</text>
+    <text x="90" y="124" >*.mi</text>
+    <path d="M 136,112 A 16,16 0,0,0 136,128" class="nofill"></path>
+    <text x="138" y="124" >Drafting</text>
+    <line x1="208" y1="112" x2="200" y2="128" class="solid"></line>
+    <text x="210" y="124" >ME10</text>
+    <text x="250" y="124" >drawings</text>
+    <path d="M 312,112 A 16,16 0,0,1 312,128" class="nofill"></path>
+    <text x="34" y="156" >models</text>
+    <text x="90" y="188" >*.sd*</text>
+    <path d="M 144,176 A 16,16 0,0,0 144,192" class="nofill"></path>
+    <text x="146" y="188" >3d</text>
+    <text x="170" y="188" >models</text>
+    <path d="M 216,176 A 16,16 0,0,1 216,192" class="nofill"></path>
+    <text x="34" y="220" >*.lsp</text>
+    <path d="M 88,208 A 16,16 0,0,0 88,224" class="nofill"></path>
+    <text x="90" y="220" >Log</text>
+    <text x="122" y="220" >files</text>
+    <path d="M 160,208 A 16,16 0,0,1 160,224" class="nofill"></path>
+    <text x="34" y="268" >report.html</text>
+    <g>
+        <line x1="4" y1="12" x2="4" y2="260" class="solid"></line>
+        <line x1="4" y1="24" x2="24" y2="24" class="solid"></line>
+        <line x1="4" y1="88" x2="24" y2="88" class="solid"></line>
+        <line x1="4" y1="152" x2="24" y2="152" class="solid"></line>
+        <line x1="4" y1="216" x2="24" y2="216" class="solid"></line>
+        <path d="M 4,260 A 4,4 0,0,0 8,264" class="nofill"></path>
+        <line x1="8" y1="264" x2="24" y2="264" class="solid"></line>
+    </g>
+    <g>
+        <line x1="60" y1="32" x2="60" y2="52" class="solid"></line>
+        <path d="M 60,52 A 4,4 0,0,0 64,56" class="nofill"></path>
+        <line x1="64" y1="56" x2="80" y2="56" class="solid"></line>
+    </g>
+    <g>
+        <line x1="60" y1="96" x2="60" y2="116" class="solid"></line>
+        <path d="M 60,116 A 4,4 0,0,0 64,120" class="nofill"></path>
+        <line x1="64" y1="120" x2="80" y2="120" class="solid"></line>
+    </g>
+    <g>
+        <line x1="60" y1="160" x2="60" y2="180" class="solid"></line>
+        <path d="M 60,180 A 4,4 0,0,0 64,184" class="nofill"></path>
+        <line x1="64" y1="184" x2="80" y2="184" class="solid"></line>
+    </g>
+</svg>

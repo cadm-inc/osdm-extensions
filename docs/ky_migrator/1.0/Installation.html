@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Extension Module Installation and Startup </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.min.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/vs2015.min.css" /> -->
+    <script src="../../js/highlight.min.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../soco_cables/index.html'>Rigid Cable Modeler</a></button>
+<button class='navitem'><a href='../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>ky_migrator</div>
+<button class='navitem'><a href='Home.html'><i>ky_migrator</i> <b>Home</b></a></button>
+<button class='navitem'><a href='Installation.html'>Installation</a></button>
+<button class='navitem'><a href='Customization.html'>Customization</a></button>
+<button class='navitem'><a href='UI.html'>User Interface</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='KEYSIGHT-MIGRATOR/KEYSIGHT-MIGRATOR.pkg.html'>KEYSIGHT-MIGRATOR</a></button>
+<hr/>
+<div class='navlabel'>On this Page</div>
+<button class='navitem'><a href='#extension-module-installation-and-startup'><span class='navitem1'>Extension Module Installation and Startup</span></a></button>
+<button class='navitem'><a href='#prerequisites'><span class='navitem1'>Prerequisites</span></a></button>
+<button class='navitem'><a href='#installation-planning'><span class='navitem1'>Installation Planning</span></a></button>
+<button class='navitem'><a href='#installation-from-zip-archive'><span class='navitem1'>Installation from ZIP Archive</span></a></button>
+<button class='navitem'><a href='#using-the-installer-recommended'><span class='navitem2'>Using the Installer (recommended)</span></a></button>
+<button class='navitem'><a href='#manual-installation'><span class='navitem2'>Manual Installation</span></a></button>
+<button class='navitem'><a href='#startupConfig'><span class='navitem1'>Loading/Activating the Extension Module in <em>Modeling</em></span></a></button>
+<button class='navitem'><a href='#loading-the-extension-module-interactively'><span class='navitem2'>Loading the Extension Module Interactively</span></a></button>
+<button class='navitem'><a href='#some-commands-to-try'><span class='navitem3'>Some Commands to Try</span></a></button>
+<button class='navitem'><a href='#automatically-loading-the-module-when-modeling-starts-autoload'><span class='navitem2'>Automatically Loading the  Module when <em>Modeling</em> Starts (Autoload)</span></a></button>
+<button class='navitem'><a href='#module-on-demand-activation-deactivation'><span class='navitem2'>Module 'On-Demand' Activation / Deactivation</span></a></button>
+<button class='navitem'><a href='#activating-the-module-when-modeling-starts'><span class='navitem2'>Activating the Module when Modeling Starts</span></a></button>
+<button class='navitem'><a href='#loading-a-previous-version-of-the-module'><span class='navitem1'>Loading a Previous Version of the Module</span></a></button>
+<button class='navitem'><a href='#uninstalling-the-module'><span class='navitem1'>Uninstalling the Module</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="extension-module-installation-and-startup" class="title">Extension Module Installation and Startup</h1>
+<h1 id="prerequisites">Prerequisites</h1>
+<ul>
+<li>A complete, up-to-date <em>Creo Elements Direct Modeling</em> installation.</li>
+</ul>
+<h1 id="installation-planning">Installation Planning</h1>
+<p>To perform a successfull installation of this <em>Modeling</em> extension module it is
+necessary to understand the relationship between the module startup
+configuration options and the module install location. Please read section
+<a href="#startupConfig">Loading/Activating the extension module in <em>Modeling</em></a>
+before installing the module.</p>
+<h1 id="installation-from-zip-archive">Installation from ZIP Archive</h1>
+<p>The <code>ky_migrator</code> extension module is shipped in a single ZIP
+archive. It can be installed in one of the following ways:</p>
+<h2 id="using-the-installer-recommended">Using the Installer (recommended)</h2>
+<p>The extension module comes with an installer written in Lisp (<code>install.lsp</code>).
+This installer is located at the root diectory of the ZIP archive. To install the extension
+module using the installer follow these steps:</p>
+<ul>
+<li>Unpack the ZIP archive to a temporary loctation.</li>
+<li>Start a version of <em>Modeling</em> supported by this extension module.</li>
+<li>In Modeling load <code>install.lsp.</code> by one of the following methods:
+<ul>
+<li>Open the <em>Load</em> dialog by clicking on <code>File --&gt; Open...</code> or by typing the
+<code>CTRL-O</code> keyboard shortcut, and then choose the <code>LISP source</code> file type from
+the <em>File type</em> options. Browse to the directory the module got unpacked to,
+and then select <code>install.lsp</code>.</li>
+<li>Load <code>install.lsp</code> from the <em>Modeling</em> command line by typing the Lisp expression:</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<pre><code class="language-Lisp">; '...' = path to the unpacked ZIP archive
+(load &quot;.../install.lsp&quot;)
+</code></pre>
+</blockquote>
+<ul>
+<li>Upon loading the installer, the extension module installation dialog opens.
+Make sure you understand the implications of the load and startup configuration
+of this module as described in the next section. If you need some explanation
+about any of the install options, click the <em>help</em> button <b>❔</b> at the top right
+corner of the dialog.</li>
+<li>Select an installation location and/or startup option and click the <em>Confirm</em> button.
+The module will be installed to the selected loaction and is ready for use.</li>
+</ul>
+<h2 id="manual-installation">Manual Installation</h2>
+<p>The extension module is <em>portable</em> and can be unpacked in any desired directory and executed from there.</p>
+<h1 id="startupConfig">Loading/Activating the Extension Module in <em>Modeling</em></h1>
+<p>To use the functionality provided by the extension module it needs to be first
+<em>loaded</em> into <em>Modeling</em>.</p>
+<p>The module can be then activated manually (interactively) or automatically when
+<em>Modeling</em> starts:</p>
+<h2 id="loading-the-extension-module-interactively">Loading the Extension Module Interactively</h2>
+<ul>
+<li>Open the <em>Load</em> dialog by clicking on <code>File --&gt; Open...</code> or pressing the
+<code>CTRL-O</code> keyboard shortcut and then choose the <code>LISP source</code> file type from the
+File type_ options. Browse to the 'ky_migrator' directory in the
+module's installation and then select <code>startup.lsp</code>.</li>
+<li>Load <code>startup.lsp</code> from the <em>Modeling</em> command line by typing the Lisp expression:</li>
+</ul>
+<blockquote>
+<blockquote>
+<pre><code class="language-Lisp">; '...' -  path to the module's installation directory
+(load &quot;.../ky_migrator/startup.lsp&quot;)
+</code></pre>
+</blockquote>
+</blockquote>
+<h3 id="some-commands-to-try">Some Commands to Try</h3>
+<blockquote>
+<p>Type any of the following commands into the <em>Modeling</em> command
+line and press <em>Enter</em> to execute:</p>
+<pre><code class="language-lisp">; Show information about the `ky_migrator` extension module
+(kym:about-module)
+
+; Show help information
+(kym:display-module-help)
+</code></pre>
+</blockquote>
+<h2 id="automatically-loading-the-module-when-modeling-starts-autoload">Automatically Loading the  Module when <em>Modeling</em> Starts (Autoload)</h2>
+<p>The extension module can be loaded automatically on <em>Modeling</em> startup by adding
+startup code to one of the <code>sd_customize</code> files:</p>
+<pre><code class="language-lisp">; '...' is the module installation directory
+(load &quot;.../ky_migrator/startup.lsp&quot;)
+</code></pre>
+<p>As described in the <em>Customization Guide for Administrators and Advanced Users</em> (<em>Modeling documentation</em>),
+<code>sd_customize</code> files can exist in any of the <em>Modeling</em> customization directories:</p>
+<ul>
+<li>SD (factory level)</li>
+<li>Corp (corporate level)</li>
+<li>Site (site level)</li>
+<li>User (user level)</li>
+</ul>
+<p>It is recommended to let the install dialog add this entry the optimal
+<code>sd_customize</code> file by <strong>checking</strong> the <em>Load when Modeling starts</em> option. The
+installer automatically chooses the optimal <code>sd_customize</code>
+file location for the selected install location.</p>
+<h2 id="module-on-demand-activation-deactivation">Module 'On-Demand' Activation / Deactivation</h2>
+<p>Once the module is loaded it needs to be turned on (activated) using
+the Modeling <em>Module Management Dialog</em> which opens when you click
+on <code>File -&gt; Modules ...</code>. All loaded CADM extension Modules can be found in the
+<code>CADM Extensions</code> section.</p>
+<p>To activate/deactivate a CADM module check/uncheck it in the dialog.</p>
+<h2 id="activating-the-module-when-modeling-starts">Activating the Module when Modeling Starts</h2>
+<p>To activate the module automatically when Modeling starts, perform these
+steps:</p>
+<ul>
+<li>Open the <em>Modeling Module Activation</em> dialog by clicking on
+<code>File -&gt; Modules ... -&gt; Startup ...</code>.</li>
+<li>Select the module to auto-activate from the <em>Modules</em> list on the right side.</li>
+<li>Click 'Add --&gt;' to add the module to the <em>Modeling Startup Sequence</em>.</li>
+</ul>
+<h1 id="loading-a-previous-version-of-the-module">Loading a Previous Version of the Module</h1>
+<p>All versions of a module are installed side-by-side. By default the newest
+installed version is started. In case is should be necessary to temporarily or
+permanently revert back to an older version of the module, this can be easily
+achieved by editing the module's <code>startup.lsp</code> file
+&quot;.../ky_migrator/startup.lsp&quot;. <code>...</code> represents the module's install
+location. The top of this <code>startup.lsp</code> looks like this:</p>
+<pre><code class="language-lisp">(in-package :cadm-extension-installer :use '(:lisp :oli))
+
+(let ((module-version &quot;1.2.8&quot;) ; &lt;-- change this version
+   ...
+)
+</code></pre>
+<p>To start an older version replace the current version with another installed
+version and save the changes.</p>
+<h1 id="uninstalling-the-module">Uninstalling the Module</h1>
+<p>CADM extension moduled are <em>portable</em> and can be easily deinstalled by deleting
+the module directory.</p>
+<p>To delete a particular version of the module, delete the <em>version</em> directory
+from the module's installation directory and update the
+&quot;.../ky_migrator/startup.lsp&quot; file to load one of the remaining
+versions as described in the previous section.</p>
+<p>To delete all versions of the module delete its installation directory
+and remove the load configuration from <code>sd_customize</code> or <code>pesd_startup</code>.</p>
+
+        </article>
+        <footer>
+            <hr />
+            Module: ky_migrator v1.0.0 - Build Date: Sep  7 2023; Copyright 2023 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>

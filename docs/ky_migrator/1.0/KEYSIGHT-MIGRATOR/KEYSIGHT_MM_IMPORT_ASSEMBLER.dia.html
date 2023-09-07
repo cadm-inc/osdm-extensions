@@ -1,0 +1,179 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>KEYSIGHT_MM_IMPORT_ASSEMBLER [Public Dialog] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.min.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/vs2015.min.css" /> -->
+    <script src="../../../js/highlight.min.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_cables/index.html'>Rigid Cable Modeler</a></button>
+<button class='navitem'><a href='../../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>ky_migrator</div>
+<button class='navitem'><a href='../Home.html'><i>ky_migrator</i> <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../KEYSIGHT-MIGRATOR/KEYSIGHT-MIGRATOR.pkg.html'>KEYSIGHT-MIGRATOR</a></button>
+<hr/>
+<div class='navlabel'>On this Page</div>
+<button class='navitem'><a href='#keysight_mm_import_assembler-public-dialog'><span class='navitem1'>KEYSIGHT_MM_IMPORT_ASSEMBLER [Public Dialog]</span></a></button>
+<button class='navitem'><a href='#dialog'><span class='navitem1'>Dialog</span></a></button>
+<button class='navitem'><a href='#description'><span class='navitem1'>Description</span></a></button>
+<button class='navitem'><a href='#syntax'><span class='navitem1'>Syntax</span></a></button>
+<button class='navitem'><a href='#options'><span class='navitem2'>Options</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="keysight_mm_import_assembler-public-dialog" class="title">KEYSIGHT_MM_IMPORT_ASSEMBLER [Public Dialog]</h1>
+<p class="package">Package: <a href="KEYSIGHT-MIGRATOR.pkg.html"><code>keysight-migrator</code></a> (Nick name(s): <code>:kym</code>) </p>
+<p>Stage <em>Modeling</em> 2d and 3d models for <em>ModelManager</em> check-in.</p>
+<p>This dialog can be activated by:</p>
+<ul>
+<li>Selecting the command Prepare MM Import in the Keysight Migrator group
+of the <em>Modeling</em> ribbon (see also <a href="../UI.html">The Extension Module User Interface</a></li>
+<li>Typing <code>KEYSIGHT_MM_IMPORT_ASSEMBLER</code> into the <em>Modeling</em> command line.</li>
+</ul>
+<h1 id="dialog">Dialog</h1>
+<p><img src="images/Assembler.png" class="rightfloat" alt="Import Assembler Screenshot" /></p>
+<ol>
+<li><p>Location of the input directory containing 2d/3d data for check-in:</p>
+<ul>
+<li>3d Models (*.sd?; *.sd?c; *.xmit (ME30); *.bdl; *.pkg; *.sdexp)</li>
+<li>Annotation or plain ME10 drawings (*.mi; *.ami).</li>
+</ul>
+<p>The sub-structure is up to the user but it is recommended to keep related files together
+in sub-directories.</p>
+</li>
+<li><p>The 2d/3d models staged for <em>ModelManager</em> import.</p>
+<ul>
+<li>3d models are staged in the 'models' sub-directory.  Filenames in this sub-directory
+are component sysids to guarantee uniqueness.</li>
+<li>Annotation drawings are staged in the <code>drawings.ami</code> sub-directory.</li>
+<li>Plain ME10(Drafting drawings are staged in the <code>drawings.mi</code> sub-directory.</li>
+<li>Various log files (*.lsp) are generated in the staging directory:
+<ul>
+<li><code>toc.lsp</code> - Records of type <a href="cad-fileinfo.struct.html"><code>cad-fileinfo</code></a> describing the files
+loaded and staged for ModelManager check-in-</li>
+<li><code>ami-drawings.lsp</code> - Records of type <a href="ami-drawing-info.struct.html"><code>ami-drawing-info</code></a> describing the
+relationship of Annotation drawings with the 3d model.</li>
+<li><code>components.lsp</code> - Records of type <a href="instance-info.struct.html"><code>instance-info</code></a> and <a href="contents-info.struct.html"><code>contents-info</code></a>
+describing the structure components of the models loaded for processing.</li>
+<li><code>analytics.lsp</code> - Records of type [<code>model-status</code>] and [<code>ami-drawing-status</code>]
+decribing the associations between 3d and 2d model and also a quality (part check) assessment of the 3d model.</li>
+</ul>
+</li>
+<li>A human-readable report file <code>report.htm</code> generated in the staging directory.
+The report is generated from the information available in the log files.</li>
+</ul>
+<p>The structure diagram of this directory is:</p>
+<pre><img src='KEYSIGHT_MM_IMPORT_ASSEMBLER.dia1.svg' alt='Diagram 1.' /></pre>
+</li>
+</ol>
+<h1 id="description">Description</h1>
+<p>This dialog implements stage 1 of the migration process. For stage 1 <em>ModelManager</em> is
+<strong>not</strong> is not required nor is any specific knowledge about <em>ModelManager</em></p>
+<pre><img src='KEYSIGHT_MM_IMPORT_ASSEMBLER.dia2.svg' alt='Diagram 2.' /></pre>
+<p>All models and drawings contained in the <code>Input Directory</code> are loaded into
+<em>Modeling</em> to perform specific actions:</p>
+<ul>
+<li><strong>Drawings</strong>:
+<ul>
+<li>Determine the drawing type (Annotation or ME10).</li>
+<li>Log <em>drawing owners for</em> <em>Annotation</em> drawings.</li>
+<li>Copy <em>Annotation</em> to <code>drawings.ami</code> in the <code>Staging Directory</code></li>
+<li>Copy <em>Drafting (ME10)</em> to <code>drawings.ami</code> in the <code>Staging Directory</code></li>
+</ul>
+</li>
+<li><strong>3d Models</strong>
+<ul>
+<li>Reintegrate versioned parts</li>
+<li>Mark simplified objects as <em>untouchable</em> and delete the simplifiication feature.</li>
+<li>Mark PC Board Assemblies as <em>untouchable</em> and delete any contained coordinate systems.</li>
+<li>Run a part-check.</li>
+<li>Resolve SYSID conflicts (by assigning new sysids to convert
+sysid conflicts into  model name conflicts).</li>
+<li>Save each loaded model (top-level instance) to <code>models</code> in the <code>Staging Directory</code></li>
+</ul>
+</li>
+<li>Finally, if option <code>DISPLAY_REPORT</code> is active a report is displayed in the default browser.</li>
+</ul>
+<h1 id="syntax">Syntax</h1>
+<pre><img src='KEYSIGHT_MM_IMPORT_ASSEMBLER.dia3.svg' alt='Diagram 3.' /></pre>
+<h2 id="options">Options</h2>
+<dl>
+<dt><code>:INPUT_DIRECTORY</code></dt>
+<dd>The input directory containing 2d <em>Annotation</em> and MI drawings (*.mi; <em>.ami) as well as 3d models of
+any format supported by <em>Modeling</em> (</em>.sd?; *.sd?c; *.xmit (ME30); *.bdl; *.pkg; *.sdexp).</dd>
+<dt><code>:STAGING_DIRECTORY</code></dt>
+<dd>
+<p>3d models and drawings The models in native <em>Modeling</em> format (.sd*; *.ami: <em>.mi) and log files (</em>.lsp)
+to pass check-in information to the stage 2 dialog <a href="KEYSIGHT_MM_ASSISTED_CHECKIN.dia.html"><code>KEYSIGHT_MM_ASSISTED_CHECKIN</code></a>.</p>
+<p>Filenames in the <code>models</code> sub-directory are component sysids to guarantee uniqueness.</p>
+</dd>
+<dt><code>:CHECK</code></dt>
+<dd>Option to run a part check on all parts.</dd>
+<dt><code>:DISPLAY_REPORT</code></dt>
+<dd>
+<p>Show a report when all models are staged.</p>
+</dd>
+</dl>
+
+        </article>
+        <footer>
+            <hr />
+            Module: ky_migrator v1.0.0 - Build Date: Sep  7 2023; Copyright 2023 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>

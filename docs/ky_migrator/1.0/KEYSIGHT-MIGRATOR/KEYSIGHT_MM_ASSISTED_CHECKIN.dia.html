@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>KEYSIGHT_MM_ASSISTED_CHECKIN [Public Dialog] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.min.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/vs2015.min.css" /> -->
+    <script src="../../../js/highlight.min.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_cables/index.html'>Rigid Cable Modeler</a></button>
+<button class='navitem'><a href='../../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>ky_migrator</div>
+<button class='navitem'><a href='../Home.html'><i>ky_migrator</i> <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../KEYSIGHT-MIGRATOR/KEYSIGHT-MIGRATOR.pkg.html'>KEYSIGHT-MIGRATOR</a></button>
+<hr/>
+<div class='navlabel'>On this Page</div>
+<button class='navitem'><a href='#keysight_mm_assisted_checkin-public-dialog'><span class='navitem1'>KEYSIGHT_MM_ASSISTED_CHECKIN [Public Dialog]</span></a></button>
+<button class='navitem'><a href='#dialog'><span class='navitem1'>Dialog</span></a></button>
+<button class='navitem'><a href='#checking-in-3d-models'><span class='navitem2'>Checking in 3d Models</span></a></button>
+<button class='navitem'><a href='#checking-in-drawings'><span class='navitem2'>Checking in Drawings</span></a></button>
+<button class='navitem'><a href='#description'><span class='navitem1'>Description</span></a></button>
+<button class='navitem'><a href='#syntax'><span class='navitem1'>Syntax</span></a></button>
+<button class='navitem'><a href='#options'><span class='navitem1'>Options</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="keysight_mm_assisted_checkin-public-dialog" class="title">KEYSIGHT_MM_ASSISTED_CHECKIN [Public Dialog]</h1>
+<p class="package">Package: <a href="KEYSIGHT-MIGRATOR.pkg.html"><code>keysight-migrator</code></a> (Nick name(s): <code>:kym</code>) </p>
+<p>Assisted _ModelManager check-in of 2d/3d models in a staging directory</p>
+<p>This dialog can be activated by:</p>
+<ul>
+<li>Selecting the command Prepare MM Import in the Keysight Migrator group
+of the <em>Modeling</em> ribbon (see also <a href="../UI.html">The Extension Module User Interface</a></li>
+<li>Typing <code>KEYSIGHT_MM_ASSISTED_CHECKIN</code> into the <em>Modeling</em> command line.</li>
+</ul>
+<h1 id="dialog">Dialog</h1>
+<p>The dialog has two main distinct, sequential phases to facilitate check-in of 3d models (phase 1) and drawings (phase 2).
+Before drawings can be checked-in, the 3d model has to be checked-in to <em>ModelManager sucessfully</em>.</p>
+<p><img src="images/StagingFolderSelection.png" class="rightfloat" alt="Staging folder selection" /></p>
+<p>The assisted check-in process begins with selection of the staging directory which was producedmust  by the.
+<a href="KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.html"><code>KEYSIGHT_MM_IMPORT_ASSEMBLER</code></a> dialog.</p>
+<ol>
+<li>Selection of the staging folder (generated by the <a href="KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.html"><code>KEYSIGHT_MM_IMPORT_ASSEMBLER</code></a> dialog).</li>
+<li>Displays the number of models in the selected staging folder which are available for check-in.</li>
+</ol>
+<h2 id="checking-in-3d-models" class="unfloat">Checking in 3d Models</h2>
+<p>Several steps are needed to prepare a model for <em>ModelManager</em> check-in:</p>
+<ul>
+<li><p id="ModelSelection">Model Selection</p>
+<p><img src="images/ModelSelection.png" alt="Model Selection" /></p>
+<p>Each model has to be loaded one-by-one for check-in.</p>
+<ol>
+<li>The model to process can be chosen
+from the <em>Import Queue</em> selection table by double left-click or by single click to select followed by a click
+on the <code>Apply</code> button.</li>
+<li>The number of components in the current models which were flagged by the first migration stage.
+Since these errors were not repaired in stage 1, it is assumed that the model is supposed to be checked-in
+in its corrupt state.</li>
+<li>Show the error report created in the migration stage 1. This action is only available if there are any errors</li>
+<li>Option to allow a model to be checked-in despite of errors. ⚠️ Must be checked in order to check-in a corrupted model.</li>
+</ol>
+</li>
+<li><p id="NameConflictSelection">Name Conflict Resolution</p>
+<p>In <em>ModelManager</em> each distinct, sharable structure component must have a unique name. If more than one structure component share the
+same model model name, that conflict must be resolved by using the tools provided by actions in the <em>Model Name Conflicts</em>
+panel of this dialog or manually by manipulating the currently loaded model.</p>
+<p><img src="images/NameConflictSelection.png" alt="Name Conflict Selection" /></p>
+<ol start="5">
+<li><p>A model name conflict selected for conflict resolution. All model components with the conflicting name are highlighted in
+the structure browser.</p>
+</li>
+<li><p>The number of model name conflicts found in the current model.</p>
+</li>
+<li><p>The currently selected model name selected for conflict resolution. The model name can directly selected in the
+structure browser by double-click, or in the <em>Name Conflicts</em> table.</p>
+</li>
+<li><p>Information about the type of conflict. Can be</p>
+<ul>
+<li><em>Type mismatch</em> - Components of different type (part/assembly) have the same name.</li>
+<li><em>Local</em> - More than one local component of the same type have the same name.</li>
+<li><em>Database ID</em> - name revision and status of a component with that name in the database</li>
+</ul>
+</li>
+<li><p>Option to automatically focus on the component selected for conflict resolution when checked.</p>
+</li>
+<li><p>The number of distinct components sharing the same model name.</p>
+</li>
+<li><p>Options to resolve the name conflict. Model name conflicts are resolved pairwise. Hence it might be necessary
+to resolve more than one conflict for the same model name.</p>
+<p>The resolution options depend on the context of conflict:</p>
+<table>
+<col style="width:25.42%" />
+<col style="width:28.81%" />
+<col style="width:45.76%" />
+<thead>
+<tr>
+<th>Check-Model
+Source</th>
+<th>Component Types</th>
+<th>Resolution Options</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>database</td>
+<td>incompatible</td>
+<td>
+<ul>
+<li>Rename Reference Model</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>database</td>
+<td>compatible</td>
+<td>
+<ul>
+<li>Rename Reference Model</li>
+<li>Replace Reference Model</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>local</td>
+<td>incompatible</td>
+<td>
+<ul>
+<li>Rename Reference Model</li>
+<li>Rename Check Model</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>local</td>
+<td>compatible</td>
+<td>
+<ul>
+<li>Rename Reference Model</li>
+<li>Rename Check Model</li>
+<li>Replace Reference Model</li>
+<li>Replace Check Model</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt><strong>Check Model</strong></dt>
+<dd>The term <em>Check Model</em> refers to a model in or loaded from the <em>ModelManager</em> database or a (random) local
+model which takes part in the conflict.</dd>
+<dt><strong>Reference Model</strong></dt>
+<dd>The term 'Reference Model' always refers to a local model which participates in a name conflict.</dd>
+<dt><strong>Rename ...</strong></dt>
+<dd>A conflict resolution option which assigns a unique, auto-generated model name to the
+<em>Check-</em> or <em>Reference Model</em></dd>
+<dt><strong>Replace ...</strong></dt>
+<dd>
+<p>A conflict resolution option which <strong>destructively</strong> replaces all instances of a part/assembly with the
+<em>Check Model</em>, which is another part/assembly. If the <em>Check Model</em> is not in-session, it is loaded from the
+database.</p>
+<p>⚠️ Always use the <code>Compare</code> option <strong>(11)</strong> to make sure the <em>Replace</em> operation does not change
+the model in a bad way. In cases <em>Replace</em> did change the model in a bad way the <em>UNDO</em> action can be used to
+revert the change. In that case the the model <strong>must</strong> be scanned again with the <em>Re-Analyze</em> action <strong>(13)</strong>
+to pick up the changes.</p>
+</dd>
+</dl>
+</li>
+<li><p>Compare two conflicting components. ⚠️ The comparison is performed by an external dialog which terminates
+this dialog. Just restart this dialog once comparison is complete to resume name conflict resolution.</p>
+</li>
+<li><p>Apply the resolution selected in <strong>(11)</strong>.</p>
+</li>
+<li><p>Re-analyze the current model after a manual model change including rollbacks (<em>UNDO</em>) of previous conflict
+resolutions. ⚠️ Model Analysis is an expensive operation and may take a while.</p>
+</li>
+<li><p>Check-in the current model to <em>ModelManager</em>. This actions is available only when all conflicts are resolved.
+This action opens the <em>ModelManager</em> <em>Save Modified</em> dialog to perform final checks and allow for a review
+of the components being checked in.</p>
+</li>
+<li><p>Retry failed queries. Particularly when working with large models, model name queries fail. The <code>Retry</code> button can be used
+to recover from these failures.</p>
+<p><img src="images/QueryError.png" alt="Model Name Query Errors" /></p>
+</li>
+</ol>
+</li>
+</ul>
+<h2 id="checking-in-drawings">Checking in Drawings</h2>
+<p>Once a model has been successfully checked-in to <em>ModelManager</em> any drawing associated with that model can be checked-in:</p>
+<p><img src="images/DrawingSelection.png" alt="Model Selection" /></p>
+<ol start="17">
+<li>The number of drawings associated with the current model.</li>
+<li>The Annotation drawing loaded for the current model.Can be selected in the drawing selection table.</li>
+<li>The number of views on the drawing which could not be associated with any 3d component of the currently
+loaded model.</li>
+<li>Action button to check-in the currently loaded drawing.</li>
+</ol>
+<h1 id="description">Description</h1>
+<p>This dialog implements stage 2 of the migration process. Basic <em>ModelManager</em> know-how is required.</p>
+<pre><img src='KEYSIGHT_MM_ASSISTED_CHECKIN.dia1.svg' alt='Diagram 1.' /></pre>
+<h1 id="syntax">Syntax</h1>
+<pre><img src='KEYSIGHT_MM_ASSISTED_CHECKIN.dia2.svg' alt='Diagram 2.' /></pre>
+<h1 id="options">Options</h1>
+<dl>
+<dt><code>:STAGING_DIRECTORY</code></dt>
+<dd>The models in native <em>Modeling</em> format (.sd*) as prepared by the migration
+stage 1 dialog <a href="KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.html"><code>KEYSIGHT_MM_IMPORT_ASSEMBLER</code></a>.
+Filenames are component sysids to guarantee uniqueness.</dd>
+<dt><code>:CURRENT_MODEL</code></dt>
+<dd>The current model loaded into session for conflict resolution and check-in.</dd>
+<dt><code>:CURRENT_MODEL_NAME</code></dt>
+<dd>The 3d component currently selected for conflict resolution.</dd>
+<dt><code>:FOCUS_SELECTED_COMPONENT</code></dt>
+<dd>Option to focus on a component selected for conflict resolution to only draw that component
+in the graphical viewport.</dd>
+<dt><code>:SHOW_ERROR_REPORT</code></dt>
+<dd>Show the error report generated in phase one for the selected component.</dd>
+</dl>
+<p><code>:IGNORE_ERRORS</code>
+: Option to ignore model errors which would otherwise prevent a check-in.</p>
+<dl>
+<dt><code>:RESOLUTION</code></dt>
+<dd>
+<p>A list of choices for resolving a conflict.</p>
+<ul>
+<li><code>:rename-local</code> - Assign a unique model name to a local (reference) component.</li>
+<li><code>:rename-check</code> - Assign a unique model name to another local (check) component.</li>
+<li><code>:replace-local-by-db</code> - Replace a local (reference) model by a model loaded from the database.</li>
+<li><code>:replace-reference-by-check</code>-Replace a local (reference) model by another local (check) model.</li>
+<li><code>:replace-check-by-reference</code> - Replace a local (check) model by another local (refernce) model.</li>
+</ul>
+</dd>
+<dt><code>:COMPARE</code></dt>
+<dd>
+<p>Perform a model compare of a local (reference) model and a another (check) model which can be local
+or from the database.</p>
+<p><code>:APPLY_RESOLUTION</code></p>
+</dd>
+<dd>Apply the selected resolution-</dd>
+<dt><code>:RESCAN_CURRENT_MODEL</code></dt>
+<dd>
+<p>Re analyze the current model after a change which was performed outside the
+<em>Assisted Check-in</em> dialog.</p>
+<p><code>:CHECK_IN</code></p>
+</dd>
+<dd>Action to check the current model in to <em>ModelManager</em> after all conflicts have been resolved,</dd>
+<dt><code>:CURRENT_DRAWING</code></dt>
+<dd>The drawing currently loaded into session for check-in.</dd>
+<dt><code>:CHECK_IN_DRAWING</code></dt>
+<dd>
+<p>Check-in current drawing into <em>ModelManager</em>.</p>
+</dd>
+</dl>
+
+        </article>
+        <footer>
+            <hr />
+            Module: ky_migrator v1.0.0 - Build Date: Sep  7 2023; Copyright 2023 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>
