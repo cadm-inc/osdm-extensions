@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Modeling Extension Module _Keysight Migrator_ </title>
+    <link rel="stylesheet" type="text/css" href="../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../styles/vs.min.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/agate.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/far.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/tomorrow-night-blue.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../styles/vs2015.min.css" /> -->
+    <script src="../../js/highlight.min.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../katex/katex.min.css" />
+    <script defer src="../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../soco_cables/index.html'>Rigid Cable Modeler</a></button>
+<button class='navitem'><a href='../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>ky_migrator</div>
+<button class='navitem'><a href='Home.html'><i>ky_migrator</i> <b>Home</b></a></button>
+<button class='navitem'><a href='Installation.html'>Installation</a></button>
+<button class='navitem'><a href='Customization.html'>Customization</a></button>
+<button class='navitem'><a href='UI.html'>User Interface</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='KEYSIGHT-MIGRATOR/KEYSIGHT-MIGRATOR.pkg.html'>KEYSIGHT-MIGRATOR</a></button>
+<hr/>
+<div class='navlabel'>On this Page</div>
+<button class='navitem'><a href='#modeling-extension-module-keysight-migrator'><span class='navitem1'>Modeling Extension Module <em>Keysight Migrator</em></span></a></button>
+<button class='navitem'><a href='#getting-started'><span class='navitem1'>Getting Started</span></a></button>
+<button class='navitem'><a href='#migration-processes-and-tools'><span class='navitem1'>Migration Processes and Tools</span></a></button>
+<button class='navitem'><a href='#drawing-association'><span class='navitem2'>Drawing Association</span></a></button>
+<button class='navitem'><a href='#migration-of-unmanaged-2d3d-data-to-modelmanager'><span class='navitem2'>Migration of unmanaged 2d/3d Data to ModelManager</span></a></button>
+<button class='navitem'><a href='#programming-interfaces'><span class='navitem1'>Programming Interfaces</span></a></button>
+<button class='navitem'><a href='#lisp-packages-in-this-module'><span class='navitem2'>Lisp packages in this module</span></a></button>
+<button class='navitem'><a href='#programming-interfaces-1'><span class='navitem1'>Programming Interfaces</span></a></button>
+<button class='navitem'><a href='#lisp-packages-in-this-module-1'><span class='navitem2'>Lisp packages in this module</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="modeling-extension-module-keysight-migrator" class="title">Modeling Extension Module <em>Keysight Migrator</em></h1>
+<p>The <em>Keysight Migrator</em> extension module for <em>Modeling</em> provides dialogs and
+tools to facilitate the import of 3d models and 2d drawings
+contained in local folders to <em>ModelManager</em> in preparation for migrating the data to <em>Enovia</em>.</p>
+<h1 id="getting-started">Getting Started</h1>
+<ul>
+<li><a href="Installation.html">Extension Module Installation and Startup</a></li>
+<li><a href="Customization.html">Extension Module Customization Overview</a></li>
+<li><a href="UI.html">The Extension Module User Interface</a></li>
+</ul>
+<h1 id="migration-processes-and-tools">Migration Processes and Tools</h1>
+<h2 id="drawing-association">Drawing Association</h2>
+<p>The Drawing Association Tool <a href="KEYSIGHT-MIGRATOR/KEYSIGHT_DRAWING_ASSOCIATOR.dia.html"><code>keysight-migrator:KEYSIGHT_DRAWING_ASSOCIATOR</code></a> uses comma
+separated records read from a <em>Master Extraction List</em> to obtain information about
+drawings and 3d models (parts / assemblies) located in an 'extraction folder'.
+This information is used in the following ways to establish an association between
+drawings and 3d models (parts / assemblies):</p>
+<ol>
+<li>The 3d models referenced by the Master Extraction List are scanned for instances</li>
+<li>Each drawing referenced in the Master Extraction List is loaded into Modeling in order to inquire the sysids of the 3d models referenced the drawing.</li>
+<li>The sysids obtained from the drawing are matched against the sysids obtained in step 1. The match result is reported in the output csv file (drawing associations file).</li>
+<li>If enabled a metadata match is applied to drawings which incomplete matching in the previous step. The 3d models matching the metadata criteria are reported in the output csv file.</li>
+</ol>
+<pre><img src='Home1.svg' alt='Diagram 1.' /></pre>
+<h2 id="migration-of-unmanaged-2d3d-data-to-modelmanager">Migration of unmanaged 2d/3d Data to ModelManager</h2>
+<p>The migration process imports unmanaged models and drawings from a local folder to ModelManager is a two-stage process. Each process stage has a
+dedicated dialog:</p>
+<ol>
+<li><a href="KEYSIGHT-MIGRATOR/KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.html"><code>keysight-migrator:KEYSIGHT_MM_IMPORT_ASSEMBLER</code></a> (Stage <em>Modeling</em> 2d and 3d models for <em>ModelManager</em> check-in)</li>
+<li><a href="KEYSIGHT-MIGRATOR/KEYSIGHT_MM_ASSISTED_CHECKIN.dia.html"><code>keysight-migrator:KEYSIGHT_MM_ASSISTED_CHECKIN</code></a> (Assisted _ModelManager check-in of 2d/3d models in a staging directory)</li>
+</ol>
+<p>Data is passed between the stages via file system directories.</p>
+<pre><img src='Home2.svg' alt='Diagram 2.' /></pre>
+<p>where:</p>
+<dl>
+<dt><code>Input Directory</code></dt>
+<dd>is a local folder containing <em>Drafting</em> or Annotation drawings (*.mi; <em>.ami) and 3d models
+(</em>.sd?; *.sd?c; *.xmit (ME30); *.bdl; *.pkg; *.sdexp). This folder can contain
+a user defined sub-directory structure.</dd>
+<dt><code>Staging Directory</code></dt>
+<dd>
+<p>A work folder which is used to pass processed models and drawings to the check-in stage (stage 2).
+this directory typically has following structure and contents:</p>
+<pre><img src='Home3.svg' alt='Diagram 3.' /></pre>
+</dd>
+<dt><code>Model Manager</code></dt>
+<dd>The <code>ModelManager</code> database where the models and drawings are to be managed.</dd>
+</dl>
+<p>The process has two distinct stages each of which can be interrupted and resumed at any point.</p>
+<dl>
+<dt>Stage 1 (not connected to MM)</dt>
+<dd>
+<p>This stage does <strong>not</strong> require the <em>ModelManager</em> module to be activated nor does it require
+the user to have <em>ModelManager</em> specific knowledge.</p>
+<p>Associated dialog: <a href="KEYSIGHT-MIGRATOR/KEYSIGHT_MM_IMPORT_ASSEMBLER.dia.html"><code>keysight-migrator:KEYSIGHT_MM_IMPORT_ASSEMBLER</code></a></p>
+<p>During processing of models and drawings a report of required user actions is compiled. The user
+is expected to address all items in the action list before handing the <code>Staging Directory</code>
+down to stage 2.</p>
+</dd>
+<dt>Stage 2 (Connected to ModelManager)</dt>
+<dd>
+<p>This stage requires the <em>ModelManager</em> module to be activated. The user is expected to have basic
+<em>ModelManager</em> knowledge to perform the assisted check-ins. The import uses the data passed down
+from stage 1 in the <code>Staging Directory</code>.</p>
+<p>Associated dialog: <a href="KEYSIGHT-MIGRATOR/KEYSIGHT_MM_ASSISTED_CHECKIN.dia.html"><code>keysight-migrator:KEYSIGHT_MM_ASSISTED_CHECKIN</code></a></p>
+<p>All models and drawings contained in the <code>Input Directory</code> are loaded into
+<em>Modeling</em> via an <em>Assisted Check-in</em> dialog which:</p>
+<ul>
+<li>presents a table of 'model-name conflicts' which the user can resolve by.
+<ul>
+<li>Assigning a new model name</li>
+<li>Replacing the conflicting object with an object already present in <em>ModelManager</em></li>
+</ul>
+</li>
+<li>Loads all associated drawings for check-in.</li>
+</ul>
+</dd>
+</dl>
+<h1 id="programming-interfaces">Programming Interfaces</h1>
+<h2 id="lisp-packages-in-this-module">Lisp packages in this module</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="KEYSIGHT-MIGRATOR/KEYSIGHT-MIGRATOR.pkg.html"><code>keysight-migrator</code></a></td>
+<td style="text-align: left;">Primary Lisp package of the <code>ky_migrator</code> <em>Modeling</em> extension module.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="programming-interfaces-1">Programming Interfaces</h1>
+<h2 id="lisp-packages-in-this-module-1">Lisp packages in this module</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Summary</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="KEYSIGHT-MIGRATOR/KEYSIGHT-MIGRATOR.pkg.html"><code>keysight-migrator</code></a></td>
+<td style="text-align: left;">Primary Lisp package of the <code>ky_migrator</code> <em>Modeling</em> extension module.</td>
+</tr>
+</tbody>
+</table>
+
+        </article>
+        <footer>
+            <hr />
+            Module: ky_migrator v1.1.0 - Build Date: Oct 30 2023; Copyright 2023 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>

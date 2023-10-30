@@ -111,10 +111,13 @@ Several steps are needed to prepare a model for _ModelManager_ check-in:
   13. Apply the resolution selected in **(11)**.
   14. Re-analyze the current model after a manual model change including rollbacks (_UNDO_) of previous conflict
       resolutions. :warning: Model Analysis is an expensive operation and may take a while.
-  15. Check-in the current model to _ModelManager_. This actions is available only when all conflicts are resolved.
+  15. Save the current model to disk, including all conflict resolutions applied so far. This is useful to allow interruptions of the check-in process.
+      When the Assisted Check-in dialog is started again the saved model will be listed as `:PENDING` and, when loaded, will have all changes
+      applied in an earlier session.
+  16. Check-in the current model to _ModelManager_. This actions is available only when all conflicts are resolved.
       This action opens the _ModelManager_ _Save Modified_ dialog to perform final checks and allow for a review
       of the components being checked in.
-  16. Retry failed queries. Particularly when working with large models, model name queries fail. The `Retry` button can be used
+  17. Retry failed queries. Particularly when working with large models, model name queries fail. The `Retry` button can be used
       to recover from these failures.
 
       ![Model Name Query Errors](images/QueryError.png)
@@ -125,11 +128,11 @@ Once a model has been successfully checked-in to _ModelManager_ any drawing asso
 
 ![Model Selection](images/DrawingSelection.png)
 
-17. The number of drawings associated with the current model.
-18. The Annotation drawing loaded for the current model.Can be selected in the drawing selection table.
-19. The number of views on the drawing which could not be associated with any 3d component of the currently
+18. The number of drawings associated with the current model.
+19. The Annotation drawing loaded for the current model.Can be selected in the drawing selection table.
+20. The number of views on the drawing which could not be associated with any 3d component of the currently
     loaded model.
-20. Action button to check-in the currently loaded drawing.
+21. Action button to check-in the currently loaded drawing.
 
 # Description
 
@@ -184,13 +187,13 @@ Migration Stage 2 Process Diagramm
                                       O->| :FOCUS_SELECTED_COMPONENT |->--/ :ON/:OFF /------->---O
                                       |  '---------------------------'   '----------'            |
                                       |  .--------------------.                                  |
-                                      O->| :SHOW_ERROR_REPORT |---->------------------------->---O
+                                      O->| :SHOW_ERROR_REPORT |-------->--------------------->---O
                                       |  '--------------------'                                  |
                                       |  .----------------.                .----------.          |
                                       O->| :IGNORE_ERRORS |------------>--/ :ON/:OFF /------->---O
                                       |  '----------------'              '----------'            |
                                       |  .--------------.                  .--------.            |
-                                      O->| :RESOLUTION |--------------->--/ option /--------->---O
+                                      O->| :RESOLUTION  |-------------->--/ option /--------->---O
                                       |   '-------------'                '--------'              |
                                       |  .----------.                                            |
                                       O->| :COMPARE |------------------>--------------------->---O
@@ -201,11 +204,14 @@ Migration Stage 2 Process Diagramm
                                       |  .-----------------------.                               |
                                       O->| :RESCAN_CURRENT_MODEL |----->--------------------->---O
                                       |  '-----------------------'                               |
+                                      |  .---------------------.                                 |
+                                      O->| :SAVE_CURRENT_MODEL |------->--------------------->---O
+                                      |  '---------------------'                                 |
                                       |  .-----------.                                           |
                                       '->| :CHECK_IN |----------------->--------------------->---O
                                          '-----------'                                           |
                                       .-<------------------------------<---------------------<---O
-                                      |  .------------------.              .--------.            |
+                                      |  .------------------.              .---------.           |
                                       O->| :CURRENT_DRAWING |---------->--/ drawing /-------->---O
                                       |  '------------------'            '---------'             |
                                       |  .-------------------.                                   |
@@ -247,15 +253,18 @@ Migration Stage 2 Process Diagramm
 `:COMPARE`
 :   Perform a model compare of a local (reference) model and a another (check) model which can be local
     or from the database.
-    
+
 `:APPLY_RESOLUTION`
 :   Apply the selected resolution-
 
 `:RESCAN_CURRENT_MODEL`
 :   Re analyze the current model after a change which was performed outside the
     _Assisted Check-in_ dialog.
-    
-`:CHECK_IN`
+
+`:SAVE_CURRENT_MODEL`
+:   Save the current model to disk to preserve any conflict resolutions made so far
+    in case Modeling has to be restarted.
+
 :   Action to check the current model in to _ModelManager_ after all conflicts have been resolved,
 
 `:CURRENT_DRAWING`

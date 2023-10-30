@@ -225,6 +225,10 @@ this dialog. Just restart this dialog once comparison is complete to resume name
 <li><p>Re-analyze the current model after a manual model change including rollbacks (<em>UNDO</em>) of previous conflict
 resolutions. ⚠️ Model Analysis is an expensive operation and may take a while.</p>
 </li>
+<li><p>Save the current model to disk, including all conflict resolutions applied so far. This is useful to allow interruptions of the check-in process.
+When the Assisted Check-in dialog is started again the saved model will be listed as <code>:PENDING</code> and, when loaded, will have all changes
+applied in an earlier session.</p>
+</li>
 <li><p>Check-in the current model to <em>ModelManager</em>. This actions is available only when all conflicts are resolved.
 This action opens the <em>ModelManager</em> <em>Save Modified</em> dialog to perform final checks and allow for a review
 of the components being checked in.</p>
@@ -239,7 +243,7 @@ to recover from these failures.</p>
 <h2 id="checking-in-drawings">Checking in Drawings</h2>
 <p>Once a model has been successfully checked-in to <em>ModelManager</em> any drawing associated with that model can be checked-in:</p>
 <p><img src="images/DrawingSelection.png" alt="Model Selection" /></p>
-<ol start="17">
+<ol start="18">
 <li>The number of drawings associated with the current model.</li>
 <li>The Annotation drawing loaded for the current model.Can be selected in the drawing selection table.</li>
 <li>The number of views on the drawing which could not be associated with any 3d component of the currently
@@ -282,17 +286,17 @@ in the graphical viewport.</dd>
 </ul>
 </dd>
 <dt><code>:COMPARE</code></dt>
-<dd>
-<p>Perform a model compare of a local (reference) model and a another (check) model which can be local
-or from the database.</p>
-<p><code>:APPLY_RESOLUTION</code></p>
-</dd>
+<dd>Perform a model compare of a local (reference) model and a another (check) model which can be local
+or from the database.</dd>
+<dt><code>:APPLY_RESOLUTION</code></dt>
 <dd>Apply the selected resolution-</dd>
 <dt><code>:RESCAN_CURRENT_MODEL</code></dt>
+<dd>Re analyze the current model after a change which was performed outside the
+<em>Assisted Check-in</em> dialog.</dd>
+<dt><code>:SAVE_CURRENT_MODEL</code></dt>
 <dd>
-<p>Re analyze the current model after a change which was performed outside the
-<em>Assisted Check-in</em> dialog.</p>
-<p><code>:CHECK_IN</code></p>
+<p>Save the current model to disk to preserve any conflict resolutions made so far
+in case Modeling has to be restarted.</p>
 </dd>
 <dd>Action to check the current model in to <em>ModelManager</em> after all conflicts have been resolved,</dd>
 <dt><code>:CURRENT_DRAWING</code></dt>

@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>`*USER-INTERFACE-INTEGRATION*` [Public Variable] </title>
+    <link rel="stylesheet" type="text/css" href="../../../styles/md-styles.css" />
+
+    <!-- Code syntax highlighting configuration -->
+    <!-- Comment this to deactivate syntax highlighting. -->
+    <link rel="stylesheet" type="text/css" href="../../../styles/vs.min.css" />
+    <!-- Alternative highlighting styles -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/agate.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/far.min.css" /> -->
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/tomorrow-night-blue.min.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../../../styles/vs2015.min.css" /> -->
+    <script src="../../../js/highlight.min.js"></script>
+    <script>
+        hljs.configure({ languages: [] });
+        hljs.initHighlightingOnLoad();
+    </script>
+    <!-- -->
+    <!-- mermaid diagram generator configuration -->
+    <!-- Comment this to deactivate the diagramming extension ('diagrams'). -->
+    <script src="../../../js/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+    <!-- -->
+    <!-- KaTeX LaTeX Math typesetting configuration -->
+    <!-- Comment this to deactivate the LaTeX math extension ('mathematics'). -->
+    <link rel="stylesheet" type="text/css" href="../../../katex/katex.min.css" />
+    <script defer src="../../../katex/katex.min.js"></script>
+    <script>
+        // <![CDATA[
+        window.onload = function () {
+            var tex = document.getElementsByClassName("math");
+            Array.prototype.forEach.call(tex, function (el) {
+                katex.render(el.textContent, el, {
+                    displayMode: (el.nodeName == "DIV"),
+                    macros: {
+                        "\\(": "",
+                        "\\)": "",
+                        "\\[": "",
+                        "\\]": ""
+                    }
+                })
+            });
+        };
+          // ]]>
+    </script>
+    <!-- add page icon link -->
+    <link rel="icon" href="../../../PageIcon.png" type="image/x-icon" />
+</head>
+<body>
+    <nav><button class='navitem'><a href='https://cadm-inc-us.com/'><img width='90%' src='../../../CADM-logo.jpg' /></a></button>
+<button class='navitem'><a href='../../../index.html'>CADM Documentation Hub</a></button>
+<div class='navlabel'>Modeling Extensions</div>
+<button class='navitem'><a href='../../../3d_printing/index.html'>3-D Manufacturing</a></button>
+<button class='navitem'><a href='../../../ADGservice/index.html'>Automated Document Generator</a></button>
+<button class='navitem'><a href='../../../soco_cables/index.html'>Rigid Cable Modeler</a></button>
+<button class='navitem'><a href='../../../soco_router/index.html'>Cable Auto-Router</a></button>
+<div class='navlabel'>ky_migrator</div>
+<button class='navitem'><a href='../Home.html'><i>ky_migrator</i> <b>Home</b></a></button>
+<button class='navitem'><a href='../Installation.html'>Installation</a></button>
+<button class='navitem'><a href='../Customization.html'>Customization</a></button>
+<button class='navitem'><a href='../UI.html'>User Interface</a></button>
+<div class='navlabel'>Lisp API</div>
+<button class='navitem'><a href='../KEYSIGHT-MIGRATOR/KEYSIGHT-MIGRATOR.pkg.html'>KEYSIGHT-MIGRATOR</a></button>
+<hr/>
+<div class='navlabel'>On this Page</div>
+<button class='navitem'><a href='#user-interface-integration-public-variable'><span class='navitem1'><code>*USER-INTERFACE-INTEGRATION*</code> [Public Variable]</span></a></button>
+</nav>
+    <main>
+        <article>
+            <h1 id="user-interface-integration-public-variable" class="title"><code>*USER-INTERFACE-INTEGRATION*</code> [Public Variable]</h1>
+<p class="package">Package: <a href="KEYSIGHT-MIGRATOR.pkg.html"><code>keysight-migrator</code></a> (Nick name(s): <code>:kym</code>) </p>
+<p>Modeling user interface integration level {<code>keyword</code>} for this extension
+module. Supported levels are:</p>
+<dl>
+<dt><code>:FLUENTUI</code> (factory default)</dt>
+<dd>Commands defined in this module are added to a module specific group in the
+<em>Extensions</em> tab of the Modeling ribbon bar.
+The settings dialog is added to <code>File -&gt; Settings -&gt; Extensions</code>.
+Help action(s) are added to the <em>Modeling</em> Help menu.</dd>
+<dt><code>:TOOLBOX</code></dt>
+<dd>Commands defined in this module are added to the <em>Toolbox</em>
+of the <em>Quick Access Toolbar.</em>
+The settings dialog is added to <code>File -&gt; Settings -&gt; Extensions</code>.
+Help action(s) are added to the <em>Modeling</em> Help menu.</dd>
+<dt><code>:CUSTOM</code></dt>
+<dd>The settings dialog is added to <code>File -&gt; Settings -&gt; Extensions</code>.
+Help action(s) are added to the <em>Modeling</em> Help menu.
+All other required user interfaces need to be custom built.</dd>
+<dt><code>:NONE</code></dt>
+<dd>
+<p>Commands available in this module are defined, but no user interface is
+built.</p>
+</dd>
+</dl>
+
+        </article>
+        <footer>
+            <hr />
+            Module: ky_migrator v1.1.0 - Build Date: Oct 30 2023; Copyright 2023 CADM, Inc
+
+        </footer>
+    </main>
+</body>
+</html>
