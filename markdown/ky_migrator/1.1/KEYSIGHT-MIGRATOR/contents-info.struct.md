@@ -11,7 +11,8 @@ Record of a fileable contents cluster.
 
 :warning: When created in session some of the slots contain
 [`sel_item`] or [`entity`] objects
-as placeholders. These are replaced by the target types by [`update-contents-info`]
+as placeholders. These are replaced by [`update-component-records`]
+with the appropriate target types.
 
 # Slots
 
