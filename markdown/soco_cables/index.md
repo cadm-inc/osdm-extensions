@@ -4,7 +4,8 @@ The _soco_cables_extension module for Modeling provides  tools to simplify the p
 
 # Releases
 
-:sparkles: 15.1.5: [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/soco_cables/soco_cables_x64_15.1.5.zip) -
-         [Documentation](15.1/Home.md)
-* 15.1.4: [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/soco_cables/soco_cables_x64_15.1.4.zip) -
-         [Documentation](15.1/Home.md)         
+         
+{style="border-collapse:collapse"}
+|            |            |                                                                      |
+| :--------: | -----------| -------------------------------------------------------------------- |
+| :sparkles: |**v15.1.5** | [Download](https://github.com/cadm-inc/osdm-extensions/raw/master/downloads/soco_cables/soco_cables_x64_15.1.5.zip)  - [Documentation](15.1/Home.md) - [Installation](15.1/Installation.md) |
